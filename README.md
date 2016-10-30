@@ -1,27 +1,26 @@
-# FresherNote
+# HairBNB
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
+[Heroku link][heroku]
 
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/b/ALgfuX0Q/freshernote
+[trello]: https://trello.com/b/FhRgpcIJ/hairbnb
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
+HairBNB is a full stack web application inspired by AirBNB built using Ruby on Rails
 and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Notes
-- [ ] Notebooks for organizing notes
-- [ ] Tags
-- [ ] Rich Text Editing
-- [ ] Infinite Scroll
-- [ ] Production README [sample](docs/production_readme.md)
+- [ ] Spots
+- [ ] Spot search
+- [ ] Bookings
+- [ ] Spot reviews
+- [ ] Production README
 
 ## Design Docs
 * [View Wireframes][wireframes]
@@ -42,29 +41,30 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Spots (4 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
+**Objective:** Spots can be created, read, edited and destroyed through
 the API.
 
-### Phase 3: Notebooks (2 day)
+### Phase 3: Spot search (2 day)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Users can search for spots through a UI that incorporates Google Maps' API
 
-### Phase 4: Tags (1 days)
+### Phase 4: Bookings (2 days)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Users can request bookings which hosts can approve or reject
 
-### Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
+### Phase 5: Reviews (1 day, W2 F 4pm)
 
-**objective:** Allow rich text editing of notes.
-
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
-
-**objective:** Add infinite scroll to Notes Index
+**objective:** Users can add reviews for prior stays
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] Customized map graphics
+- [ ] Map zoom search
+- [ ] Spots picture gallery
+- [ ] Messaging
+- [ ] User profiles
+- [ ] Host profiles
+- [ ] Wish lists
+- [ ] Local experiences
+- [ ] Review responses
