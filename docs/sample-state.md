@@ -38,7 +38,15 @@
     barking: true,
     whining: true,
     begging: false,
-    shedding: false
+    shedding: false,
+    reviews: {
+      1: {
+        author: "Zach Krasner",
+        title: "Best place ever",
+        body: "Really awesome place",
+        rating: 5
+      }
+    }
   }
   newListing: {
     street_address: "100 Van Ness",

@@ -58,3 +58,4 @@ guest_id    | integer   | not null, foreign key (references users), indexed
 listing_id  | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 body        | string    | not null
+rating      | integer   | not null, between 1 and 5
