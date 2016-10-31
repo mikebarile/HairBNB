@@ -4,69 +4,77 @@
  - AuthForm
 
 **HomeContainer**
- - Home
- - Sidebar
+ - TopBar
+ - Footer
 
-**NotesContainer**
- - NotesHeader
-  * NoteIndex
+**ListingsContainer**
+ - DatesFilter
+ - PriceFilter
+ - Listings
+  + ListingResult
+  + ResultNav
+ - Map
 
-**NotebookContainer**
- - NotebookHeader
-  + NoteIndex
+**ListingContainer**
+ - ListingHost
+  + Image
+  + PriceHost
+  + PendingBookings
+    + PendingBookingResult
+  + UpcomingBookings
+    + UpcomingBookingResult
+  + RemoveListingButton
+  + ListingDescription
+  + ListingAmenities
+   + Amenity
+  + ListingRules
+   + Rule
+  + ListingReviews
+   + Review
+ - ListingGuest
+  + Image
+  + CheckIn
+   + Price
+   + Info
+   + PriceInfo
+   + BookButton
+    + ConfirmationPopup
+  + ListingDescription
+  + ListingAmenities
+   + Amenity
+  + ListingRules
+   + Rule
+  + ListingReviews
+   + Review
+   + AddReviewButton
+    + AddReviewForm
 
-**SearchResultsContainer**
- - Search
- - NoteIndex
+**BookingsContainer**
+ - Listing
+  + PendingBookings
+   + PendingBooking
+  + UpcomingBookings
+   + UpcomingBooking
 
-**TagContainer**
- - NotebookHeader
-  + NoteIndex
+**TripsContainer**
+ - UpcomingTripsHeader
+ - Trips
+  + Trip
 
-**NoteIndex**
- - NoteIndexItem
-  + NoteDetail
-    + NoteTools
-    - NotebookSearch
-    - Tags
-      - Tag
-    * Note
-
-**NewNoteContainer**
- - NewNote
-  - RTETools
-  - NewNoteButton
-
-**Search**
-
-**NewNotebook**
- - NewNotebook
-
-**NewTag**
- - NewTag
-
-**NotebookSearch**
- + AutoSearch
- * AutoSearchResults
-
-**TagsSearch**
- + AutoSearch
- * AutoSearchResults
+**NewListingContainer**
+ - NewListingHome
+ - NewListingOne
+ - NewListingTwo
+ - NewListingThree
 
 ## Routes
 
 |Path   | Component   |
 |-------|-------------|
 | "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
-| "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
-| "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
-| "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
-| "/new-tag" | "NewTag" |
-| "/tag-search" | "TagSearch" |
-| "/notebook-search" | "NotebookSearch" |
+| "/listings/" | "ListingsContainer" |
+| "/listings/:listing_id" | "ListingContainer" |
+| "/my-listings" | "BookingsContainer" |
+| "/my-trips" | "TripsContainer" |
+| "/add-a-listing/**" | "NewlistingContainer" |

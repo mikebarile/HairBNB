@@ -16,10 +16,10 @@ sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Spots
-- [ ] Spot search
+- [ ] Listings
+- [ ] Listing search
 - [ ] Bookings
-- [ ] Spot reviews
+- [ ] Listing reviews
 - [ ] Production README
 
 ## Design Docs
@@ -41,27 +41,27 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Spots (4 days)
+### Phase 2: Listings (4 days)
 
-**Objective:** Spots can be created, read, edited and destroyed through
+**Objective:** Listings can be created, read, edited and destroyed through
 the API.
 
-### Phase 3: Spot search (2 day)
+### Phase 3: Listing search (2 days)
 
-**Objective:** Users can search for spots through a UI that incorporates Google Maps' API
+**Objective:** Users can search for listings through a UI that incorporates Google Maps' API
 
 ### Phase 4: Bookings (2 days)
 
 **Objective:** Users can request bookings which hosts can approve or reject
 
-### Phase 5: Reviews (1 day, W2 F 4pm)
+### Phase 5: Reviews (1 day)
 
 **objective:** Users can add reviews for prior stays
 
 ### Bonus Features (TBD)
 - [ ] Customized map graphics
 - [ ] Map zoom search
-- [ ] Spots picture gallery
+- [ ] Listings picture gallery
 - [ ] Messaging
 - [ ] User profiles
 - [ ] Host profiles
