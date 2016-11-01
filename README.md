@@ -9,10 +9,11 @@
 
 ## Minimum Viable Product
 
-HairBNB is a full stack web application inspired by AirBNB built using Ruby on Rails
-and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
-following criteria with smooth, bug-free navigation, adequate seed data and
-sufficient CSS styling:
+HairBNB is an AirBNB-inspired full stack web application that allows dog owners
+to send their furry friends on vacations to hosts' homes. The application
+was built using Ruby on Rails and React/Redux.  By the end of Week 9, this
+app will, at a minimum, satisfy the following criteria with smooth, bug-free
+navigation, adequate seed data and sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
