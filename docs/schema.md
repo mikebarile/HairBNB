@@ -4,11 +4,12 @@
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+first_name      | string    | nut null
+last_name       | string    | nut null
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
-birthday        | date      | not null
-image_url       | string    | not null
+image_url       | string    |
 
 ## listings
 column name    | data type | details
@@ -59,3 +60,11 @@ listing_id  | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 body        | text      | not null
 rating      | integer   | not null, between 1 and 5
+
+## cities
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+city_name   | string    | not null
+state       | string    |
+country     | string    | not null

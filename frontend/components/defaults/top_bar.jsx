@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { withRouter } from 'react-router';
+import SearchBar from './search_bar';
+import UserButtons from './user_buttons';
 
 const TopBar = ({router, currentUser, logout}) => {
 
@@ -15,28 +17,10 @@ const TopBar = ({router, currentUser, logout}) => {
         src="/assets/dog_icon.png"
         className={"Logo"}
       />
-
+      <SearchBar/>
+      <UserButtons currentUser={currentUser} logout={logout}/>
     </div>
   );
-
-
-  // if (currentUser !== null) {
-  //   return (
-  //     <div>
-  //       <h2>Welcome {currentUser.username}!</h2>
-  //       <br/>
-  //       <button onClick={logout}>Logout</button>
-  //     </div>
-  //   );
-  // }
-  // else {
-  //   return (
-  //     <div>
-  //       <Link to="/signup">Signup</Link> or
-  //       <Link to="/login"> Login</Link>!
-  //     </div>
-  //   );
-  // }
 };
 
 export default withRouter(TopBar);
