@@ -3,9 +3,12 @@
 **AuthFormContainer**
  - AuthForm
 
-**HomeContainer**
+**DefaultContainer**
  - TopBar
  - Footer
+
+ **HomeContainer**
+  - Home
 
 **ListingsContainer**
  - DatesFilter
@@ -39,8 +42,9 @@
 
 |Path   | Component   |
 |-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
+| "/" | "DefaultContainer" |
 | "/home" | "HomeContainer" |
+| "/sign-up" | "AuthFormContainer" |
 | "/listings/" | "ListingsContainer" |
 | "/listings/:listing_id" | "ListingContainer" |
 | "/my-listings" | "BookingsContainer" |
