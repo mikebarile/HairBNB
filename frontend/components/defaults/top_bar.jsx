@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { withRouter } from 'react-router';
 
-const TopBar = ({currentUser, logout}) => {
+const TopBar = ({router, currentUser, logout}) => {
+
+  const redirectToHome = () => {
+    router.push('/');
+  };
 
   return (
     <div>
-      <img src="" />
+      <img
+        onClick={redirectToHome}
+        src="/assets/dog_icon.png"
+        className={"Logo"}
+      />
+
     </div>
   );
 
@@ -29,4 +39,4 @@ const TopBar = ({currentUser, logout}) => {
   // }
 };
 
-export default TopBar;
+export default withRouter(TopBar);

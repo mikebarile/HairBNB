@@ -5,7 +5,6 @@ import Footer from './defaults/footer';
 
 const App = ({ children }) => (
   <div>
-    <h1><Link to="/">Bench BnB</Link></h1>
     <TopBarContainer />
     {children}
     <Footer />
