@@ -42,12 +42,12 @@ navigation, adequate seed data and sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Listings (4 days)
+### Phase 2: Listings (3 days)
 
 **Objective:** Listings can be created, read, edited and destroyed through
 the API.
 
-### Phase 3: Listing search (2 days)
+### Phase 3: Listing search (1 days)
 
 **Objective:** Users can search for listings through a UI that incorporates Google Maps' API
 
@@ -60,8 +60,6 @@ the API.
 **objective:** Users can add reviews for prior stays
 
 ### Bonus Features (TBD)
-- [ ] Customized map graphics
-- [ ] Map zoom search
 - [ ] Listings picture gallery
 - [ ] Messaging
 - [ ] User profiles

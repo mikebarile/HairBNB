@@ -47,7 +47,7 @@ guest_id    | integer   | not null, foreign key (references users), indexed
 listing_id  | integer   | not null, foreign key (references users), indexed
 start_date  | date      | not null
 end_date    | date      | not null
-message     | string    | not null
+message     | text      | not null
 status      | string    | not null, must be "approved", "pending", or "rejected"
 
 ## reviews
@@ -57,5 +57,5 @@ id          | integer   | not null, primary key
 guest_id    | integer   | not null, foreign key (references users), indexed
 listing_id  | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
-body        | string    | not null
+body        | text      | not null
 rating      | integer   | not null, between 1 and 5

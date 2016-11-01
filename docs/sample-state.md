@@ -8,61 +8,47 @@
   trips: {},
   listings: {
     1: {
-      street_address: "100 Van Ness",
-      city: "San Francisco",
       title: "Amazing rooftop views",
-      description: "Really great place for a dog!",
       price: 500,
-      dog_walks: true,
-      deluxe_bed: false,
-      house_cat: false,
-      gourmet_food: true,
-      chew_toys: true,
-      frisbee: false,
-      mailman: false,
-      grooming: true,
-      cuddle_buddy: true,
-      indoor_pee: true,
-      indoor_poop: true,
-      barking: true,
-      whining: true,
-      begging: false,
-      shedding: false,
-      reviews: {
-        1: {
-          author: "Zach Krasner",
-          title: "Best place ever",
-          body: "Really awesome place",
-          rating: 5
-        }
-      }
+      num_reviews: 95,
+      avg_rating: 4.8
+    },
+    2: {
+      title: "Best dog bed ever!",
+      price: 300,
+      num_reviews: 943,
+      avg_rating: 4.9
     }
-  },
-  newListing: {
-    form_state: 3
-    form_data: {
-      street_address: "100 Van Ness",
-      city: "San Francisco",
-      zip_code: 94102,
-      apartment_num: 2811,
-      title: "Amazing rooftop views",
-      description: "Really great place for a dog!",
-      price: 500,
-      dog_walks: true,
-      deluxe_bed: false,
-      house_cat: false,
-      gourmet_food: true,
-      chew_toys: true,
-      frisbee: false,
-      mailman: false,
-      grooming: true,
-      cuddle_buddy: true,
-      indoor_pee: true,
-      indoor_poop: true,
-      barking: true,
-      whining: true,
-      begging: false,
-      shedding: false
+  }
+  listing: {
+    id: 1,
+    street_address: "100 Van Ness",
+    city: "San Francisco",
+    title: "Amazing rooftop views",
+    description: "Really great place for a dog!",
+    price: 500,
+    dog_walks: true,
+    deluxe_bed: false,
+    house_cat: false,
+    gourmet_food: true,
+    chew_toys: true,
+    frisbee: false,
+    mailman: false,
+    grooming: true,
+    cuddle_buddy: true,
+    indoor_pee: true,
+    indoor_poop: true,
+    barking: true,
+    whining: true,
+    begging: false,
+    shedding: false,
+    reviews: {
+      1: {
+        author: "Zach Krasner",
+        title: "Best place ever",
+        body: "Really awesome place",
+        rating: 5
+      }
     }
   },
   searchParams: {

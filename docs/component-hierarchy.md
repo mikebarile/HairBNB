@@ -10,62 +10,30 @@
 **ListingsContainer**
  - DatesFilter
  - PriceFilter
- - Listings
-  + ListingResult
+ - ListingsIndex
+  + ListingIndexItem
   + ResultNav
  - Map
 
 **ListingContainer**
  - ListingHost
-  + Image
-  + PriceHost
-  + PendingBookings
-    + PendingBookingResult
-  + UpcomingBookings
-    + UpcomingBookingResult
-  + RemoveListingButton
-  + ListingDescription
-  + ListingAmenities
-   + Amenity
-  + ListingRules
-   + Rule
-  + ListingReviews
-   + Review
  - ListingGuest
-  + Image
-  + CheckIn
-   + Price
-   + Info
-   + PriceInfo
-   + BookButton
-    + ConfirmationPopup
-  + ListingDescription
-  + ListingAmenities
-   + Amenity
-  + ListingRules
-   + Rule
-  + ListingReviews
-   + Review
-   + AddReviewButton
-    + AddReviewForm
 
 **BookingsContainer**
  - Listing
-  + PendingBookings
-   + PendingBooking
-  + UpcomingBookings
-   + UpcomingBooking
+  + BookingsIndex
+   + BookingsIndexItem
 
 **TripsContainer**
  - UpcomingTripsHeader
- - Trips
-  + Trip
+ - TripsIndex
+  + TripsIndexItem
 
 **NewListingContainer**
  - NewListingHome
- - NewListingOne
- - NewListingTwo
- - NewListingThree
+ - NewListingFormOne
+ - NewListingFormTwo
+ - NewListingFormThree
 
 ## Routes
 

@@ -37,6 +37,6 @@
 ### Review
 
 - A listing's reviews will be included in the listing show template
-- `POST /api/listings/:listing_id/reviews`
-- `PATCH /api/listings/:listing_id/reviews/:review_id`
-- `DELETE /api/listings/:listing_id/reviews/:review_id`
+- `POST /api/reviews`
+- `PATCH /api/reviews/:review_id`
+- `DELETE /api/reviews/:review_id`
