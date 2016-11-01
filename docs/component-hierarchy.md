@@ -3,12 +3,12 @@
 **AuthFormContainer**
  - AuthForm
 
-**DefaultContainer**
+**App**
  - TopBar
  - Footer
 
  **HomeContainer**
-  - Home
+ - Home
 
 **ListingsContainer**
  - DatesFilter
@@ -33,16 +33,17 @@
   + TripsIndexItem
 
 **NewListingContainer**
- - NewListingHome
- - NewListingFormOne
- - NewListingFormTwo
- - NewListingFormThree
+ - NewListingForm
+   + NewListingHome
+   + NewListingFormOne
+   + NewListingFormTwo
+   + NewListingFormThree
 
 ## Routes
 
 |Path   | Component   |
 |-------|-------------|
-| "/" | "DefaultContainer" |
+| "/" | "App" |
 | "/home" | "HomeContainer" |
 | "/sign-up" | "AuthFormContainer" |
 | "/listings/" | "ListingsContainer" |

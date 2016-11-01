@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router';
-import GreetingContainer from './greeting/greeting_container';
+import TopBarContainer from './defaults/top_bar_container';
+import Footer from './defaults/footer';
 
 const App = ({ children }) => (
   <div>
     <h1><Link to="/">Bench BnB</Link></h1>
-    <GreetingContainer />
+    <TopBarContainer />
     {children}
+    <Footer />
   </div>
 );
 
