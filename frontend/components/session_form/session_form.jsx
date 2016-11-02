@@ -44,13 +44,11 @@ class SessionForm extends React.Component {
             <li className="error" key={idx}>{error}</li>)}
         </ul>
 
-        <div className="form-input-row">
-          <input
-            onChange={this.update("email")}
-            className="form-input"
-            type="text"
-            placeholder="Email"/>
-        </div>
+        <input
+          onChange={this.update("email")}
+          className="form-input-row-new"
+          type="text"
+          placeholder="Email"/>
         <br/>
 
         <div className="form-input-row">
@@ -59,17 +57,18 @@ class SessionForm extends React.Component {
             className="form-input"
             type="password"
             placeholder="Password"/>
+          <img className = "form-icon" src="/assets/lock.ico"/>
         </div>
         <br/>
 
         <button
           className="submit-button"
-          onClick={this.handleSubmit}>Login
+          onClick={this.handleSubmit}>Log in
         </button>
 
         <div className="form-bottom">
           <p className="form-bottom-text">Don't have an account?</p>
-          <Link className="other-form-button" to="/signup">Signup</Link>
+          <Link className="other-form-button" to="/signup">Sign up</Link>
         </div>
       </div>
     );

@@ -53,6 +53,7 @@ class UserForm extends React.Component {
             className="form-input"
             type="text"
             placeholder="Fist name"/>
+          <img className = "form-icon" src="/assets/person-icon.png"/>
         </div>
         <br/>
 
@@ -62,6 +63,7 @@ class UserForm extends React.Component {
             className="form-input"
             type="text"
             placeholder="Last name"/>
+          <img className = "form-icon" src="/assets/person-icon.png"/>
         </div>
         <br/>
 
@@ -71,6 +73,7 @@ class UserForm extends React.Component {
             className="form-input"
             type="text"
             placeholder="Email"/>
+          <img className = "form-icon" src="/assets/mail.png"/>
         </div>
         <br/>
 
@@ -80,6 +83,7 @@ class UserForm extends React.Component {
             className="form-input"
             type="password"
             placeholder="Password"/>
+          <img className = "form-icon" src="/assets/lock.ico"/>
         </div>
         <br/>
 
