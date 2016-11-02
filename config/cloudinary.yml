@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dsguwnfdw
+  api_key: '266735242539547'
+  api_secret: ebPBkxmZ3R-OiOTpjM25WMCq4ow
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dsguwnfdw
+  api_key: '266735242539547'
+  api_secret: ebPBkxmZ3R-OiOTpjM25WMCq4ow
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dsguwnfdw
+  api_key: '266735242539547'
+  api_secret: ebPBkxmZ3R-OiOTpjM25WMCq4ow
+  enhance_image_tag: true
+  static_image_support: false

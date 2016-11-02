@@ -46,19 +46,16 @@ class SessionForm extends React.Component {
 
         <input
           onChange={this.update("email")}
-          className="form-input-row-new"
+          className="form-input email-row"
           type="text"
           placeholder="Email"/>
         <br/>
 
-        <div className="form-input-row">
-          <input
-            onChange={this.update("password")}
-            className="form-input"
-            type="password"
-            placeholder="Password"/>
-          <img className = "form-icon" src="/assets/lock.ico"/>
-        </div>
+        <input
+          onChange={this.update("password")}
+          className="form-input password-row"
+          type="text"
+          placeholder="Password"/>
         <br/>
 
         <button

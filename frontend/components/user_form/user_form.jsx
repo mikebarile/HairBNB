@@ -47,44 +47,32 @@ class UserForm extends React.Component {
             <li className="error" key={idx}>{error}</li>)}
         </ul>
 
-        <div className="form-input-row">
-          <input
-            onChange={this.update("first_name")}
-            className="form-input"
-            type="text"
-            placeholder="Fist name"/>
-          <img className = "form-icon" src="/assets/person-icon.png"/>
-        </div>
+        <input
+          onChange={this.update("first_name")}
+          className="form-input person-row"
+          type="text"
+          placeholder="First name"/>
         <br/>
 
-        <div className="form-input-row">
-          <input
-            onChange={this.update("last_name")}
-            className="form-input"
-            type="text"
-            placeholder="Last name"/>
-          <img className = "form-icon" src="/assets/person-icon.png"/>
-        </div>
+        <input
+          onChange={this.update("last_name")}
+          className="form-input person-row"
+          type="text"
+          placeholder="Last name"/>
         <br/>
 
-        <div className="form-input-row">
-          <input
-            onChange={this.update("email")}
-            className="form-input"
-            type="text"
-            placeholder="Email"/>
-          <img className = "form-icon" src="/assets/mail.png"/>
-        </div>
+        <input
+          onChange={this.update("email")}
+          className="form-input email-row"
+          type="text"
+          placeholder="Email"/>
         <br/>
 
-        <div className="form-input-row">
-          <input
-            onChange={this.update("password")}
-            className="form-input"
-            type="password"
-            placeholder="Password"/>
-          <img className = "form-icon" src="/assets/lock.ico"/>
-        </div>
+        <input
+          onChange={this.update("password")}
+          className="form-input password-row"
+          type="text"
+          placeholder="Password"/>
         <br/>
 
         <button
