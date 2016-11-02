@@ -5,12 +5,24 @@ import { withRouter } from 'react-router';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {query: ""};
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch(e) {
+    e.preventDefault();
+    this.setState({query: e.target.value});
   }
 
   render() {
     return (
       <div>
-        Searchbar!
+        <input
+          type="text"
+          onChange={this.handleSearch}
+          value={this.state.query}
+          placeholder="Search..."
+        />
       </div>
     );
   }

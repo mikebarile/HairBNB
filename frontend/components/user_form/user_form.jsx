@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class SessionForm extends React.Component {
+class UserForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
         <p>
           Welcome to HairBNB!
           <br/>
-          Please login or <Link to="/signup">signup</Link> instead
+          Please signup or <Link to="/signup">login</Link> instead
         </p>
 
         <ul>
@@ -65,4 +65,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default UserForm;
