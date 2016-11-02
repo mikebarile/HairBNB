@@ -41,7 +41,7 @@ class UserForm extends React.Component {
         <p>
           Welcome to HairBNB!
           <br/>
-          Please signup or <Link to="/signup">login</Link> instead
+          Please signup or <Link to="/login">login</Link> instead
         </p>
 
         <ul>
