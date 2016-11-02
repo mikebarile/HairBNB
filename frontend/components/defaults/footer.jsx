@@ -5,7 +5,11 @@ const Footer = (props) => {
 
   return (
     <div className="footer">
-      <p>Footer!</p>
+      <span className="footer-text-container">
+        <a className="footer-text" href="https://www.linkedin.com/in/mikebarile">Company</a>
+        <a className="footer-text" href="https://github.com/mikebarile/HairBNB">Discover</a>
+        <a className="footer-text" href="https://hairbnb13.herokuapp.com/">Hosting</a>
+      </span>
     </div>
   );
 };

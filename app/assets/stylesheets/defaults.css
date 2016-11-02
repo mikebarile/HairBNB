@@ -74,10 +74,23 @@
 
 .footer {
   width: 100%;
-  height: 60px;
+  height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   background-color: #484848;
   color: white;
   font-family: sans-serif;
+}
+
+.footer-text-container {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-text:hover {
+  cursor: pointer;
+  color: #B8B8B8
 }
