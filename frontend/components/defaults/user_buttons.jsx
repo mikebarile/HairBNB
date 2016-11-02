@@ -7,6 +7,10 @@ class UserButtons extends React.Component {
     super(props);
   }
 
+  logout() {
+    this.props.logout();
+  }
+
   render() {
     let currentUser = this.props.currentUser;
     if (currentUser === null) {
@@ -23,7 +27,10 @@ class UserButtons extends React.Component {
         <div>
           <Link className="user-button" to="/">Become a Host</Link>
           <Link className="user-button" to="/">Trips</Link>
-          <Link className="user-button" to="/">{currentUser.first_name}</Link>
+            <button
+              onClick={this.props.logout}
+              className="user-button-logout" to="/">Logout
+            </button>
         </div>
       );
     }
@@ -32,7 +39,10 @@ class UserButtons extends React.Component {
         <div>
           <Link className="user-button" to="/">My Listings</Link>
           <Link className="user-button" to="/">Trips</Link>
-          <Link className="user-button" to="/">{currentUser.first_name}</Link>
+          <button
+            onClick={this.props.logout}
+            className="user-button-logout" to="/">Logout
+          </button>
         </div>
       );
     }

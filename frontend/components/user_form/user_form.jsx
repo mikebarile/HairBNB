@@ -5,8 +5,11 @@ class UserForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
+          first_name: "",
+          last_name: "",
           email: "",
-          password: ""
+          password: "",
+          is_host: false
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.setState = this.setState.bind(this);
@@ -38,28 +41,57 @@ class UserForm extends React.Component {
   render() {
     return(
       <div className="session-form">
-        <p>
-          Welcome to HairBNB!
-          <br/>
-          Please signup or <Link to="/login">login</Link> instead
-        </p>
 
-        <ul>
-          {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        <ul className="errors-list">
+          {this.props.errors.map((error, idx) =>
+            <li className="error" key={idx}>{error}</li>)}
         </ul>
 
-        <label>Email: <input
-          onChange={this.update("email")} type="text"/>
-        </label>
+        <div className="form-input-row">
+          <input
+            onChange={this.update("first_name")}
+            className="form-input"
+            type="text"
+            placeholder="Fist name"/>
+        </div>
         <br/>
 
-        <label>Password: <input
-          onChange={this.update("password")} type="password"/>
-
-        </label>
+        <div className="form-input-row">
+          <input
+            onChange={this.update("last_name")}
+            className="form-input"
+            type="text"
+            placeholder="Last name"/>
+        </div>
         <br/>
 
-        <button onClick={this.handleSubmit}>Submit</button>
+        <div className="form-input-row">
+          <input
+            onChange={this.update("email")}
+            className="form-input"
+            type="text"
+            placeholder="Email"/>
+        </div>
+        <br/>
+
+        <div className="form-input-row">
+          <input
+            onChange={this.update("password")}
+            className="form-input"
+            type="password"
+            placeholder="Password"/>
+        </div>
+        <br/>
+
+        <button
+          className="submit-button"
+          onClick={this.handleSubmit}>Signup
+        </button>
+
+        <div className="form-bottom">
+          <p className="form-bottom-text">Don't have an account?</p>
+          <Link className="other-form-button" to="/login">Login</Link>
+        </div>
       </div>
     );
   }

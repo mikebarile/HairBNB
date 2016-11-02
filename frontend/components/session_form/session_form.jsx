@@ -38,28 +38,39 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="session-form">
-        <p>
-          Welcome to HairBNB!
-          <br/>
-          Please login or <Link to="/signup">signup</Link> instead
-        </p>
 
-        <ul>
-          {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        <ul className="errors-list">
+          {this.props.errors.map((error, idx) =>
+            <li className="error" key={idx}>{error}</li>)}
         </ul>
 
-        <label>Email: <input
-          onChange={this.update("email")} type="text"/>
-        </label>
+        <div className="form-input-row">
+          <input
+            onChange={this.update("email")}
+            className="form-input"
+            type="text"
+            placeholder="Email"/>
+        </div>
         <br/>
 
-        <label>Password: <input
-          onChange={this.update("password")} type="password"/>
-
-        </label>
+        <div className="form-input-row">
+          <input
+            onChange={this.update("password")}
+            className="form-input"
+            type="password"
+            placeholder="Password"/>
+        </div>
         <br/>
 
-        <button onClick={this.handleSubmit}>Submit</button>
+        <button
+          className="submit-button"
+          onClick={this.handleSubmit}>Login
+        </button>
+
+        <div className="form-bottom">
+          <p className="form-bottom-text">Don't have an account?</p>
+          <Link className="other-form-button" to="/signup">Signup</Link>
+        </div>
       </div>
     );
   }
