@@ -14,7 +14,7 @@ const TopBar = ({router, currentUser, logout}) => {
     <div className={"top-bar"}>
       <img
         onClick={redirectToHome}
-        src="/assets/dog_icon.png"
+        src="http://res.cloudinary.com/dsguwnfdw/image/upload/v1478115862/dog_icon_rwqkmj.png"
         className={"logo"}
       />
 
