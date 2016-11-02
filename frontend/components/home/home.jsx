@@ -14,8 +14,9 @@ class Home extends React.Component {
 
   render() {
     return(
-      <div className="home">
-        <img className="dog-gif" src="http://res.cloudinary.com/dsguwnfdw/image/upload/v1478119352/dog-gif_scd4ez.gif"/>
+      <div className="dog-gif">
+        <span className="home-header">TIME FOR DOGGY VACATION</span>
+        <span className="home-subheader">Send your best friend to stay with local hosts in 190 countries</span>
       </div>
     );
   }
