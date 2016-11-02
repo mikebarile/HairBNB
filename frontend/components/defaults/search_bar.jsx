@@ -16,12 +16,14 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="search-bar">
+        <img className = "magnifier" src="/assets/magnifier.png"/>
         <input
+          className="search-input"
           type="text"
           onChange={this.handleSearch}
           value={this.state.query}
-          placeholder="Search..."
+          placeholder="Where to?"
         />
       </div>
     );

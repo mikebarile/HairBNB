@@ -11,7 +11,7 @@ class UserButtons extends React.Component {
     let currentUser = this.props.currentUser;
     if (currentUser === null) {
       return (
-        <div>
+        <div className="user-buttons">
           <Link className="user-button" to="/">Become a Host</Link>
           <Link className="user-button" to="/signup">Signup</Link>
           <Link className="user-button" to="/login">Login</Link>
