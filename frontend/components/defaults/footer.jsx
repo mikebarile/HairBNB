@@ -4,8 +4,8 @@ import { Link } from 'react-router';
 const Footer = (props) => {
 
   return (
-    <div className="Footer">
-      Footer!
+    <div className="footer">
+      <p>Footer!</p>
     </div>
   );
 };
