@@ -11,12 +11,13 @@ const TopBar = ({router, currentUser, logout}) => {
   };
 
   return (
-    <div>
+    <div className={"top-bar"}>
       <img
         onClick={redirectToHome}
         src="/assets/dog_icon.png"
-        className={"Logo"}
+        className={"logo"}
       />
+
       <SearchBar/>
       <UserButtons currentUser={currentUser} logout={logout}/>
     </div>

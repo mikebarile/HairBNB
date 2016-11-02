@@ -9,20 +9,30 @@ class UserButtons extends React.Component {
 
   render() {
     let currentUser = this.props.currentUser;
-    if (currentUser !== null) {
+    if (currentUser === null) {
       return (
         <div>
-          <h2>Welcome {currentUser.first_name}!</h2>
-          <br/>
-          <button onClick={this.props.logout}>Logout</button>
+          <Link className="user-button" to="/">Become a Host</Link>
+          <Link className="user-button" to="/signup">Signup</Link>
+          <Link className="user-button" to="/login">Login</Link>
+        </div>
+      );
+    }
+    else if (currentUser.is_host === false) {
+      return (
+        <div>
+          <Link className="user-button" to="/">Become a Host</Link>
+          <Link className="user-button" to="/">Trips</Link>
+          <Link className="user-button" to="/">{currentUser.first_name}</Link>
         </div>
       );
     }
     else {
       return (
         <div>
-          <Link to="/signup">Signup</Link> or
-          <Link to="/login"> Login</Link>!
+          <Link className="user-button" to="/">My Listings</Link>
+          <Link className="user-button" to="/">Trips</Link>
+          <Link className="user-button" to="/">{currentUser.first_name}</Link>
         </div>
       );
     }
