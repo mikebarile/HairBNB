@@ -17,10 +17,12 @@ column name    | data type | details
 id             | integer   | not null, primary key
 title          | string    | not null
 host_id        | integer   | not null, foreign key (references users), indexed
+lat            | float     | not null
+lng            | float     | not null
 street_address | string    | not null
 city           | string    | not null
 zip_code       | integer   | not null
-apartment_num  | integer   |
+apt_num        | integer   |
 description    | string    | not null
 price          | float     | not null, positive, less than 20000
 dog_walks      | boolean   | not null

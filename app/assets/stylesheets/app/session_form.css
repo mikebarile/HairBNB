@@ -69,8 +69,24 @@
   border-radius: 5px;
 }
 
+.guest-login {
+  display: flex;
+  width: 350px;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A699;
+  color: white;
+  height: 60px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
 .submit-button:hover {
   background-color: #FF7E82
+}
+
+.guest-login:hover {
+  background-color: #01ccbc
 }
 
 .form-bottom {
