@@ -25,27 +25,30 @@ class SearchBar extends React.Component {
   render() {
     return(
       <div className="home-search-bar">
+        <div className="home-input-container">
+          <input
+            onChange={this.update("city")}
+            className="home-search-city"
+            type="text"
+            placeholder="Where to?"/>
+          <br/>
 
-        <input
-          onChange={this.update("city")}
-          className="home-search-city"
-          type="text"
-          placeholder="Where to?"/>
-        <br/>
+          <input
+            onChange={this.update("check_in")}
+            className="home-search-date"
+            type="text"
+            placeholder="Check in"/>
+          <br/>
 
-        <input
-          onChange={this.update("check_in")}
-          className="home-search-city"
-          type="text"
-          placeholder="Check in"/>
-        <br/>
+          <img className="home-arrow-icon" src="http://res.cloudinary.com/dsguwnfdw/image/upload/v1478132097/Arrows-Right-icon_wgfi7w.png"/>
 
-        <input
-          onChange={this.update("check_out")}
-          className="home-search-city"
-          type="text"
-          placeholder="Check out"/>
-        <br/>
+          <input
+            onChange={this.update("check_out")}
+            className="home-search-date"
+            type="text"
+            placeholder="Check out"/>
+          <br/>
+        </div>
 
         <button
           className="home-search-button"
