@@ -45,22 +45,24 @@
 }
 
 .user-buttons {
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .user-button {
-  padding: 24px 22px 22px 22px;
+  padding: 0 22px 0 22px;
   border-left: 1px solid #DCE0E0;
   line-height: 66px;
   height: 66px;
   font-size: 14px;
+  width: 107px;
 }
 
 .user-button-new {
   padding-left: 22px;
   padding-right: 22px;
   border-left: 1px solid #DCE0E0;
-  height: 60px;
+  height: 66px;
   font-size: 14px;
 }
 
@@ -69,6 +71,7 @@
 }
 
 .user-button-logout {
+  padding-top: 3px;
   padding-left: 22px;
   padding-right: 22px;
   border-left: 1px solid #DCE0E0;
