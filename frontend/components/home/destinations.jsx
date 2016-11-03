@@ -8,58 +8,37 @@ class Destinations extends React.Component {
 
   render() {
     return(
-      <div className="home-spot-picks">
+      <div className="home-destinations">
         <h1 className="home-main-header">Explore the world</h1>
 
-        <div className="home-picks-index">
-          <div className="home-pick-index-item">
-            <img className="home-pick-img" src="http://res.cloudinary.com/dsguwnfdw/image/upload/v1478136940/Spots/under-the-stairs-dog-bed-polished-concrete-floor-built-in-dog-bed.jpg"/>
-            <div className="home-pick-description">
-              <span className="home-pick-price">$294</span>
-              <span className="home-pick-title">Charming post-modern kennel</span>
-            </div>
-            <div className="home-pick-reviews">
-              <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-              <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-              <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-              <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-              <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-              <span className="home-pick-num-reviews">164 reviews</span>
-            </div>
+        <div className="home-destinations-row">
+          <div className="home-destination-big london">London</div>
+
+          <div className="home-destination-sub-row">
+            <div className="home-destination-small los-angeles">Los Angeles</div>
+            <div className="home-destination-small tokyo">Tokyo</div>
           </div>
 
-          <div className="home-pick-index-item">
-            <img className="home-pick-img" src="http://res.cloudinary.com/dsguwnfdw/image/upload/v1478136937/Spots/_32.jpg"/>
-              <div className="home-pick-description">
-                <span className="home-pick-price">$164</span>
-                <span className="home-pick-title">Rustic dog house with big yard</span>
-              </div>
-              <div className="home-pick-reviews">
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_7/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.13.12_PM.png"/>
-                <span className="home-pick-num-reviews">32 reviews</span>
-              </div>
-          </div>
-
-          <div className="home-pick-index-item">
-            <img className="home-pick-img" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_330,w_540/v1478136942/Spots/ee58f1d8650eb2c5e208930bb711578e.jpg"/>
-              <div className="home-pick-description">
-                <span className="home-pick-price">$450</span>
-                <span className="home-pick-title">Chic innercity batchelor pad</span>
-              </div>
-              <div className="home-pick-reviews">
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_7/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.13.12_PM.png"/>
-                <span className="home-pick-num-reviews">98 reviews</span>
-              </div>
+          <div className="home-destination-sub-row">
+            <div className="home-destination-small washington-dc">Washington DC</div>
+            <div className="home-destination-small honolulu">Honolulu</div>
           </div>
         </div>
+
+        <div className="home-destinations-row">
+          <div className="home-destination-sub-row">
+            <div className="home-destination-small paris">Paris</div>
+            <div className="home-destination-small berlin">Berlin</div>
+          </div>
+
+          <div className="home-destination-big san-francisco">San Francisco</div>
+
+          <div className="home-destination-sub-row">
+            <div className="home-destination-small cairo">Cairo DC</div>
+            <div className="home-destination-small new-york">New York</div>
+          </div>
+        </div>
+
       </div>
 
     );

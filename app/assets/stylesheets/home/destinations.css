@@ -1,0 +1,99 @@
+.home-destinations {
+  margin: 50px 0px 0px 0px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;;
+  color: #4F4F4F;
+  font-family: pretty-font;
+  width: 65%;
+}
+
+.home-destinations-row {
+  height: 280px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.home-destination-sub-row {
+  height: 280px;
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-destination-big {
+  width: 48%;
+  height: 280px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.home-destination-small {
+  display: flex;
+  height: 135px;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.london {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142150/locations/london.jpg');
+}
+
+.los-angeles {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142189/locations/los_angeles.jpg');
+}
+
+.tokyo {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142150/locations/tokyo.jpg');
+}
+
+.washington-dc {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142156/locations/washington_dc.jpg');
+}
+
+.honolulu {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478145717/locations/beach-dog.jpg');
+}
+
+.paris {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/Paris.jpg')
+}
+
+.berlin {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/berlin.jpg')
+}
+
+.san-francisco {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/san_francisco.jpg')
+}
+
+.cairo {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142161/locations/cairo.jpg')
+}
+
+.new-york {
+  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/new-york.jpg')
+}
