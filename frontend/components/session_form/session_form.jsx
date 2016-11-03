@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
         <input
           onChange={this.update("password")}
           className="form-input password-row"
-          type="text"
+          type="password"
           placeholder="Password"/>
         <br/>
 
