@@ -14,7 +14,7 @@
   height: 280px;
   width: 100%;
   display: flex;
-  justify-content: space-between;;
+  justify-content: flex-start;
   align-items: center;
   padding-bottom: 10px;
 }
@@ -26,10 +26,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-right: 20px;
 }
 
 .home-destination-big {
-  width: 48%;
+  width: 49%;
   height: 280px;
   display: flex;
   justify-content: flex-start;
@@ -40,7 +41,11 @@
   color: white;
   font-weight: bold;
   font-size: 18px;
+  margin-right: 20px;
+}
 
+.home-destination-big:hover {
+  cursor: pointer;
 }
 
 .home-destination-small {
@@ -55,7 +60,14 @@
   color: white;
   font-weight: bold;
   font-size: 18px;
+}
 
+.home-destination-small:hover {
+  cursor: pointer;
+}
+
+.home-destination-text {
+  padding: 0 0 10px 10px;
 }
 
 .london {

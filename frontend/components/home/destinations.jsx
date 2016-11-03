@@ -12,30 +12,50 @@ class Destinations extends React.Component {
         <h1 className="home-main-header">Explore the world</h1>
 
         <div className="home-destinations-row">
-          <div className="home-destination-big london">London</div>
-
-          <div className="home-destination-sub-row">
-            <div className="home-destination-small los-angeles">Los Angeles</div>
-            <div className="home-destination-small tokyo">Tokyo</div>
+          <div className="home-destination-big london">
+            <span className="home-destination-text">London</span>
           </div>
 
           <div className="home-destination-sub-row">
-            <div className="home-destination-small washington-dc">Washington DC</div>
-            <div className="home-destination-small honolulu">Honolulu</div>
+            <div className="home-destination-small los-angeles">
+              <span className="home-destination-text">Los Angeles</span>
+            </div>
+            <div className="home-destination-small tokyo">
+              <span className="home-destination-text">Tokyo</span>
+            </div>
+          </div>
+
+          <div className="home-destination-sub-row">
+            <div className="home-destination-small washington-dc">
+              <span className="home-destination-text">Washington DC</span>
+            </div>
+            <div className="home-destination-small honolulu">
+              <span className="home-destination-text">Honolulu</span>
+            </div>
           </div>
         </div>
 
         <div className="home-destinations-row">
           <div className="home-destination-sub-row">
-            <div className="home-destination-small paris">Paris</div>
-            <div className="home-destination-small berlin">Berlin</div>
+            <div className="home-destination-small paris">
+              <span className="home-destination-text">Paris</span>
+            </div>
+            <div className="home-destination-small berlin">
+              <span className="home-destination-text">Berlin</span>
+            </div>
           </div>
 
-          <div className="home-destination-big san-francisco">San Francisco</div>
+          <div className="home-destination-big san-francisco">
+            <span className="home-destination-text">San Francisco</span>
+          </div>
 
           <div className="home-destination-sub-row">
-            <div className="home-destination-small cairo">Cairo DC</div>
-            <div className="home-destination-small new-york">New York</div>
+            <div className="home-destination-small cairo">
+              <span className="home-destination-text">Cairo</span>
+            </div>
+            <div className="home-destination-small new-york">
+              <span className="home-destination-text">New York</span>
+            </div>
           </div>
         </div>
 
