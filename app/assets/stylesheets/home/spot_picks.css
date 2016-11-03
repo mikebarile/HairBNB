@@ -47,3 +47,23 @@
   font-weight: lighter;
   padding-right: 4px;
 }
+
+.home-pick-reviews {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2px;
+  padding-top: 7px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.home-pick-star {
+  height: 12px;
+  width: 12px;
+  padding-top: 2px;
+  padding-right: 3px;
+}
+
+.home-pick-num-reviews {
+  padding-right: 4px;
+}
