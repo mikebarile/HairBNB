@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar">
-        <img className = "magnifier" src="http://res.cloudinary.com/dsguwnfdw/image/upload/v1478115862/magnifier_qolcun.png"/>
+        <img className = "magnifier" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478115862/Icons/magnifier_qolcun.png"/>
         <input
           className="search-input"
           type="text"

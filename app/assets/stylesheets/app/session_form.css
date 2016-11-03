@@ -43,15 +43,15 @@
 }
 
 .email-row {
-  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478115862/mail_lncn7p.png');
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478115862/Icons/mail_lncn7p.png');
 }
 
 .password-row {
-  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478115863/lock_qn4pof.ico');
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478115863/Icons/lock_qn4pof.ico');
 }
 
 .person-row {
-  background-image: url('http://res.cloudinary.com/dsguwnfdw/image/upload/v1478115862/person-icon_ywsnf9.png');
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478115862/Icons/person-icon_ywsnf9.png');
 }
 
 .form-input:focus {

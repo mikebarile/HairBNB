@@ -40,7 +40,7 @@ class SearchBar extends React.Component {
             placeholder="Check in"/>
           <br/>
 
-          <img className="home-arrow-icon" src="http://res.cloudinary.com/dsguwnfdw/image/upload/v1478132097/Arrows-Right-icon_wgfi7w.png"/>
+          <img className="home-arrow-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478132097/Icons/Arrows-Right-icon_wgfi7w.png"/>
 
           <input
             onChange={this.update("check_out")}
