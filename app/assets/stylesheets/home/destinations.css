@@ -33,9 +33,10 @@
   width: 49%;
   height: 280px;
   display: flex;
+  background-size: cover;
+  background-position: center center;
   justify-content: flex-start;
   align-items: flex-end;
-  background-size: 100%;
   background-repeat: no-repeat;
   font-family: sans-serif;
   color: white;
@@ -54,7 +55,8 @@
   width: 100%;
   justify-content: flex-start;
   align-items: flex-end;
-  background-size: 100%;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   font-family: sans-serif;
   color: white;
@@ -71,41 +73,101 @@
 }
 
 .london {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142150/locations/london.jpg');
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142150/locations/london.jpg")
+    center center / cover no-repeat;
 }
 
 .los-angeles {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142189/locations/los_angeles.jpg');
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142189/locations/los_angeles.jpg")
+    center center / cover no-repeat;
 }
 
 .tokyo {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142150/locations/tokyo.jpg');
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142150/locations/tokyo.jpg")
+    center center / cover no-repeat;
 }
 
 .washington-dc {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142156/locations/washington_dc.jpg');
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142156/locations/washington_dc.jpg")
+    center center / cover no-repeat;
 }
 
 .honolulu {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478145717/locations/beach-dog.jpg');
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478145717/locations/beach-dog.jpg")
+    center center / cover no-repeat;
 }
 
 .paris {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/Paris.jpg')
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/Paris.jpg")
+    center center / cover no-repeat;
 }
 
 .berlin {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/berlin.jpg')
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/berlin.jpg")
+    center center / cover no-repeat;
 }
 
 .san-francisco {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/san_francisco.jpg')
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/san_francisco.jpg")
+    center center / cover no-repeat;
 }
 
 .cairo {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142161/locations/cairo.jpg')
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142161/locations/cairo.jpg")
+    center center / cover no-repeat;
 }
 
 .new-york {
-  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/new-york.jpg')
+  background:
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/new-york.jpg")
+    center center / cover no-repeat;
 }
