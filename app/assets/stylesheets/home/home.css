@@ -65,12 +65,14 @@
   border-radius: 2px 0px 0px 2px;
   height: 22px;
   border-right: 1px solid #4F4F4F;
+  width: 40%;
 }
 
 .home-search-date {
   font-size: 15px;
   height: 22px;
-  padding: 12px 0 10px 10px
+  padding: 12px 0 10px 10px;
+  width: 30%;
 }
 
 .home-search-button {
