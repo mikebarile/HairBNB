@@ -1,9 +1,9 @@
-import { receiveListings, receiveListing, removeListing, FETCH_LISTING,
-  FETCH_LISTINGS, CREATE_LISTING, DELETE_LISTING, EDIT_LISTING
+import { receiveListings, receiveListing, removeListing, receiveListingErrors,
+  FETCH_LISTING, FETCH_LISTINGS, CREATE_LISTING, DELETE_LISTING, EDIT_LISTING
 } from '../actions/listing_actions';
 
 import {fetchListing, fetchListings, createListing, deleteListing,
-  editListing, receiveErrors
+  editListing
 } from '../util/listing_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
@@ -19,7 +19,7 @@ export default ({ getState, dispatch }) => next => action => {
     dispatch(removeListing(listing));
   };
 
-  const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
+  const errorCallback = xhr => dispatch(receiveListingErrors(xhr.responseJSON));
 
   switch(action.type) {
     case FETCH_LISTING:
