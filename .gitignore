@@ -20,5 +20,5 @@ node_modules/
 bundle.js
 bundle.js.map
 
-/cloudinary.yml
-/secrets.yml
+config/cloudinary.yml
+config/secrets.yml
