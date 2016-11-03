@@ -1,3 +1,12 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #4F4F4F;
+  font-family: pretty-font;
+}
+
 .dog-gif {
   display: flex;
   background-repeat: no-repeat;
@@ -10,7 +19,7 @@
       ),
     url("http://res.cloudinary.com/dsguwnfdw/image/upload/v1478124321/581a622416934971871193_dlejc3.gif");
   background-size: 100% 100%;
-  font-family: sans-serif;
+  font-family: pretty-font;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -20,11 +29,6 @@
   font-size: 60px;
   font-weight: bold;
   color: #FF5A5F;
-  /*text-shadow:
-   -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;*/
 }
 
 .home-subheader {
@@ -32,9 +36,27 @@
   font-weight: bold;
   padding-top: 00px;
   color: white;
-  /*text-shadow:
-   -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;*/
+}
+
+.home-search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #4F4F4F;
+}
+
+.home-search-city {
+  padding: 12px 0 10px 10px;
+  font-size: 15px;
+}
+
+.home-search-date {
+  padding: 10px 0 10px 10px
+}
+
+.home-search-button {
+  padding: 10px 0 10px 10px
 }

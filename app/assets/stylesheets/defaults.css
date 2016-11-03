@@ -3,18 +3,17 @@
   height: 60px;
   display: flex;
   justify-content: space-between;
-  font-family: sans-serif;
+  font-family: pretty-font;
   border-bottom: 1px solid #DCE0E0;
-  font-family: sans-serif;
   color: #4F4F4F;
 }
 
 .logo {
-  width: 40px;
+  width: 140px;
   height: 40px;
   padding: 10px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-right: 2px solid #DCE0E0;
 }
 
@@ -26,7 +25,7 @@
 .search-bar {
   display: flex;
   justify-content: flex-end;
-  width: 72%;
+  width: 66%;
 }
 
 .magnifier {
@@ -42,6 +41,7 @@
   height: 60px;
   border: white;
   font-size: 15px;
+  padding-top: 2px;
 }
 
 .user-buttons {
@@ -49,10 +49,10 @@
 }
 
 .user-button {
-  padding: 22px;
+  padding: 24px 22px 22px 22px;
   border-left: 1px solid #DCE0E0;
-  line-height: 60px;
-  height: 60px;
+  line-height: 66px;
+  height: 66px;
   font-size: 14px;
 }
 
@@ -80,7 +80,7 @@
   align-items: center;
   background-color: #484848;
   color: white;
-  font-family: sans-serif;
+  font-family: pretty-font;
 }
 
 .footer-text-container {
