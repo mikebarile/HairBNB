@@ -6,6 +6,15 @@ class Api::ListingsController < ApplicationController
   def show
   end
 
+  def patch
+    @listing = Listing.find(params[:id])
+    if @listing.update(listing_params)
+      render "api/listings/show"
+    else
+      render json: @listing.errors.full_messages, status: 422
+    end
+  end
+
   def create
     @listing = Listing.new(listing_params)
     if @listing.save

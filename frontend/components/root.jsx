@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-rou
 import App from './app.jsx';
 import SessionFormContainer from './session_form/session_form_container';
 import UserFormContainer from './user_form/user_form_container';
+import ListingContainer from './listing-show/listing_container';
 import Home from './home/home';
 
 const Root = ({ store }) => {
@@ -21,6 +22,7 @@ const Root = ({ store }) => {
       <Route path="/" component={App} >
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home}/>
+        // <Route path="listings/:listingId" component={ListingContainer}/>
       </Route>
     </Router>
   </Provider>
