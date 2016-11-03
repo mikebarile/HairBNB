@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import SearchBar from './search_bar';
 import SpotPicks from './spot_picks';
+import Destinations from './destinations';
 
 class Home extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Home extends React.Component {
         </div>
         <SearchBar/>
         <SpotPicks/>
+        <Destinations/>
       </div>
 
     );
