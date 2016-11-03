@@ -16,10 +16,10 @@
 
  @font-face {
    font-family: pretty-font;
-   src: url('./prima_sans.ttf');
+   src: url('/assets/prima_sans.ttf');
  }
 
 @font-face {
   font-family: pretty-font-bold;
-  src: url('./prima_sans_bold.ttf');
+  src: url('/assets/prima_sans_bold.ttf');
 }
