@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   has_many :links
   has_many :comments
 
+  has_many :listings,
+  primary_key: :id,
+  foreign_key: :host_id,
+  class_name: :Listing
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)
