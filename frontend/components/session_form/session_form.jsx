@@ -3,14 +3,15 @@ import { Link } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
-      super(props);
-      this.state = {
-          email: "",
-          password: ""
-      };
-      this.handleSubmit = this.handleSubmit.bind(this);
-      this.setState = this.setState.bind(this);
-      this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
+    super(props);
+    this.state = {
+        email: "",
+        password: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.setState = this.setState.bind(this);
+    this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
+    this.handleSwitch = this.handleSwitch.bind(this);
   }
 
   componentDidUpdate() {
@@ -29,6 +30,12 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
+  handleSwitch(e) {
+    e.preventDefault();
+    this.props.switch();
+    this.props.hideLoginModal();
+  }
+
   update(property) {
     return e => this.setState({
       [property]: e.target.value
@@ -38,6 +45,8 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="session-form">
+        <br/>
+        <br/>
 
         <ul className="errors-list">
           {this.props.errors.map((error, idx) =>
@@ -65,8 +74,12 @@ class SessionForm extends React.Component {
 
         <div className="form-bottom">
           <p className="form-bottom-text">Don't have an account?</p>
-          <Link className="other-form-button" to="/signup">Sign up</Link>
+          <button
+            className="other-form-button"
+            onClick={this.handleSwitch}
+            >Signup</button>
         </div>
+
       </div>
     );
   }

@@ -48,7 +48,7 @@ class SpotPicks extends React.Component {
             <img className="home-pick-img" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_330,w_540/v1478136942/Spots/ee58f1d8650eb2c5e208930bb711578e.jpg"/>
               <div className="home-pick-description">
                 <span className="home-pick-price">$450</span>
-                <span className="home-pick-title">Chic innercity batchelor pad</span>
+                <span className="home-pick-title">Chic innercity bachelor pad</span>
               </div>
               <div className="home-pick-reviews">
                 <img className="home-pick-star" src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>

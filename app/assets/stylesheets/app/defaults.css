@@ -56,6 +56,18 @@
   font-size: 14px;
 }
 
+.user-button-new {
+  padding-left: 22px;
+  padding-right: 22px;
+  border-left: 1px solid #DCE0E0;
+  height: 60px;
+  font-size: 14px;
+}
+
+.user-button-new:hover {
+  background-color: #F5F5F5;
+}
+
 .user-button-logout {
   padding-left: 22px;
   padding-right: 22px;
@@ -74,7 +86,7 @@
 
 .footer {
   width: 100%;
-  height: 100px;
+  height: 200px;
   display: flex;
   justify-content: space-around;
   align-items: center;

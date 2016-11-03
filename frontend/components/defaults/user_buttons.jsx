@@ -8,12 +8,18 @@ import LoginForm from '../session_form/session_form_container';
 class UserButtons extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {switch: false};
+
     this.showSignupModal = this.showSignupModal.bind(this);
     this.hideSignupModal = this.hideSignupModal.bind(this);
     this.showLoginModal = this.showLoginModal.bind(this);
     this.hideLoginModal = this.hideLoginModal.bind(this);
     this.logout = this.logout.bind(this);
     this.callback = this.callback.bind(this);
+    this.switchToLogin = this.switchToLogin.bind(this);
+    this.switchToSignup = this.switchToSignup.bind(this);
+    this.setSwitch = this.setSwitch.bind(this);
   }
 
   showSignupModal() {
@@ -32,12 +38,30 @@ class UserButtons extends React.Component {
     this.refs.loginModal.hide();
   }
 
+  callback(e) {
+    console.log(e);
+  }
+
   logout() {
     this.props.logout();
   }
 
-  callback(e) {
-    console.log(e);
+  switchToLogin() {
+    if (this.state.switch === true){
+      this.setState({switch: false});
+      this.showLoginModal();
+    }
+  }
+
+  switchToSignup() {
+    if (this.state.switch === true){
+      this.setState({switch: false});
+      this.showSignupModal();
+    }
+  }
+
+  setSwitch() {
+    this.setState({switch: true});
   }
 
   render() {
@@ -46,14 +70,25 @@ class UserButtons extends React.Component {
       return (
         <div className="user-buttons">
           <Link className="user-button" to="/">Become a Host</Link>
-          <button className="user-button" onClick={this.showSignupModal}>Signup</button>
-          <Modal className="userModal" ref="signupModal" keyboard={this.callback}>
-            <SignupForm/>
+
+          <button className="user-button-new" onClick={this.showSignupModal}>Signup</button>
+          <Modal
+            className="user-modal"
+            ref="signupModal"
+            keyboard={true}
+            onHide={this.switchToLogin}>
+            <SignupForm hideSignupModal={this.hideSignupModal} switch={this.setSwitch}/>
           </Modal>
-          <button className="user-button" onClick={this.showLoginModal}>Login</button>
-          <Modal className="userModal" ref="loginModal" keyboard={this.callback}>
-            <LoginForm/>
+
+          <button className="user-button-new" onClick={this.showLoginModal}>Login</button>
+          <Modal
+            lassName="user-modal"
+            ref="loginModal"
+            keyboard={true}
+            onHide={this.switchToSignup}>
+            <LoginForm hideLoginModal={this.hideLoginModal} switch={this.setSwitch}/>
           </Modal>
+
         </div>
       );
     }

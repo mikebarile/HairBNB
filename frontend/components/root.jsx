@@ -21,8 +21,6 @@ const Root = ({ store }) => {
       <Route path="/" component={App} >
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home}/>
-        <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
-        <Route path="/signup" component={UserFormContainer} onEnter={_redirectIfLoggedIn}/>
       </Route>
     </Router>
   </Provider>
