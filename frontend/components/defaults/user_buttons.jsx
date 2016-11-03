@@ -51,6 +51,7 @@ class UserButtons extends React.Component {
       this.setState({switch: false});
       this.showLoginModal();
     }
+    this.props.clearErrors();
   }
 
   switchToSignup() {
@@ -58,6 +59,7 @@ class UserButtons extends React.Component {
       this.setState({switch: false});
       this.showSignupModal();
     }
+    this.props.clearErrors();
   }
 
   setSwitch() {

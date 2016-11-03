@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import SearchBar from './search_bar';
 import UserButtons from './user_buttons';
 
-const TopBar = ({router, currentUser, logout}) => {
+const TopBar = ({router, currentUser, logout, clearErrors}) => {
 
   const redirectToHome = () => {
     router.push('/');
@@ -19,7 +19,7 @@ const TopBar = ({router, currentUser, logout}) => {
       />
 
       <SearchBar/>
-      <UserButtons currentUser={currentUser} logout={logout}/>
+      <UserButtons currentUser={currentUser} logout={logout} clearErrors={clearErrors}/>
     </div>
   );
 };
