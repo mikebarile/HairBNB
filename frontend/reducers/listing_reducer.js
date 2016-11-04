@@ -1,31 +1,35 @@
-import {RECEIVE_LISTING, RECEIVE_LISTINGS, REMOVE_LISTING, RECEIVE_LISTING_ERRORS,
+import {RECEIVE_LISTING, REMOVE_LISTING, RECEIVE_LISTING_ERRORS,
   CLEAR_LISTING_ERRORS
 } from '../actions/session_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
-  title: "",
-  host_id: null,
-  city: "",
-  state: "",
-  country: "",
-  description: "",
-  price: null,
-  dog_walks: false,
-  deluxe_bed: false,
-  house_cat: false,
-  gourmet_food: false,
-  chew_toys: false,
-  frisbee: false,
-  mailman: false,
-  grooming: false,
-  cuddle_buddy: false,
-  indoor_poop: false,
-  indoor_pee: false,
-  barking: false,
-  whining: false,
-  begging: false,
-  shedding: false
+  currentListing: {
+    id: null,
+    title: "",
+    host_id: null,
+    city: "",
+    state: "",
+    country: "",
+    description: "",
+    price: null,
+    dog_walks: false,
+    deluxe_bed: false,
+    house_cat: false,
+    gourmet_food: false,
+    chew_toys: false,
+    frisbee: false,
+    mailman: false,
+    grooming: false,
+    cuddle_buddy: false,
+    indoor_poop: false,
+    indoor_pee: false,
+    barking: false,
+    whining: false,
+    begging: false,
+    shedding: false
+  },
+  errors: []
 };
 
 const ListingReducer = (state = defaultState, action) => {
@@ -33,23 +37,25 @@ const ListingReducer = (state = defaultState, action) => {
   switch (action.type) {
     case RECEIVE_LISTING:
       return {
-        currentUser: action.currentUser,
+        currentListing: action.listing,
         errors: []
       };
-    case RECEIVE_LISTINGS:
-
     case REMOVE_LISTING:
-
+      if (action.listing.id === state.currentListing.id){
+        return defaultState;
+      }
+      else {
+        return state;
+      }
     case RECEIVE_LISTING_ERRORS:
       return {
-        currentUser: null,
+        currentListing: defaultState,
         errors: action.errors
       };
     case CLEAR_LISTING_ERRORS:
-      return {
-        currentUser: null,
-        errors: action.errors
-      };
+      let newState = merge({}, state);
+      newState.errors = [];
+      return newState;
     default:
       return state;
   }
