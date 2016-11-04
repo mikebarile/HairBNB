@@ -99,9 +99,9 @@ class UserButtons extends React.Component {
         <div className="user-buttons">
           <Link className="user-button become-a-host" to="/">Become a Host</Link>
           <Link className="user-button" to="/">Trips</Link>
-            <button
-              onClick={this.props.logout}
-              className="user-button-logout" to="/">Logout
+            <button onClick={this.props.logout} className="user-button-logout" to="/">
+              <span className="top-bar-user-name">{currentUser.first_name}</span>
+              <img src={currentUser.image_url} className="top-bar-user-image"/>
             </button>
         </div>
       );

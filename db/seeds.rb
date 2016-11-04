@@ -10,7 +10,7 @@ City.create(city_name: "San Francisco", state: "CA", country: "United States")
 City.create(city_name: "New York City", state: "NY", country: "United States")
 City.create(city_name: "Washington", state: "DC", country: "United States")
 
-User.create({email: "mikebarile13@gmail.com", password: "password", first_name: "Mike", last_name: "Barile", is_host: false})
+User.create({email: "mikebarile13@gmail.com", password: "password", first_name: "Mike", last_name: "Barile", is_host: false, image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478283164/People/headshot.jpg"})
 
 Listing.create({
   title: "Charming post-modern kennel",

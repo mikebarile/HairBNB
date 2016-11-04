@@ -79,6 +79,9 @@
   border-left: 1px solid #DCE0E0;
   height: 60px;
   font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .user-button-logout:hover {
@@ -87,6 +90,19 @@
 
 .user-button:hover {
   background-color: #F5F5F5;
+}
+
+.top-bar-user-name {
+  padding-top: 10px;
+  padding-right: 8px;
+}
+
+.top-bar-user-image {
+  width: 27px;
+  height: 27px;
+  border: 2px solid #C4C4C4;
+  border-radius: 15px;
+  margin-top: 2px;
 }
 
 .footer {
