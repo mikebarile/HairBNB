@@ -8,6 +8,7 @@ export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const REMOVE_LISTING = "REMOVE_LISTING";
 export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
 export const CLEAR_LISTING_ERRORS = "CLEAR_LISTING_ERRORS";
+export const CLEAR_LISTING = "CLEAR_LISTING";
 
 export const fetchListing = (id) => ({
   type: FETCH_LISTING,
@@ -56,4 +57,8 @@ export const receiveListingErrors = (errors) => ({
 
 export const clearListingErrors = () => ({
   type: CLEAR_LISTING_ERRORS
+});
+
+export const clearListing = () => ({
+  type: CLEAR_LISTING
 });

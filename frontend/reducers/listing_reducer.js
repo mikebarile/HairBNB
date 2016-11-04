@@ -1,5 +1,5 @@
 import {RECEIVE_LISTING, REMOVE_LISTING, RECEIVE_LISTING_ERRORS,
-  CLEAR_LISTING_ERRORS
+  CLEAR_LISTING_ERRORS, CLEAR_LISTING
 } from '../actions/listing_actions';
 import { merge } from 'lodash';
 
@@ -53,6 +53,8 @@ const ListingReducer = (state = defaultState, action) => {
         currentListing: defaultState,
         errors: action.errors
       };
+    case CLEAR_LISTING:
+      return defaultState;
     case CLEAR_LISTING_ERRORS:
       let newState = merge({}, state);
       newState.errors = [];
