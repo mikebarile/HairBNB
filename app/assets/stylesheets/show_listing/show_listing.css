@@ -72,3 +72,17 @@
   padding-right: 22px;
   padding-top: 2px;
 }
+
+.sl-first-col {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sl-second-col {
+  display: flex;
+  width: 315px;
+  flex-direction: column;
+  align-items: center;
+}

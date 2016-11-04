@@ -48,12 +48,13 @@
 }
 
 .tbd-one {
-  border-top: .5px solid #C4C4C4;
+  border-top: .5px solid #DCE0E0;
 }
 
 .tbd-two {
   margin-top: 59px;
-  border-bottom: .25px solid #C4C4C4;
+  border-bottom: .25px solid #DCE0E0;
+  border-bottom-left-radius: 2px;
 }
 
 .top-bar-dropdown-element:hover {

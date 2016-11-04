@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { withRouter } from 'react-router';
+import BookListing from './book_listing';
 
 class ShowListingGuest extends React.Component {
   constructor(props) {
@@ -33,8 +34,16 @@ class ShowListingGuest extends React.Component {
         </div>
 
         <div className="sl-columns-container">
-          <div className="sl-first_col"></div>
-          <div className="sl-second-col"></div>
+          <div className="sl-first_col">
+
+          </div>
+
+          <div className="sl-second-col">
+            <BookListing
+              currentListing={listing}
+              currentUser={this.props.currentUser}
+              errors={this.props.errs}/>
+          </div>
         </div>
 
       </div>
