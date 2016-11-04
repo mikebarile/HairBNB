@@ -8,8 +8,16 @@ class ShowListingGuest extends React.Component {
   }
 
   render() {
+    let listing = this.props.currentListing;
+    let imgStyle = {
+      backgroundImage: `url('${listing.image_url}')`
+    };
+
     return (
-      <div>GUEST</div>
+      <div className="show-listing">
+        <div className="show-listing-image" style={imgStyle}>
+        </div>
+      </div>
     );
   }
 }

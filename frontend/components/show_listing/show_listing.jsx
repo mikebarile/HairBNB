@@ -24,7 +24,7 @@ class ShowListing extends React.Component {
     if (isHost) {
       return <ShowListingHost
         currentUser={this.props.currentUser}
-        currentListng={this.props.currentListing}
+        currentListing={this.props.currentListing}
         errors={this.props.errors}
         deleteListing={this.deleteListing}
         editListing={this.editListing}/>;
@@ -32,7 +32,7 @@ class ShowListing extends React.Component {
     else {
       return <ShowListingGuest
         currentUser = {this.props.currentUser}
-        currentListng = {this.props.currentListing}
+        currentListing = {this.props.currentListing}
         errors = {this.props.errors}/>;
     }
   }

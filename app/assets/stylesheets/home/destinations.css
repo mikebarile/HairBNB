@@ -33,11 +33,8 @@
   width: 49%;
   height: 280px;
   display: flex;
-  background-size: cover;
-  background-position: center center;
   justify-content: flex-start;
   align-items: flex-end;
-  background-repeat: no-repeat;
   font-family: sans-serif;
   color: white;
   font-weight: bold;
@@ -55,9 +52,6 @@
   width: 100%;
   justify-content: flex-start;
   align-items: flex-end;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   font-family: sans-serif;
   color: white;
   font-weight: bold;

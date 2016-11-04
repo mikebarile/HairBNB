@@ -44,37 +44,6 @@ Listing.create({
 })
 
 Listing.create({
-  title: "Chic innercity bachelor pad",
-  price: 450,
-  host_id: 1,
-  lat: 40.733102,
-  lng: -73.976316,
-  street_address: "530 East 20th Street",
-  city: "New York City",
-  zip_code: 10009,
-  apt_num: 1334,
-  description: "Wonderful kennel looking for a pooch to come enjoy! Great views!",
-  dog_walks: false,
-  deluxe_bed: true,
-  house_cat: true,
-  gourmet_food: true,
-  chew_toys: true,
-  frisbee: true,
-  mailman: true,
-  grooming: true,
-  cuddle_buddy: true,
-  indoor_poop: true,
-  indoor_pee: false,
-  barking: true,
-  whining: true,
-  begging: true,
-  shedding: true,
-  state: "New York",
-  country: "United States",
-  image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136942/Spots/ee58f1d8650eb2c5e208930bb711578e.jpg"
-})
-
-Listing.create({
   title: "Rustic dog house with big yard",
   price: 164,
   host_id: 1,
@@ -103,4 +72,35 @@ Listing.create({
   state: "",
   country: "Colombia",
   image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136937/Spots/_32.jpg"
+})
+
+Listing.create({
+  title: "Chic innercity bachelor pad",
+  price: 450,
+  host_id: 1,
+  lat: 40.733102,
+  lng: -73.976316,
+  street_address: "530 East 20th Street",
+  city: "New York City",
+  zip_code: 10009,
+  apt_num: 1334,
+  description: "Wonderful kennel looking for a pooch to come enjoy! Great views!",
+  dog_walks: false,
+  deluxe_bed: true,
+  house_cat: true,
+  gourmet_food: true,
+  chew_toys: true,
+  frisbee: true,
+  mailman: true,
+  grooming: true,
+  cuddle_buddy: true,
+  indoor_poop: true,
+  indoor_pee: false,
+  barking: true,
+  whining: true,
+  begging: true,
+  shedding: true,
+  state: "New York",
+  country: "United States",
+  image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136942/Spots/ee58f1d8650eb2c5e208930bb711578e.jpg"
 })
