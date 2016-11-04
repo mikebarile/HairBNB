@@ -23,14 +23,25 @@
   right: 184px;
   width: 250px;
   background: white;
+  transition-property: right, width, padding-left;
+  transition-duration: .5s;
+  -webkit-transition-property: right, width, padding-left;
+  -webkit-transition-duration: .5s;
+}
+
+.top-bar-dropdown-element:hover {
+  right: 184px;
+  width: 240px;
+  padding-left: 30px;
+
 }
 
 .tbd-border {
   border-top: 1px solid #efefef;
   margin-top: 59px;
   position: absolute;
-  width: 220px;
-  right: 210px;
+  width: 230px;
+  right: 207px;
   align-self: center;
   height: 1px;
   content="df";
