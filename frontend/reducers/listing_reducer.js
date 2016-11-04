@@ -1,6 +1,6 @@
 import {RECEIVE_LISTING, REMOVE_LISTING, RECEIVE_LISTING_ERRORS,
   CLEAR_LISTING_ERRORS
-} from '../actions/session_actions';
+} from '../actions/listing_actions';
 import { merge } from 'lodash';
 
 const defaultState = {

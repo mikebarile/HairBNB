@@ -96,7 +96,7 @@ class UserButtons extends React.Component {
     }
     else if (currentUser.is_host === false) {
       return (
-        <div>
+        <div className="user-buttons">
           <Link className="user-button" to="/">Become a Host</Link>
           <Link className="user-button" to="/">Trips</Link>
             <button
@@ -108,7 +108,7 @@ class UserButtons extends React.Component {
     }
     else {
       return (
-        <div>
+        <div className="user-buttons">
           <Link className="user-button" to="/">My Listings</Link>
           <Link className="user-button" to="/">Trips</Link>
           <button

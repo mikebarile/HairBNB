@@ -3,7 +3,8 @@ import ShowListing from './show_listing';
 import {fetchListing, deleteListing, editListing, clearListingErrors
 } from '../../actions/listing_actions';
 
-const mapStateToProps = ({listing}) => ({
+const mapStateToProps = ({listing, session}) => ({
+  currentUser: session.currentUser,
   currentListing: listing.currentListing,
   errors: listing.errors
 });

@@ -1,19 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { withRouter } from 'react-router';
+import ShowListingGuest from './show_listing_guest';
+import ShowListingHost from './show_listing_host';
 
 class ShowListing extends React.Component {
   constructor(props) {
-      super(props);
+    super(props);
+  }
+
+  componentWillMount() {
+    this.props.fetchListing(this.props.params.listing_id);
   }
 
   render() {
-    return(
-      <div className="listing">
-        TESTING
-      </div>
+    let isHost;
+    if (this.props.currentUser && this.props.currentUser.id ===
+      this.props.currentListing.host_id) {
+      isHost = true;
+    }
+    else {
+      isHost = false;
+    }
 
-    );
+    if (isHost) {
+      return <ShowListingHost
+        currentUser={this.props.currentUser}
+        currentListng={this.props.currentListing}
+        errors={this.props.errors}
+        deleteListing={this.deleteListing}
+        editListing={this.editListing}/>;
+    }
+    else {
+      return <ShowListingGuest
+        currentUser = {this.props.currentUser}
+        currentListng = {this.props.currentListing}
+        errors = {this.props.errors}/>;
+    }
   }
 }
 
