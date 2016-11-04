@@ -1,18 +1,50 @@
 .dropdown {
-    display: inline-block;
+  display: inline-block;
 }
 
 .dropdown__content {
-    display: none;
-    position: absolute;
+  display: none;
+  position: absolute;
 }
 
 .dropdown--active .dropdown__content {
-    display: block;
+  display: flex;
+  width: 300px;
 }
 
 .top-bar-dropdown-element {
-  width: 100px;
-  height: 40px;
-  background: grey;
+  font-size: 13px;
+  padding-top: 21px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  position: absolute;
+  border-left: .25px solid #C4C4C4;
+  border-right: .25px solid #C4C4C4;
+  right: 184px;
+  width: 250px;
+  background: white;
+}
+
+.tbd-border {
+  border-top: 1px solid #efefef;
+  margin-top: 59px;
+  position: absolute;
+  width: 220px;
+  right: 210px;
+  align-self: center;
+  height: 1px;
+  content="df";
+}
+
+.tbd-one {
+  border-top: .5px solid #C4C4C4;
+}
+
+.tbd-two {
+  margin-top: 59px;
+  border-bottom: .25px solid #C4C4C4;
+}
+
+.top-bar-dropdown-element:hover {
+  cursor: pointer;
 }
