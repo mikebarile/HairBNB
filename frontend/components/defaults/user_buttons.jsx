@@ -71,7 +71,7 @@ class UserButtons extends React.Component {
     if (currentUser === null) {
       return (
         <div className="user-buttons">
-          <Link className="user-button" to="/">Become a Host</Link>
+          <Link className="user-button become-a-host" to="/">Become a Host</Link>
 
           <button className="user-button-new" onClick={this.showSignupModal}>Signup</button>
           <Modal
@@ -97,7 +97,7 @@ class UserButtons extends React.Component {
     else if (currentUser.is_host === false) {
       return (
         <div className="user-buttons">
-          <Link className="user-button" to="/">Become a Host</Link>
+          <Link className="user-button become-a-host" to="/">Become a Host</Link>
           <Link className="user-button" to="/">Trips</Link>
             <button
               onClick={this.props.logout}

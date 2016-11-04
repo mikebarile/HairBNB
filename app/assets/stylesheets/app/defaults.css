@@ -53,15 +53,19 @@
   padding: 0 22px 0 22px;
   border-left: 1px solid #DCE0E0;
   line-height: 66px;
-  height: 66px;
+  height: 61px;
   font-size: 14px;
+}
+
+.become-a-host {
+  width: 107px;
 }
 
 .user-button-new {
   padding-left: 22px;
   padding-right: 22px;
   border-left: 1px solid #DCE0E0;
-  height: 66px;
+  height: 61px;
   font-size: 14px;
 }
 
