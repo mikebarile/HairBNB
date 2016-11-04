@@ -18,7 +18,7 @@ const Root = ({ store }) => {
 
   return (
   <Provider store={store}>
-    <Router history={hashHistory}>
+    <Router history={hashHistory} onUpdate={() => window.scrollTo(0, 0)}>
       <Route path="/" component={App} >
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home}/>
