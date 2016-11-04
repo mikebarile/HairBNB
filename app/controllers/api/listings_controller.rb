@@ -37,7 +37,7 @@ class Api::ListingsController < ApplicationController
       :city, :zip_code, :apt_num, :description, :price, :dog_walks, :deluxe_bed,
       :house_cat, :gourmet_food, :chew_toys, :frisbee, :mailman, :grooming,
       :cuddle_buddy, :indoor_poop, :indoor_pee, :barking, :whining, :begging,
-      :shedding, :country, :state)
+      :shedding, :country, :state, :image_url)
   end
 
 end

@@ -11,10 +11,11 @@ City.create(city_name: "New York City", state: "NY", country: "United States")
 City.create(city_name: "Washington", state: "DC", country: "United States")
 
 User.create({email: "mikebarile13@gmail.com", password: "password", first_name: "Mike", last_name: "Barile", is_host: false})
+
 Listing.create({
   title: "Charming post-modern kennel",
   price: 294,
-  host_id: 2,
+  host_id: 1,
   lat: 37.7767,
   lng: 122.4193,
   street_address: "100 Van Ness Avenue",
@@ -38,13 +39,14 @@ Listing.create({
   begging: true,
   shedding: true,
   state: "California",
-  country: "United States"
+  country: "United States",
+  image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136940/Spots/under-the-stairs-dog-bed-polished-concrete-floor-built-in-dog-bed.jpg"
 })
 
 Listing.create({
   title: "Chic innercity bachelor pad",
   price: 450,
-  host_id: 2,
+  host_id: 1,
   lat: 40.733102,
   lng: -73.976316,
   street_address: "530 East 20th Street",
@@ -68,13 +70,14 @@ Listing.create({
   begging: true,
   shedding: true,
   state: "New York",
-  country: "United States"
+  country: "United States",
+  image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136942/Spots/ee58f1d8650eb2c5e208930bb711578e.jpg"
 })
 
 Listing.create({
   title: "Rustic dog house with big yard",
   price: 164,
-  host_id: 2,
+  host_id: 1,
   lat: 4.712857,
   lng: -74.085834,
   street_address: "Ak. 60 #57 – 60",
@@ -98,5 +101,6 @@ Listing.create({
   begging: false,
   shedding: false,
   state: "",
-  country: "Colombia"
+  country: "Colombia",
+  image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136937/Spots/_32.jpg"
 })

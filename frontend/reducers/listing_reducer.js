@@ -27,7 +27,8 @@ const defaultState = {
     barking: false,
     whining: false,
     begging: false,
-    shedding: false
+    shedding: false,
+    image_url: ""
   },
   errors: []
 };

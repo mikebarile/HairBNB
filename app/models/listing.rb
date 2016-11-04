@@ -1,6 +1,6 @@
 class Listing < ActiveRecord::Base
   validates :title, :host_id, :lat, :lng, :street_address, :city, :zip_code,
-    :description, :price, :country, presence: true
+    :description, :price, :country, :image_url, presence: true
 
   belongs_to :user,
   primary_key: :id,
