@@ -91,7 +91,7 @@ class UserForm extends React.Component {
         </button>
 
         <div className="form-bottom">
-          <p className="form-bottom-text">Don't have an account?</p>
+          <p className="form-bottom-text">Already have an account?</p>
           <button
             className="other-form-button"
             onClick={this.handleSwitch}

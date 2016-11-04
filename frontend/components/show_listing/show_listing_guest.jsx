@@ -15,8 +15,28 @@ class ShowListingGuest extends React.Component {
 
     return (
       <div className="show-listing">
-        <div className="show-listing-image" style={imgStyle}>
+        <div className="sl-image" style={imgStyle}>
+          <div className="sl-columns-container">
+
+            <div className="sl-img-first_col"></div>
+
+            <div className="sl-img-second-col">
+              <div className="sl-price-container">
+                <span className="sl-price">
+                  <span className="sl-dollar-sign">$</span>{listing.price}
+                </span>
+                <span className="sl-per-night">Per Night</span>
+              </div>
+            </div>
+
+          </div>
         </div>
+
+        <div className="sl-columns-container">
+          <div className="sl-first_col"></div>
+          <div className="sl-second-col"></div>
+        </div>
+
       </div>
     );
   }
