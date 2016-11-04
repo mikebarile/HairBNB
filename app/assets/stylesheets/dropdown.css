@@ -1,0 +1,18 @@
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+}
+
+.dropdown--active .dropdown__content {
+    display: block;
+}
+
+.top-bar-dropdown-element {
+  width: 100px;
+  height: 40px;
+  background: grey;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { withRouter } from 'react-router';
+import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdown';
 import Modal from 'boron/FadeModal';
 import SignupForm from '../user_form/user_form_container';
 import LoginForm from '../session_form/session_form_container';
@@ -20,6 +21,8 @@ class UserButtons extends React.Component {
     this.switchToLogin = this.switchToLogin.bind(this);
     this.switchToSignup = this.switchToSignup.bind(this);
     this.setSwitch = this.setSwitch.bind(this);
+    this.openDropdown = this.openDropdown.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
   }
 
   showSignupModal() {
@@ -66,6 +69,14 @@ class UserButtons extends React.Component {
     this.setState({switch: true});
   }
 
+  openDropdown() {
+    this.refs.userDropdown.show();
+  }
+
+  closeDropdown() {
+    this.refs.userDropdown.hide();
+  }
+
   render() {
     let currentUser = this.props.currentUser;
     if (currentUser === null) {
@@ -99,10 +110,17 @@ class UserButtons extends React.Component {
         <div className="user-buttons">
           <Link className="user-button become-a-host" to="/">Become a Host</Link>
           <Link className="user-button" to="/">Trips</Link>
-            <button onClick={this.props.logout} className="user-button-logout" to="/">
-              <span className="top-bar-user-name">{currentUser.first_name}</span>
-              <img src={currentUser.image_url} className="top-bar-user-image"/>
-            </button>
+            <Dropdown ref="userDropdown">
+              <div onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
+                <button className="user-button-logout" to="/">
+                  <span className="top-bar-user-name">{currentUser.first_name}</span>
+                  <img src={currentUser.image_url} className="top-bar-user-image"/>
+                </button>
+              </div>
+              <DropdownContent onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
+                <span className="top-bar-dropdown-element" onClick={this.props.logout}>Log out</span>
+              </DropdownContent>
+            </Dropdown>
         </div>
       );
     }
@@ -111,10 +129,10 @@ class UserButtons extends React.Component {
         <div className="user-buttons">
           <Link className="user-button" to="/">My Listings</Link>
           <Link className="user-button" to="/">Trips</Link>
-          <button
-            onClick={this.props.logout}
-            className="user-button-logout" to="/">Logout
-          </button>
+            <button onClick={this.props.logout} className="user-button-logout" to="/">
+              <span className="top-bar-user-name">{currentUser.first_name}</span>
+              <img src={currentUser.image_url} className="top-bar-user-image"/>
+            </button>
         </div>
       );
     }
