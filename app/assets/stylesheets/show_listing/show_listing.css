@@ -135,6 +135,8 @@
 .sl-sub-title-row {
   margin-top: 10px;
   display: flex;
+  height: 20px;
+  align-items: center
 }
 
 .sl-sub-title {
@@ -150,10 +152,11 @@
 }
 
 .sl-star {
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 15px;
   padding-top: 2px;
-  padding-right: 3px;
+  margin-left: 3px;
+  align-self: flex-start;
 }
 
 .sl-host-col {
