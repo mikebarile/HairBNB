@@ -33,7 +33,8 @@
   font-family: pretty-font;
   font-size: 18px;
   padding-top: 10px;
-  padding-right: 60px;
+  width: 170px;
+  min-width: 170px;
 }
 
 .sl-amenities {
@@ -59,14 +60,39 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
 }
 
 .sl-amenity-true {
-  height: 40px;
+  font-size: 18px;
+  height: 43px;
+  font-weight: 500;
 }
 
 .sl-amenity-false {
+  font-size: 18px;
   height: 40px;
   text-decoration: line-through;
+}
+
+.sl-rules {
+  display: flex;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 18px;
+  justify-content: flex-start;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.sl-rules-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sl-rule {
+  font-family: sans-serif;
+  font-weight: lighter;
+  height: 40px;
 }
