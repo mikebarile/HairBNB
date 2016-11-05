@@ -85,6 +85,10 @@ class ShowListingGuest extends React.Component {
                 <span className="sl-host-name">{listing.host_first_name}</span>
               </div>
             </div>
+
+            <Description
+              currentListing={listing}
+              errors={this.props.errors}/>
           </div>
 
           <div className="sl-dummy-col"></div>
@@ -96,13 +100,6 @@ class ShowListingGuest extends React.Component {
               errors={this.props.errors}/>
           </div>
         </div>
-
-        <div className="sl-columns-container">
-          <Description
-            currentListing={listing}
-            errors={this.props.errors}/>
-        </div>
-
       </div>
     );
   }
