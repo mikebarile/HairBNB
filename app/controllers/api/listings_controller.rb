@@ -1,11 +1,12 @@
 class Api::ListingsController < ApplicationController
 
   def index
+    @listings = Listing.where(params)
+    p @listings
   end
 
   def show
     @listing = Listing.find(params[:id])
-    p @listing
   end
 
   def patch

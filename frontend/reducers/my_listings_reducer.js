@@ -6,6 +6,8 @@ const defaultState = {};
 const MyListingsReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case RECEIVE_MY_LISTINGS:
+      return action.listings;
     default:
       return state;
   }
