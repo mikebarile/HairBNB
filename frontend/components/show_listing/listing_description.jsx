@@ -8,8 +8,13 @@ class Description extends React.Component {
     this.prepRules = this.prepRules.bind(this);
   }
 
-  handleAmenity(boolean) {
-    return boolean ? "sl-amenity-true" : "sl-amenity-false";
+  handleAmenity(boolean, subclass) {
+    if (boolean) {
+      return `sl-amenity-true ${subclass}`;
+    }
+    else {
+      return "sl-amenity-false";
+    }
   }
 
   prepRules() {
@@ -51,18 +56,18 @@ class Description extends React.Component {
             <span className="sl-section-header">Amenities</span>
             <div className="sl-amenities-cols">
               <div className="sl-amenities-col">
-                <span className={this.handleAmenity(listing.dog_walks)}>Free dog walks</span>
-                <span className={this.handleAmenity(listing.deluxe_bed)}>Deluxe doggy bed</span>
-                <span className={this.handleAmenity(listing.house_cat)}>House cat friend</span>
-                <span className={this.handleAmenity(listing.cuddle_buddy)}>Cuddle buddy</span>
+                <span className={this.handleAmenity(listing.dog_walks, "sl-dog-walks")}>Free dog walks</span>
+                <span className={this.handleAmenity(listing.deluxe_bed, "sl-doggy-bed")}>Deluxe doggy bed</span>
+                <span className={this.handleAmenity(listing.house_cat, "sl-house-cat")}>House cat friend</span>
+                <span className={this.handleAmenity(listing.cuddle_buddy, "sl-cuddle-buddy")}>Cuddle buddy</span>
               </div>
 
               <div className="sl-amenities-col">
-                <span className={this.handleAmenity(listing.gourmet_food)}>Gourmet dog food</span>
-                <span className={this.handleAmenity(listing.chew_toys)}>Chew toys</span>
-                <span className={this.handleAmenity(listing.frisbee)}>Daily frisbee sessions</span>
-                <span className={this.handleAmenity(listing.mailman)}>Mailman visits</span>
-                <span className={this.handleAmenity(listing.grooming)}>Free grooming</span>
+                <span className={this.handleAmenity(listing.gourmet_food, "sl-dog-food")}>Gourmet dog food</span>
+                <span className={this.handleAmenity(listing.chew_toys, "sl-chew-toys")}>Chew toys</span>
+                <span className={this.handleAmenity(listing.frisbee, "sl-frisbee")}>Daily frisbee sessions</span>
+                <span className={this.handleAmenity(listing.mailman, "sl-mailman")}>Mailman visits</span>
+                <span className={this.handleAmenity(listing.grooming, "sl-grooming")}>Free grooming</span>
               </div>
             </div>
           </div>
