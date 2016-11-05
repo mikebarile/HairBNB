@@ -1,12 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
-import App from './app.jsx';
-import SessionFormContainer from './session_form/session_form_container';
-import UserFormContainer from './user_form/user_form_container';
-import ShowListingContainer from './show_listing/show_listing_container';
-import Home from './home/home';
 import { clearListing } from '../actions/listing_actions';
+import App from './app.jsx';
+import Home from './home/home';
+import ShowListingContainer from './show_listing/show_listing_container';
+import MyListingsContainer from './my_listings/my_listings_container';
+
 
 const Root = ({ store }) => {
 
@@ -26,6 +26,7 @@ const Root = ({ store }) => {
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home}/>
         <Route path="listings/:listing_id" component={ShowListingContainer} onLeave={purgeListing}/>
+        <Route path="my-listings" component={MyListingsContainer}/>
       </Route>
     </Router>
   </Provider>

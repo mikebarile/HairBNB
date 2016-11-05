@@ -129,7 +129,7 @@ class UserButtons extends React.Component {
     else {
       return (
         <div className="user-buttons">
-          <Link className="user-button" to="/">My Listings</Link>
+          <Link className="user-button" to="/my-listings">My Listings</Link>
           <Link className="user-button" to="/">Trips</Link>
             <button onClick={this.props.logout} className="user-button-logout" to="/">
               <span className="top-bar-user-name">{currentUser.first_name}</span>

@@ -1,10 +1,10 @@
 export const FETCH_LISTING = "FETCH_LISTING";
-export const FETCH_LISTINGS = "FETCH_LISTINGS";
+export const FETCH_MY_LISTINGS = "FETCH_MY_LISTINGS";
 export const CREATE_LISTING = "CREATE_LISTING";
 export const DELETE_LISTING = "DELETE_LISTING";
 export const EDIT_LISTING = "EDIT_LISTING";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
-export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
+export const RECEIVE_MY_LISTINGS = "RECEIVE_MY_LISTINGS";
 export const REMOVE_LISTING = "REMOVE_LISTING";
 export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
 export const CLEAR_LISTING_ERRORS = "CLEAR_LISTING_ERRORS";
@@ -15,8 +15,8 @@ export const fetchListing = (id) => ({
   id
 });
 
-export const fetchListings = (params) => ({
-  type: FETCH_LISTINGS,
+export const fetchMyListings = (params) => ({
+  type: FETCH_MY_LISTINGS,
   params
 });
 
@@ -40,8 +40,8 @@ export const receiveListing = (listing) => ({
   listing
 });
 
-export const receiveListings = (listings) => ({
-  type: RECEIVE_LISTINGS,
+export const receiveMyListings = (listings) => ({
+  type: RECEIVE_MY_LISTINGS,
   listings
 });
 
