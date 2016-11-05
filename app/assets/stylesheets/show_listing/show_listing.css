@@ -19,9 +19,9 @@
   align-items: center;
 }
 
-.sl-columns-container {
+.sl-img-columns-container {
   display: flex;
-  width: 70%;
+  width: 1010px;
   height: 100%;
   justify-content: space-between;
   align-items: flex-end;
@@ -29,16 +29,21 @@
 
 .sl-img-first-col {
   display: flex;
-  width: 100%;
+  content: ".";
+  visibility: hidden;
+  min-height: 100px;
+  height: 100%;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .sl-img-second-col {
   display: flex;
-  width: 315px;
+  width: 314px;
+  min-width: 314px;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .sl-price-container {
@@ -73,16 +78,103 @@
   padding-top: 2px;
 }
 
+.sl-columns-container {
+  display: flex;
+  width: 1008px;
+  height: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .sl-first-col {
   display: flex;
-  width: 100%;
+  width: 500px;
+  min-width: 1000px;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sl-dummy-col {
+  min-width: 30px;
 }
 
 .sl-second-col {
   display: flex;
-  width: 315px;
+  width: 312px;
+  min-width: 312px;
   flex-direction: column;
   align-items: center;
+}
+
+.sl-title-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: 1px solid #C4C4C4;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.sl-title-col {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin-right: 40px;
+}
+
+.sl-title {
+  font-family: pretty-font-bold;
+  font-size: 34px;
+  letter-spacing: -1.5px;
+  font-weight: lighter;
+}
+
+.sl-sub-title-row {
+  margin-top: 10px;
+  display: flex;
+}
+
+.sl-sub-title {
+  margin-left: 3px;
+  margin-right: 3px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 14.5px;
+}
+
+.slst-first {
+  margin-left:0px;
+}
+
+.sl-star {
+  height: 12px;
+  width: 12px;
+  padding-top: 2px;
+  padding-right: 3px;
+}
+
+.sl-host-col {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.sl-host-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+.sl-host-name {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+  padding-top: 10px;
 }

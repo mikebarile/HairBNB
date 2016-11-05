@@ -1,5 +1,7 @@
 .sl-book-listing {
-  border: 1px solid #C4C4C4;
+  border-bottom: 1px solid #C4C4C4;
+  border-left: 1px solid #C4C4C4;
+  border-right: 1px solid #C4C4C4;
   width: 100%;
   color: #4F4F4F;
   display: flex;

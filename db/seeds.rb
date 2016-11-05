@@ -38,7 +38,7 @@ Listing.create({
   whining: true,
   begging: true,
   shedding: true,
-  state: "California",
+  state: "CA",
   country: "United States",
   image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136940/Spots/under-the-stairs-dog-bed-polished-concrete-floor-built-in-dog-bed.jpg"
 })
@@ -100,7 +100,7 @@ Listing.create({
   whining: true,
   begging: true,
   shedding: true,
-  state: "New York",
+  state: "NY",
   country: "United States",
   image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136942/Spots/ee58f1d8650eb2c5e208930bb711578e.jpg"
 })

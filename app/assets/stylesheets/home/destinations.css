@@ -76,11 +76,31 @@
     center center / cover no-repeat;
 }
 
+.london:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142150/locations/london.jpg")
+    center center / cover no-repeat;
+}
+
 .los-angeles {
   background:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142189/locations/los_angeles.jpg")
+    center center / cover no-repeat;
+}
+
+.los-angeles:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
       ),
     url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142189/locations/los_angeles.jpg")
     center center / cover no-repeat;
@@ -96,11 +116,31 @@
     center center / cover no-repeat;
 }
 
+.tokyo:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142150/locations/tokyo.jpg")
+    center center / cover no-repeat;
+}
+
 .washington-dc {
   background:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142156/locations/washington_dc.jpg")
+    center center / cover no-repeat;
+}
+
+.washington-dc:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
       ),
     url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142156/locations/washington_dc.jpg")
     center center / cover no-repeat;
@@ -116,11 +156,31 @@
     center center / cover no-repeat;
 }
 
+.honolulu:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478145717/locations/beach-dog.jpg")
+    center center / cover no-repeat;
+}
+
 .paris {
   background:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/Paris.jpg")
+    center center / cover no-repeat;
+}
+
+.paris:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
       ),
     url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/Paris.jpg")
     center center / cover no-repeat;
@@ -136,11 +196,31 @@
     center center / cover no-repeat;
 }
 
+.berlin:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/berlin.jpg")
+    center center / cover no-repeat;
+}
+
 .san-francisco {
   background:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/san_francisco.jpg")
+    center center / cover no-repeat;
+}
+
+.san-francisco:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
       ),
     url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/san_francisco.jpg")
     center center / cover no-repeat;
@@ -156,11 +236,31 @@
     center center / cover no-repeat;
 }
 
+.cairo:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142161/locations/cairo.jpg")
+    center center / cover no-repeat;
+}
+
 .new-york {
   background:
     linear-gradient(
       rgba(0,0,0,.15),
       rgba(0,0,0,.15)
+      ),
+    url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/new-york.jpg")
+    center center / cover no-repeat;
+}
+
+.new-york:hover {
+  background:
+    linear-gradient(
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.05)
       ),
     url("https://res.cloudinary.com/dsguwnfdw/image/upload/v1478142149/locations/new-york.jpg")
     center center / cover no-repeat;
