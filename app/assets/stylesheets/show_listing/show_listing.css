@@ -29,7 +29,6 @@
 
 .sl-img-first-col {
   display: flex;
-  content: ".";
   visibility: hidden;
   min-height: 100px;
   height: 100%;
