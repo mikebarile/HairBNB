@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MyListings from './my_listings';
-import {fetchListing, deleteListing, editListing, clearListingErrors
+import {fetchMyListings, deleteListing, editListing, clearListingErrors
 } from '../../actions/listing_actions';
 
 const mapStateToProps = ({listing, session}) => ({
@@ -10,7 +10,7 @@ const mapStateToProps = ({listing, session}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchListings: (id) => dispatch(fetchListing(id)),
+  fetchMyListings: (params) => dispatch(fetchMyListings(params)),
   deleteListing: (id) => dispatch(deleteListing(id)),
   editListing: (listing) => dispatch(editListing(listing)),
   clearListingErrors: () => dispatch(clearListingErrors())

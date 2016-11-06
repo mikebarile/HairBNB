@@ -1,7 +1,7 @@
 class Api::ListingsController < ApplicationController
 
   def index
-    @listings = Listing.where(params)
+    @listings = Listing.where(listing_params)
     p @listings
   end
 

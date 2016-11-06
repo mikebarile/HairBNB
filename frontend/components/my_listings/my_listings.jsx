@@ -6,7 +6,7 @@ class MyListings extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchListings({"host_id": this.props.currentUser.id});
+    this.props.fetchMyListings({"host_id": this.props.currentUser.id});
   }
 
   render() {
