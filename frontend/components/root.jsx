@@ -19,6 +19,12 @@ const Root = ({ store }) => {
 
   const purgeListing = () => store.dispatch(clearListing());
 
+  const redirectHome = (nextState, replaceState) => {
+    if(store.getState().session.currentUser === null){
+      replaceState('/home');
+    }
+  };
+
   return (
   <Provider store={store}>
     <Router history={hashHistory} onUpdate={() => window.scrollTo(0, 0)}>
@@ -26,7 +32,7 @@ const Root = ({ store }) => {
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home}/>
         <Route path="listings/:listing_id" component={ShowListingContainer} onLeave={purgeListing}/>
-        <Route path="my-listings" component={MyListingsContainer}/>
+        <Route path="my-listings" component={MyListingsContainer} onEnter={redirectHome}/>
       </Route>
     </Router>
   </Provider>

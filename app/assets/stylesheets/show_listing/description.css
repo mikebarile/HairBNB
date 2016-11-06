@@ -4,6 +4,7 @@
   align-content: space-between;
   border-bottom: 1px solid #C4C4C4;
   width: 100%;
+  color: #4F4F4F;
 }
 
 .sl-about-row {
@@ -32,7 +33,7 @@
 .sl-section-header {
   font-family: pretty-font;
   font-size: 18px;
-  margin-top: 30px;
+  margin-top: 20px;
   width: 170px;
   min-width: 170px;
 }

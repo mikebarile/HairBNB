@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class MyListings extends React.Component {
   constructor(props) {
@@ -9,13 +10,54 @@ class MyListings extends React.Component {
     this.props.fetchMyListings({"host_id": this.props.currentUser.id});
   }
 
+  componentDidUpdate() {
+    if(this.props.currentUser === null){
+      this.props.router.replace('/home');
+    }
+  }
+
+  handleLocation(listing) {
+    if (listing.country === "United States") {
+      return `${listing.city}, ${listing.state}`;
+    }
+    else {
+      return `${listing.city}, ${listing.country}`;
+    }
+  }
+
   render() {
     return (
-      <div>
-        
+      <div className="my-listings">
+        <div className="ml-columns-container">
+          <div className="ml-options-column">
+            <div className="ml-nav-buttons">
+              <Link to="/my-listings" className="ml-nav-button-selected">Your Listings</Link>
+              <Link to="/my-listings" className="ml-nav-button">Your Reservations</Link>
+            </div>
+            <Link to="/my-listings" className="ml-add-listing-button">Add New Listings</Link>
+          </div>
+
+          <div className="ml-listings-column">
+            <div className="ml-listed-box">
+              <span className="ml-listed-span">Listed</span>
+            </div>
+            {this.props.myListings.map(listing => (
+              <div className="ml-listing-item" key={listing.id}>
+                <img src={listing.image_url} className="ml-listing-image"/>
+                <div className="ml-description-column">
+                  <span className="ml-description-title">{listing.title}</span>
+                  <span className="ml-description-location">{this.handleLocation(listing)}</span>
+                  <Link to={`/listings/${listing.id}`} className="ml-description-preview">Preview</Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
 }
+
+
 
 export default MyListings;

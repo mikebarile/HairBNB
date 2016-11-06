@@ -5,7 +5,7 @@ import {fetchMyListings, deleteListing, editListing, clearListingErrors
 
 const mapStateToProps = ({myListings, session}) => ({
   currentUser: session.currentUser,
-  myListings: myListings
+  myListings
 });
 
 const mapDispatchToProps = dispatch => ({
