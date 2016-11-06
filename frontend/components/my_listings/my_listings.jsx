@@ -34,6 +34,11 @@ class MyListings extends React.Component {
     }
   }
 
+  imgStyle (imageUrl) {
+    return ({background:
+      `url('${imageUrl}') center center / cover no-repeat`});
+  }
+
   render() {
     let numListings = this.props.myListings.length;
 
@@ -54,7 +59,7 @@ class MyListings extends React.Component {
             </div>
             {this.props.myListings.map((listing, idx) => (
               <div className={this.handleLastListing(idx, numListings)} key={listing.id}>
-                <img src={listing.image_url} className="ml-listing-image"/>
+                <div style={this.imgStyle(listing.image_url)} className="ml-listing-image"></div>
                 <div className="ml-description-column">
                   <span className="ml-description-title">{listing.title}</span>
                   <span className="ml-description-location">{this.handleLocation(listing)}</span>
