@@ -14,7 +14,7 @@ const defaultState = {
   country: "",
   image_url: "",
   apt_num: "",
-  desscription: "",
+  description: "",
   price: "",
   dog_walks: false,
   deluxe_bed: false,
