@@ -52,10 +52,10 @@
 .user-button {
   padding: 0 22px 0 22px;
   border-left: 1px solid #DCE0E0;
-  line-height: 66px;
   height: 60px;
   font-size: 13px;
   display: flex;
+  align-items: center;
 }
 
 .become-a-host {
@@ -72,18 +72,14 @@
   border: 2px solid #AAAAAA;
   padding: 7px;
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-height: 15px;
-  padding-top: 9px;
 }
 
 .user-button-new {
   padding-left: 22px;
   padding-right: 22px;
   border-left: 1px solid #DCE0E0;
-  height: 61px;
+  height: 60px;
   font-size: 13px;
 }
 
