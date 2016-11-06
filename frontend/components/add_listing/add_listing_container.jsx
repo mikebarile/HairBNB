@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import AddListing from './add_listing';
-import {createListing} from '../../actions/listing_actions';
+import {createListing, updateListingForm} from '../../actions/listing_actions';
 
-const mapStateToProps = ({myListings, session}) => ({
+const mapStateToProps = ({ session, listingFormState }) => ({
   currentUser: session.currentUser,
-  myListings
+  listingFormState
 });
 
 const mapDispatchToProps = dispatch => ({
+  updateListingForm: (formState) => dispatch(updateListingForm(formState)),
   createListing: (listing) => dispatch(createListing(listing))
 });
 

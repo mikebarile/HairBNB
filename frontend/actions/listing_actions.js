@@ -10,6 +10,7 @@ export const REMOVE_LISTING = "REMOVE_LISTING";
 export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
 export const CLEAR_LISTING_ERRORS = "CLEAR_LISTING_ERRORS";
 export const CLEAR_LISTING = "CLEAR_LISTING";
+export const UPDATE_LISTING_FORM = "UPDATE_LISTING_FORM";
 
 export const fetchListing = (id) => ({
   type: FETCH_LISTING,
@@ -67,4 +68,9 @@ export const clearListingErrors = () => ({
 
 export const clearListing = () => ({
   type: CLEAR_LISTING
+});
+
+export const updateListingForm = (formState) => ({
+  type: UPDATE_LISTING_FORM,
+  formState
 });
