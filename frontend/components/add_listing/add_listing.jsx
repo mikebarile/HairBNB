@@ -5,7 +5,11 @@ class AddListing extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.listingFormState;
-    this.state.host_id = this.props.currentUser.id;
+  }
+
+  componentDidMount() {
+    this.setState({host_id: this.props.currentUser.id});
+    this.props.updateListingForm(this.state);
   }
 
   componentDidUpdate() {

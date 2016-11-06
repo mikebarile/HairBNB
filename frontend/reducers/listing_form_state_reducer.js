@@ -2,6 +2,7 @@ import { UPDATE_LISTING_FORM } from '../actions/listing_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
+  current_form: "home",
   title: "",
   host_id: null,
   lat: null,

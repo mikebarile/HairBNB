@@ -34,7 +34,7 @@ const Root = ({ store }) => {
         <Route path="/home" component={Home}/>
         <Route path="listings/:listing_id" component={ShowListingContainer} onLeave={purgeListing}/>
         <Route path="my-listings" component={MyListingsContainer} onEnter={redirectHome}/>
-        <Route path="add-listing" component={AddListingContainer} onEnter={redirectHome}/>
+        <Route path="become-a-host" component={AddListingContainer} onEnter={redirectHome}/>
       </Route>
     </Router>
   </Provider>

@@ -78,7 +78,7 @@ class UserButtons extends React.Component {
 
   handleBecomeHost() {
     if (this.props.currentUser) {
-      this.props.router.push('/add-listing');
+      this.props.router.push('/become-a-host');
     }
     else {
       this.showSignupModal();
