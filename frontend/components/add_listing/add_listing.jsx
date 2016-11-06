@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { merge } from 'lodash';
 
 class AddListing extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.listingFormState;
     this.updateState = this.updateState.bind(this);
   }
 
   componentDidMount() {
-    this.setState({host_id: this.props.currentUser.id});
-    this.props.updateListingForm(this.state);
+    this.props.updateListingForm({host_id: this.props.currentUser.id});
   }
 
   componentDidUpdate() {
@@ -24,7 +23,6 @@ class AddListing extends React.Component {
   }
 
   render() {
-
     return (
       <div className="add-listing">
         TEST

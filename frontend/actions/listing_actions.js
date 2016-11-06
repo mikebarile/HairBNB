@@ -70,7 +70,7 @@ export const clearListing = () => ({
   type: CLEAR_LISTING
 });
 
-export const updateListingForm = (formState) => ({
+export const updateListingForm = (formParams) => ({
   type: UPDATE_LISTING_FORM,
-  formState
+  formParams
 });

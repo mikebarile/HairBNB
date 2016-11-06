@@ -37,7 +37,9 @@ const ListingFormStateReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case UPDATE_LISTING_FORM:
-      return action.formState;
+      let oldState = merge({}, state);
+      let newState = merge(oldState, action.formParams);
+      return newState;
     default:
       return state;
   }
