@@ -9,9 +9,7 @@ import LoginForm from '../session_form/session_form_container';
 class UserButtons extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {switch: false};
-
     this.showSignupModal = this.showSignupModal.bind(this);
     this.hideSignupModal = this.hideSignupModal.bind(this);
     this.showLoginModal = this.showLoginModal.bind(this);
@@ -109,7 +107,7 @@ class UserButtons extends React.Component {
       return (
         <div className="user-buttons">
           <Link className="user-button become-a-host" to="/">Become a Host</Link>
-          <Link className="user-button" to="/">Trips</Link>
+          <Link className="user-button user-button-trips" to="/">Trips</Link>
             <Dropdown ref="userDropdown">
               <div onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
                 <button className="user-button-logout" to="/">
@@ -129,8 +127,8 @@ class UserButtons extends React.Component {
     else {
       return (
         <div className="user-buttons">
-          <Link className="user-button" to="/my-listings">My Listings</Link>
-          <Link className="user-button" to="/">Trips</Link>
+          <Link className="user-button user-button-host" to="/my-listings">Host</Link>
+          <Link className="user-button user-button-trips" to="/">Trips</Link>
             <button onClick={this.props.logout} className="user-button-logout" to="/">
               <span className="top-bar-user-name">{currentUser.first_name}</span>
               <img src={currentUser.image_url} className="top-bar-user-image"/>

@@ -12,7 +12,7 @@ class MyListings extends React.Component {
   render() {
     return (
       <div>
-        TEST
+        
       </div>
     );
   }

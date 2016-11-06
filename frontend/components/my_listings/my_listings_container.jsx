@@ -3,10 +3,9 @@ import MyListings from './my_listings';
 import {fetchMyListings, deleteListing, editListing, clearListingErrors
 } from '../../actions/listing_actions';
 
-const mapStateToProps = ({listing, session}) => ({
+const mapStateToProps = ({myListings, session}) => ({
   currentUser: session.currentUser,
-  currentListing: listing.currentListing,
-  errors: listing.errors
+  myListings: myListings
 });
 
 const mapDispatchToProps = dispatch => ({
