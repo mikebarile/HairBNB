@@ -5,6 +5,7 @@ class AddListing extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.listingFormState;
+    this.updateState = this.updateState.bind(this);
   }
 
   componentDidMount() {
@@ -16,6 +17,10 @@ class AddListing extends React.Component {
     if(this.props.currentUser === null){
       this.props.router.replace('/home');
     }
+  }
+
+  updateState(newState) {
+    this.setState(newState);
   }
 
   render() {
