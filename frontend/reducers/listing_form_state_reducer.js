@@ -1,4 +1,4 @@
-import { UPDATE_LISTING_FORM } from '../actions/listing_actions';
+import { UPDATE_LISTING_FORM, CLEAR_STATE } from '../actions/listing_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
@@ -40,6 +40,8 @@ const ListingFormStateReducer = (state = defaultState, action) => {
       let oldState = merge({}, state);
       let newState = merge(oldState, action.formParams);
       return newState;
+    case CLEAR_STATE:
+      return merge({}, defaultState);
     default:
       return state;
   }

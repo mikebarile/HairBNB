@@ -1,4 +1,5 @@
-import { RECEIVE_MY_LISTINGS, RECEIVE_NEW_LISTING } from '../actions/listing_actions';
+import { RECEIVE_MY_LISTINGS, RECEIVE_NEW_LISTING, CLEAR_STATE
+} from '../actions/listing_actions';
 import { merge } from 'lodash';
 
 const defaultState = [];
@@ -12,6 +13,8 @@ const MyListingsReducer = (state = defaultState, action) => {
       let newState = merge({}, state);
       newState.push(action.listing);
       return newState;
+    case CLEAR_STATE:
+      return defaultState;
     default:
       return state;
   }

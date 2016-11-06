@@ -5,7 +5,6 @@ import { merge } from 'lodash';
 class AddListing extends React.Component {
   constructor(props) {
     super(props);
-    this.updateState = this.updateState.bind(this);
   }
 
   componentDidMount() {
@@ -18,15 +17,9 @@ class AddListing extends React.Component {
     }
   }
 
-  updateState(newState) {
-    this.setState(newState);
-  }
-
   render() {
     return (
-      <div className="add-listing">
-        TEST
-      </div>
+      <div className="add-listing">TEST</div>
     );
   }
 }
