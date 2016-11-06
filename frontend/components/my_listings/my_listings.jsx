@@ -25,7 +25,18 @@ class MyListings extends React.Component {
     }
   }
 
+  handleLastListing(idx, numListings) {
+    if (idx === numListings - 1) {
+      return "ml-listing-item ml-listing-last";
+    }
+    else {
+      return "ml-listing-item";
+    }
+  }
+
   render() {
+    let numListings = this.props.myListings.length;
+
     return (
       <div className="my-listings">
         <div className="ml-columns-container">
@@ -41,8 +52,8 @@ class MyListings extends React.Component {
             <div className="ml-listed-box">
               <span className="ml-listed-span">Listed</span>
             </div>
-            {this.props.myListings.map(listing => (
-              <div className="ml-listing-item" key={listing.id}>
+            {this.props.myListings.map((listing, idx) => (
+              <div className={this.handleLastListing(idx, numListings)} key={listing.id}>
                 <img src={listing.image_url} className="ml-listing-image"/>
                 <div className="ml-description-column">
                   <span className="ml-description-title">{listing.title}</span>
