@@ -108,19 +108,19 @@ class UserButtons extends React.Component {
         <div className="user-buttons">
           <Link className="user-button become-a-host" to="/">Become a Host</Link>
           <Link className="user-button user-button-trips" to="/">Trips</Link>
-            <Dropdown ref="userDropdown">
-              <div onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
-                <button className="user-button-logout" to="/">
-                  <span className="top-bar-user-name">{currentUser.first_name}</span>
-                  <img src={currentUser.image_url} className="top-bar-user-image"/>
-                </button>
-              </div>
-              <DropdownContent onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
-                <Link to="/" className="top-bar-dropdown-element tbd-one">Edit profile</Link>
-                <span className="tbd-border"></span>
-                <span className="top-bar-dropdown-element tbd-two" onClick={this.props.logout}>Log out</span>
-              </DropdownContent>
-            </Dropdown>
+          <Dropdown ref="userDropdown">
+            <div onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
+              <button className="user-button-logout" to="/">
+                <span className="top-bar-user-name">{currentUser.first_name}</span>
+                <img src={currentUser.image_url} className="top-bar-user-image"/>
+              </button>
+            </div>
+            <DropdownContent onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
+              <Link to="/" className="top-bar-dropdown-element tbd-one">Edit profile</Link>
+              <span className="tbd-border"></span>
+              <span className="top-bar-dropdown-element tbd-two" onClick={this.props.logout}>Log out</span>
+            </DropdownContent>
+          </Dropdown>
         </div>
       );
     }
@@ -129,10 +129,19 @@ class UserButtons extends React.Component {
         <div className="user-buttons">
           <Link className="user-button user-button-host" to="/my-listings">Host</Link>
           <Link className="user-button user-button-trips" to="/">Trips</Link>
-            <button onClick={this.props.logout} className="user-button-logout" to="/">
-              <span className="top-bar-user-name">{currentUser.first_name}</span>
-              <img src={currentUser.image_url} className="top-bar-user-image"/>
-            </button>
+          <Dropdown ref="userDropdown">
+            <div onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
+              <button className="user-button-logout" to="/">
+                <span className="top-bar-user-name">{currentUser.first_name}</span>
+                <img src={currentUser.image_url} className="top-bar-user-image"/>
+              </button>
+            </div>
+            <DropdownContent onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
+              <Link to="/" className="top-bar-dropdown-element tbd-one">Edit profile</Link>
+              <span className="tbd-border"></span>
+              <span className="top-bar-dropdown-element tbd-two" onClick={this.props.logout}>Log out</span>
+            </DropdownContent>
+          </Dropdown>
         </div>
       );
     }
