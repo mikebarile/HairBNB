@@ -45,7 +45,7 @@ class MyListings extends React.Component {
               <Link to="/my-listings" className="ml-nav-button-selected">Your Listings</Link>
               <Link to="/my-listings" className="ml-nav-button">Your Reservations</Link>
             </div>
-            <Link to="/my-listings" className="ml-add-listing-button">Add New Listings</Link>
+            <Link to="/add-listing" className="ml-add-listing-button">Add New Listings</Link>
           </div>
 
           <div className="ml-listings-column">

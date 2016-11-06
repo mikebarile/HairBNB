@@ -6,6 +6,7 @@ import App from './app.jsx';
 import Home from './home/home';
 import ShowListingContainer from './show_listing/show_listing_container';
 import MyListingsContainer from './my_listings/my_listings_container';
+import AddListingContainer from './add_listing/add_listing_container';
 
 
 const Root = ({ store }) => {
@@ -33,6 +34,7 @@ const Root = ({ store }) => {
         <Route path="/home" component={Home}/>
         <Route path="listings/:listing_id" component={ShowListingContainer} onLeave={purgeListing}/>
         <Route path="my-listings" component={MyListingsContainer} onEnter={redirectHome}/>
+        <Route path="add-listing" component={AddListingContainer} onEnter={redirectHome}/>
       </Route>
     </Router>
   </Provider>

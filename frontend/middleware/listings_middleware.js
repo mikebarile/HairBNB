@@ -1,5 +1,6 @@
-import { receiveMyListings, receiveListing, removeListing, receiveListingErrors,
-  FETCH_LISTING, FETCH_MY_LISTINGS, CREATE_LISTING, DELETE_LISTING, EDIT_LISTING
+import { receiveMyListings, receiveListing, receiveNewListing, removeListing,
+  receiveListingErrors, FETCH_LISTING, FETCH_MY_LISTINGS, CREATE_LISTING,
+  DELETE_LISTING, EDIT_LISTING
 } from '../actions/listing_actions';
 
 import {fetchListing, fetchListings, createListing, deleteListing,
@@ -19,6 +20,10 @@ export default ({ getState, dispatch }) => next => action => {
     dispatch(removeListing(listing));
   };
 
+  const receiveNewListingSuccess = listing => {
+    dispatch(receiveNewListing(listing));
+  };
+
   const errorCallback = xhr => dispatch(receiveListingErrors(xhr.responseJSON));
 
   switch(action.type) {
@@ -29,7 +34,7 @@ export default ({ getState, dispatch }) => next => action => {
       fetchListings(action.params, receiveMyListingsSuccess, errorCallback);
       break;
     case CREATE_LISTING:
-      createListing(action.listing, receiveListingSuccess, errorCallback);
+      createListing(action.listing, receiveNewListingSuccess, errorCallback);
       return next(action);
     case DELETE_LISTING:
       deleteListing(action.id, removeListingSuccess, errorCallback);
