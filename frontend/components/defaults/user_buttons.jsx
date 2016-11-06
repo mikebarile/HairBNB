@@ -21,6 +21,7 @@ class UserButtons extends React.Component {
     this.setSwitch = this.setSwitch.bind(this);
     this.openDropdown = this.openDropdown.bind(this);
     this.closeDropdown = this.closeDropdown.bind(this);
+    this.handleBecomeHost = this.handleBecomeHost.bind(this);
   }
 
   showSignupModal() {
@@ -75,12 +76,23 @@ class UserButtons extends React.Component {
     this.refs.userDropdown.hide();
   }
 
+  handleBecomeHost() {
+    if (this.props.currentUser) {
+      this.props.router.push('/add-listing');
+    }
+    else {
+      this.showSignupModal();
+    }
+  }
+
   render() {
     let currentUser = this.props.currentUser;
     if (currentUser === null) {
       return (
         <div className="user-buttons">
-          <Link className="user-button become-a-host" to="/">Become a Host</Link>
+          <div className="user-button become-a-host" onClick={this.handleBecomeHost}>
+            <span className="become-a-host-link">Become a Host</span>
+          </div>
 
           <button className="user-button-new" onClick={this.showSignupModal}>Signup</button>
           <Modal
@@ -103,10 +115,12 @@ class UserButtons extends React.Component {
         </div>
       );
     }
-    else if (currentUser.is_host === false) {
+    else if (currentUser && currentUser.is_host === false) {
       return (
         <div className="user-buttons">
-          <Link className="user-button become-a-host" to="/">Become a Host</Link>
+          <div className="user-button become-a-host" onClick={this.handleBecomeHost}>
+            <span className="become-a-host-link">Become a Host</span>
+          </div>
           <Link className="user-button user-button-trips" to="/">Trips</Link>
           <Dropdown ref="userDropdown">
             <div onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
