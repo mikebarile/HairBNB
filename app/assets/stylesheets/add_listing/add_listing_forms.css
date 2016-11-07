@@ -1,0 +1,93 @@
+.add-listing-form {
+  display: flex;
+  justify-content: center;
+  color: #484848;
+  font-family: pretty-font;
+}
+
+.alf-first-half {
+  display: flex;
+  justify-content: flex-end;
+  width: 55%;
+}
+
+.alf-col-first {
+  margin-top: 65px;
+  width: 500px;
+  min-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.alf-field-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.alf-input-row {
+  display: flex;
+}
+
+.alf-text-full {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #DCE0E0;
+  width: 440px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  margin-bottom: 40px;
+  -webkit-transition: border .3s;
+  transition: border .3s;
+  resize: none;
+}
+
+.alf-title-counter {
+  color: #767676;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  padding-left: 460px;
+  padding-top: 7px;
+}
+
+.alf-description-counter {
+  color: #767676;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  padding-left: 450px;
+  padding-top: 7px;
+}
+
+.alf-low {
+  color: #B34143;
+}
+
+.alf-text-full:focus {
+  border: 1px solid #484848;
+}
+
+.alf-file {
+
+}
+
+.alf-second-half {
+  display: flex;
+  justify-content: flex-start;
+  width: 45%;
+  background-color: #FAFAFA;
+}
+
+.alf-col-second {
+  width: 330px;
+  min-width: 330px;
+  height: 100%;
+}
