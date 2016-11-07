@@ -10,6 +10,7 @@
 .alh-first-col {
   margin-top: 60px;
   margin-left: 170px;
+  max-width: 480px;
 }
 
 .alh-step-container {
@@ -150,6 +151,7 @@
 }
 
 .alh-second-col {
+  margin-top: 60px;
   display: flex;
   margin-right: 100px;
 }
@@ -159,23 +161,38 @@
   display: flex;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  min-width: 600px;
-  min-height: 500px;
+  min-width: 700px;
+  min-height: 550px;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .alh-tip-container {
-
+  min-width: 350px;
+  min-height: 170px;
+  margin-top: 20px;
+  margin-right: 20px;
+  background-color: white;
+  border: 1px solid #DCE0E0;
+  display: flex;
+  flex-direction: column;
 }
 
 .alh-tip-icon {
+  padding: 20px;
   max-width: 32px;
   max-height: 38px;
 }
 
 .alh-tip-description {
-
+  color: #767676;
+  padding-left: 20px;
+  padding-bottom: 5px;
 }
 
 .alh-tip-quantity {
+  color: #484848;
+  padding-left: 20px;
+  font-size: 30px;
 
 }
