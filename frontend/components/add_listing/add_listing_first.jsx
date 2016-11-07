@@ -52,6 +52,9 @@ class AddListingFirst extends React.Component {
       newErrors.push("File type must be JPEG, TIF, or PNG");
     }
     this.setState({image_errors: newErrors});
+    if (newErrors.length === 0) {
+      
+    }
   }
 
   render() {

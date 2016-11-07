@@ -12,6 +12,7 @@ export const CLEAR_LISTING_ERRORS = "CLEAR_LISTING_ERRORS";
 export const CLEAR_LISTING = "CLEAR_LISTING";
 export const UPDATE_LISTING_FORM = "UPDATE_LISTING_FORM";
 export const CLEAR_STATE = "CLEAR_STATE";
+export const UPDATE_IMAGE = "UPDATE_IMAGE";
 
 export const fetchListing = (id) => ({
   type: FETCH_LISTING,
@@ -78,4 +79,9 @@ export const updateListingForm = (formParams) => ({
 
 export const clearState = () => ({
   type: CLEAR_STATE
+});
+
+export const updateImage = (file) => ({
+  type: UPDATE_IMAGE,
+  file
 });

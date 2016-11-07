@@ -1,11 +1,13 @@
 import { receiveMyListings, receiveListing, receiveNewListing, removeListing,
-  receiveListingErrors, FETCH_LISTING, FETCH_MY_LISTINGS, CREATE_LISTING,
-  DELETE_LISTING, EDIT_LISTING
+  receiveListingErrors, updateListingForm, FETCH_LISTING, FETCH_MY_LISTINGS,
+  CREATE_LISTING, DELETE_LISTING, EDIT_LISTING, UPDATE_IMAGE
 } from '../actions/listing_actions';
 
 import {fetchListing, fetchListings, createListing, deleteListing,
   editListing
 } from '../util/listing_api_util';
+
+import { cloudinary } from 'cloudinary';
 
 export default ({ getState, dispatch }) => next => action => {
   const receiveListingSuccess = listing => {
@@ -24,6 +26,10 @@ export default ({ getState, dispatch }) => next => action => {
     dispatch(receiveNewListing(listing));
   };
 
+  const receiveImageSuccess = object => {
+    dispatch(updateListingForm({image_url: object.secure_url}));
+  };
+
   const errorCallback = xhr => dispatch(receiveListingErrors(xhr.responseJSON));
 
   switch(action.type) {
@@ -31,16 +37,19 @@ export default ({ getState, dispatch }) => next => action => {
       fetchListing(action.id, receiveListingSuccess, errorCallback);
       return next(action);
     case FETCH_MY_LISTINGS:
-      fetchListings(action.params, receiveMyListingsSuccess, errorCallback);
+      fetchListings(action.params, receiveMyListingsSuccess);
       break;
     case CREATE_LISTING:
-      createListing(action.listing, receiveNewListingSuccess, errorCallback);
+      createListing(action.listing, receiveNewListingSuccess);
       return next(action);
     case DELETE_LISTING:
-      deleteListing(action.id, removeListingSuccess, errorCallback);
+      deleteListing(action.id, removeListingSuccess);
       return next(action);
     case EDIT_LISTING:
-      editListing(action.listing, receiveListingSuccess, errorCallback);
+      editListing(action.listing, receiveListingSuccess);
+      return next(action);
+    case UPDATE_IMAGE:
+      Cloudinary.uploader.upload(action.file, receiveImageSuccess);
       return next(action);
     default:
       return next(action);
