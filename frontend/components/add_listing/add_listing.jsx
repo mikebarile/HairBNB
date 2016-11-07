@@ -21,25 +21,25 @@ class AddListingHome extends React.Component {
   handleButton(step, element) {
     let form = this.props.listingFormState.current_form;
     switch (step) {
-      case "step-one":
-        if (form === "home" || form === "step-one") {
+      case "start-with-basics":
+        if (form === "home" || form === "start-with-basics") {
           return `${element}-next`;
         }
         else {
           return `${element}-previous`;
         }
-      case "step-two":
-        if (form === "home" || form === "step-one") {
+      case "set-the-scene":
+        if (form === "home" || form === "start-with-basics") {
           return `${element}-dead`;
         }
-        else if (form === "step-two") {
+        else if (form === "set-the-scene") {
           return `${element}-next`;
         }
         else {
           return `${element}-dead`;
         }
-      case "step-three":
-        if (form === "step-three") {
+      case "ready-for-pups":
+        if (form === "ready-for-pups") {
           return `${element}-next`;
         }
         else {
@@ -54,7 +54,7 @@ class AddListingHome extends React.Component {
   handleHeader() {
     let user = this.props.currentUser;
     if (this.props.listingFormState.current_form === "home" ||
-      this.props.listingFormState.current_form === "step-one") {
+      this.props.listingFormState.current_form === "start-with-basics") {
         return(<span>Hi, {user.first_name}! Let's get you ready to become a host.</span>);
     }
     else {
@@ -71,32 +71,32 @@ class AddListingHome extends React.Component {
 
           <div className="alh-step-container">
             <div className="alh-step-container-description">
-              <span className={this.handleButton("step-one", "alh-step-name")}>STEP 1</span>
-              <span className={this.handleButton("step-one", "alh-step-title")}>Start with the basics</span>
-              <span className={this.handleButton("step-one", "alh-step-description")}>Listing title, description, etc.</span>
-              <button className={this.handleButton("step-one", "alh-step-button")}></button>
+              <span className={this.handleButton("start-with-basics", "alh-step-name")}>STEP 1</span>
+              <span className={this.handleButton("start-with-basics", "alh-step-title")}>Start with the basics</span>
+              <span className={this.handleButton("start-with-basics", "alh-step-description")}>Listing title, description, etc.</span>
+              <button className={this.handleButton("start-with-basics", "alh-step-button")}></button>
             </div>
-            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("step-one", "alh-check")}></img>
+            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("start-with-basics", "alh-check")}></img>
           </div>
 
           <div className="alh-step-container">
             <div className="alh-step-container-description">
-              <span className={this.handleButton("step-two", "alh-step-name")}>STEP 2</span>
-              <span className={this.handleButton("step-two", "alh-step-title")}>Set the scene</span>
-              <span className={this.handleButton("step-two", "alh-step-description")}>Amenities and house rules</span>
-              <button className={this.handleButton("step-two", "alh-step-button")}></button>
+              <span className={this.handleButton("set-the-scene", "alh-step-name")}>STEP 2</span>
+              <span className={this.handleButton("set-the-scene", "alh-step-title")}>Set the scene</span>
+              <span className={this.handleButton("set-the-scene", "alh-step-description")}>Amenities and house rules</span>
+              <button className={this.handleButton("set-the-scene", "alh-step-button")}></button>
             </div>
-            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("step-two", "alh-check")}></img>
+            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("set-the-scene", "alh-check")}></img>
           </div>
 
           <div className="alh-step-container">
             <div className="alh-step-container-description">
-              <span className={this.handleButton("step-three", "alh-step-name")}>STEP 3</span>
-              <span className={this.handleButton("step-three", "alh-step-title")}>Get ready for pups</span>
-              <span className={this.handleButton("step-three", "alh-step-description")}>Address information and price</span>
-              <button className={this.handleButton("step-three", "alh-step-button")}></button>
+              <span className={this.handleButton("ready-for-pups", "alh-step-name")}>STEP 3</span>
+              <span className={this.handleButton("ready-for-pups", "alh-step-title")}>Get ready for pups</span>
+              <span className={this.handleButton("ready-for-pups", "alh-step-description")}>Address information and price</span>
+              <button className={this.handleButton("ready-for-pups", "alh-step-button")}></button>
             </div>
-            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("step-three", "alh-check")}></img>
+            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("ready-for-pups", "alh-check")}></img>
           </div>
 
         </div>
@@ -114,7 +114,5 @@ class AddListingHome extends React.Component {
     );
   }
 }
-
-
 
 export default AddListingHome;
