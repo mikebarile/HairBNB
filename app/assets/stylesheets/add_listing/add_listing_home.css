@@ -169,7 +169,7 @@
 
 .alh-tip-container {
   min-width: 350px;
-  min-height: 170px;
+  min-height: 165px;
   margin-top: 20px;
   margin-right: 20px;
   background-color: white;
@@ -179,7 +179,9 @@
 }
 
 .alh-tip-icon {
-  padding: 20px;
+  padding-left: 18px;
+  padding-top: 20px;
+  padding-bottom: 12px;
   max-width: 32px;
   max-height: 38px;
 }

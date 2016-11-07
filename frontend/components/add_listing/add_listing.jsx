@@ -105,7 +105,7 @@ class AddListingHome extends React.Component {
           <div className="alh-img-container">
             <div className="alh-tip-container">
               <img className="alh-tip-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478477881/Icons/Screen_Shot_2016-11-06_at_4.17.32_PM.png"/>
-              <span className="alh-tip-description">In a week, hosts sharing their homes <br/>with dogs are:</span>
+              <span className="alh-tip-description">In a week, hosts that shared their homes <br/>with dogs are:</span>
               <span className="alh-tip-quantity">184% happier</span>
             </div>
           </div>
