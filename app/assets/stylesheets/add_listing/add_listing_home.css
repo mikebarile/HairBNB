@@ -1,6 +1,6 @@
 .add-listing-home {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   font-family: sans-serif;
   color: #4F4F4F;
@@ -16,7 +16,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   border-bottom: 1px solid #F5F5F5;
 }
 
@@ -25,7 +25,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  min-width: 400px;
+  min-width: 380px;
+  max-width: 480px;
 }
 
 .alh-header {
@@ -36,21 +37,21 @@
 .alh-step-name-next {
   font-size: 13px;
   color: #BBBBBB;
-  margin-top: 20px;
+  margin-top: 30px;
   font-weight: bold;
 }
 
 .alh-step-name-previous {
   font-size: 13px;
   color: #BBBBBB;
-  margin-top: 20px;
+  margin-top: 30px;
   font-weight: bold;
 }
 
 .alh-step-name-dead {
   color: #DBDBDB;
   font-size: 13px;
-  margin-top: 20px;
+  margin-top: 30px;
   font-weight: bold;
 }
 
@@ -76,17 +77,19 @@
 .alh-step-description-next {
   color: #767676;
   font-size: 15.5px;
-
+  font-weight: lighter;
 }
 
 .alh-step-description-previous {
   color: #767676;
   font-size: 15.5px;
+  font-weight: lighter;
 }
 
 .alh-step-description-dead {
   color: #B6B6B6;
   font-size: 15.5px;
+  font-weight: lighter;
 }
 
 .alh-step-button-next {
@@ -144,4 +147,35 @@
 
 .alh-check-dead {
   display: none;
+}
+
+.alh-second-col {
+  display: flex;
+  margin-right: 100px;
+}
+
+.alh-img-container {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478478002/Icons/0_0_0_0_391_315_library_60443.png');
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-width: 600px;
+  min-height: 500px;
+}
+
+.alh-tip-container {
+
+}
+
+.alh-tip-icon {
+  max-width: 32px;
+  max-height: 38px;
+}
+
+.alh-tip-description {
+
+}
+
+.alh-tip-quantity {
+
 }
