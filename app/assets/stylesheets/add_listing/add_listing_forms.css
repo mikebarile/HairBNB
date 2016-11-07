@@ -95,8 +95,8 @@
 }
 
 .alf-file-image {
-  max-width: 200px;
-  max-height: 250px;
+  max-width: 300px;
+  height: auto;
 }
 
 .alf-file-name {
@@ -133,6 +133,10 @@
   color: #6c6c6c;
 }
 
+.alf-header-over {
+  margin-bottom: 10px;
+}
+
 .alf-next {
   display: flex;
   width: 185px;
@@ -146,6 +150,17 @@
 
 .alf-next:hover {
   background-color: #FF7E82
+}
+
+.alf-next-dead {
+  display: flex;
+  width: 185px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFD2D3;
+  color: white;
+  border-radius: 4px;
 }
 
 .alf-second-half {

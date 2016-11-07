@@ -15,6 +15,7 @@ class AddListingFirst extends React.Component {
     this.textUpdate = this.textUpdate.bind(this);
     this.handleCounter = this.handleCounter.bind(this);
     this.upload = this.upload.bind(this);
+    this.handleNext = this.handleNext.bind(this);
   }
 
   componentDidMount() {
@@ -71,21 +72,16 @@ class AddListingFirst extends React.Component {
     });
   }
 
-  // Can use this code to make custom uploader at later date
-  // handleFile(e) {
-  //   let file = e.target.files[0];
-  //   let newErrors = [];
-  //   if (file.size > 10000000) {
-  //     newErrors.push("File size cannot exceed 10 MB");
-  //   }
-  //   if (file.type !== "image/jpeg" && file.type !== "image/tif" && file.type !== "png") {
-  //     newErrors.push("File type must be JPEG, TIF, or PNG");
-  //   }
-  //   this.setState({image_errors: newErrors});
-  //   if (newErrors.length === 0) {
-  //     this.props.updateImage(file);
-  //   }
-  // }
+  handleNext() {
+    if (this.state.title < 50 && this.state.title >=0 &&
+      this.state.description < 500 && this.state.description >= 0 &&
+      this.state.url !== null && this.state.image_errors.length === 0) {
+        return "alf-next";
+    }
+    else {
+      return "alf-next-dead";
+    }
+  }
 
   render() {
     let user = this.props.currentUser;
@@ -113,7 +109,7 @@ class AddListingFirst extends React.Component {
                   <span className={this.handleCounter("description", 50)}>{this.state.description}</span>
                 </div>
 
-              <span className="alf-field-title">Upload a photo</span>
+              <span className="alf-field-title alf-header-over">Upload a photo</span>
               <ul className="alf-errors">
                 {this.state.image_errors.map((error, idx) => (
                   <span key={idx} className="alf-error">{error}</span>
@@ -123,9 +119,10 @@ class AddListingFirst extends React.Component {
               <span className="alf-file-name">{this.state.original_filename}{this.state.format}</span>
               <button onClick={this.upload} className="alf-upload">Upload Image</button>
             </div>
+
             <div className="alf-nav">
               <Link to="/become-a-host" className="alf-back">Back</Link>
-              <button className="alf-next">Next</button>
+              <button className={this.handleNext()}>Next</button>
             </div>
 
 
