@@ -7,7 +7,10 @@ class AddListingFirst extends React.Component {
     this.state = {
       "title": 50,
       "description": 500,
-      image_errors: []
+      image_errors: [],
+      original_filename: null,
+      format: null,
+      url: null
     };
     this.textUpdate = this.textUpdate.bind(this);
     this.handleCounter = this.handleCounter.bind(this);
@@ -59,6 +62,9 @@ class AddListingFirst extends React.Component {
           }
           this.setState({image_errors: newErrors});
           if (newErrors.length === 0) {
+            this.setState({format: `.${file.format}`});
+            this.setState({original_filename: file.original_filename});
+            this.setState({url: file.secure_url});
             this.props.updateListingForm({image_url: file.secure_url});
           }
         }
@@ -113,8 +119,9 @@ class AddListingFirst extends React.Component {
                   <span key={idx} className="alf-error">{error}</span>
                 ))}
               </ul>
-
-              <button onClick={this.upload}>Upload Image</button>
+              <img className="alf-file-image" src={this.state.url}/>
+              <span className="alf-file-name">{this.state.original_filename}{this.state.format}</span>
+              <button onClick={this.upload} className="alf-upload">Upload Image</button>
             </div>
             <div className="alf-nav">
               <Link to="/become-a-host" className="alf-back">Back</Link>

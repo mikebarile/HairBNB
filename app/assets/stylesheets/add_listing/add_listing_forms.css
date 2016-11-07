@@ -5,7 +5,6 @@
   font-family: pretty-font;
 }
 
-
 .alf-first-half {
   display: flex;
   justify-content: flex-end;
@@ -82,6 +81,31 @@
 
 .alf-text-full:focus {
   border: 1px solid #484848;
+}
+
+.alf-upload {
+  display: flex;
+  width: 185px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A699;
+  color: white;
+  border-radius: 5px;
+}
+
+.alf-file-image {
+  max-width: 200px;
+  max-height: 250px;
+}
+
+.alf-file-name {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.alf-upload:hover{
+  background-color: #01ccbc
 }
 
 .alf-nav {
