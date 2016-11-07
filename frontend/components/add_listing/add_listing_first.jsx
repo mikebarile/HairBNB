@@ -6,10 +6,12 @@ class AddListingFirst extends React.Component {
     super(props);
     this.state = {
       "title": 50,
-      "description": 500
+      "description": 500,
+      image_errors: []
     };
     this.textUpdate = this.textUpdate.bind(this);
     this.handleCounter = this.handleCounter.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +42,18 @@ class AddListingFirst extends React.Component {
     }
   }
 
+  handleFile(e) {
+    let file = e.target.files[0];
+    let newErrors = [];
+    if (file.size > 10000000) {
+      newErrors.push("File size cannot exceed 10 MB");
+    }
+    if (file.type !== "image/jpeg" && file.type !== "image/tif" && file.type !== "png") {
+      newErrors.push("File type must be JPEG, TIF, or PNG");
+    }
+    this.setState({image_errors: newErrors});
+  }
+
   render() {
     let user = this.props.currentUser;
     return (
@@ -66,11 +80,15 @@ class AddListingFirst extends React.Component {
                 </div>
 
               <span className="alf-field-title">Upload a photo</span>
-              <input type="file" className="alf-file"/>
+              <ul className="alf-errors">
+                {this.state.image_errors.map((error, idx) => (
+                  <span key={idx} className="alf-error">{error}</span>
+                ))}
+              </ul>
+              <input type="file" onChange={this.handleFile}/>
             </div>
             <div className="alf-nav">
               <Link to="/become-a-host" className="alf-back">Back</Link>
-
               <button className="alf-next">Next</button>
             </div>
 

@@ -91,8 +91,21 @@
   margin-bottom: 30px;
 }
 
+.alf-errors {
+  padding-bottom: 10px;
+}
+
+.alf-error {
+  color: #B34143;
+  font-size: 16px;
+}
+
 .alf-back {
-  color: #95999B;
+  color: #484848;
+}
+
+.alf-back:hover {
+  color: #6c6c6c;
 }
 
 .alf-next {
@@ -104,6 +117,10 @@
   background-color: #FF5A5F;
   color: white;
   border-radius: 4px;
+}
+
+.alf-next:hover {
+  background-color: #FF7E82
 }
 
 .alf-second-half {
