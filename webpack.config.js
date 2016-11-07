@@ -9,6 +9,9 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  node: {
+  fs: "empty"
+  },
   module: {
     loaders: [
       {
@@ -18,6 +21,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },

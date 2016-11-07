@@ -11,7 +11,7 @@ class AddListingFirst extends React.Component {
     };
     this.textUpdate = this.textUpdate.bind(this);
     this.handleCounter = this.handleCounter.bind(this);
-    this.handleFile = this.handleFile.bind(this);
+    this.upload = this.upload.bind(this);
   }
 
   componentDidMount() {
@@ -42,23 +42,48 @@ class AddListingFirst extends React.Component {
     }
   }
 
-  handleFile(e) {
-    let file = e.target.files[0];
-    let newErrors = [];
-    if (file.size > 10000000) {
-      newErrors.push("File size cannot exceed 10 MB");
-    }
-    if (file.type !== "image/jpeg" && file.type !== "image/tif" && file.type !== "png") {
-      newErrors.push("File type must be JPEG, TIF, or PNG");
-    }
-    this.setState({image_errors: newErrors});
-    if (newErrors.length === 0) {
-      
-    }
+  upload(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      (error, images) => {
+        console.log(images[0]);
+        if (error === null) {
+          let file = images[0];
+          let newErrors = [];
+          if (file.bytes > 10000000) {
+            newErrors.push("File size cannot exceed 10 MB");
+          }
+          if (file.format !== "jpg" && file.format !== "tif" && file.format !== "png") {
+            newErrors.push("File type must be JPEG, TIF, or PNG");
+          }
+          this.setState({image_errors: newErrors});
+          if (newErrors.length === 0) {
+            this.props.updateListingForm({image_url: file.secure_url});
+          }
+        }
+    });
   }
+
+  // Can use this code to make custom uploader at later date
+  // handleFile(e) {
+  //   let file = e.target.files[0];
+  //   let newErrors = [];
+  //   if (file.size > 10000000) {
+  //     newErrors.push("File size cannot exceed 10 MB");
+  //   }
+  //   if (file.type !== "image/jpeg" && file.type !== "image/tif" && file.type !== "png") {
+  //     newErrors.push("File type must be JPEG, TIF, or PNG");
+  //   }
+  //   this.setState({image_errors: newErrors});
+  //   if (newErrors.length === 0) {
+  //     this.props.updateImage(file);
+  //   }
+  // }
 
   render() {
     let user = this.props.currentUser;
+    console.log(this.props.listingFormState);
     return (
       <div className="add-listing-form">
         <div className="alf-first-half">
@@ -88,7 +113,8 @@ class AddListingFirst extends React.Component {
                   <span key={idx} className="alf-error">{error}</span>
                 ))}
               </ul>
-              <input type="file" onChange={this.handleFile}/>
+
+              <button onClick={this.upload}>Upload Image</button>
             </div>
             <div className="alf-nav">
               <Link to="/become-a-host" className="alf-back">Back</Link>

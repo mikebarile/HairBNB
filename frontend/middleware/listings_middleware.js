@@ -7,7 +7,7 @@ import {fetchListing, fetchListings, createListing, deleteListing,
   editListing
 } from '../util/listing_api_util';
 
-import { cloudinary } from 'cloudinary';
+import Cloudinary from 'cloudinary';
 
 export default ({ getState, dispatch }) => next => action => {
   const receiveListingSuccess = listing => {
@@ -47,9 +47,6 @@ export default ({ getState, dispatch }) => next => action => {
       return next(action);
     case EDIT_LISTING:
       editListing(action.listing, receiveListingSuccess);
-      return next(action);
-    case UPDATE_IMAGE:
-      Cloudinary.uploader.upload(action.file, receiveImageSuccess);
       return next(action);
     default:
       return next(action);
