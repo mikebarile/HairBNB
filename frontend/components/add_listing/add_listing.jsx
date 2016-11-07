@@ -74,7 +74,7 @@ class AddListingHome extends React.Component {
               <span className={this.handleButton("start-with-basics", "alh-step-name")}>STEP 1</span>
               <span className={this.handleButton("start-with-basics", "alh-step-title")}>Start with the basics</span>
               <span className={this.handleButton("start-with-basics", "alh-step-description")}>Listing title, description, etc.</span>
-              <button className={this.handleButton("start-with-basics", "alh-step-button")}></button>
+              <Link to="/become-a-host/start-with-basics" className={this.handleButton("start-with-basics", "alh-step-button")}></Link>
             </div>
             <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("start-with-basics", "alh-check")}></img>
           </div>

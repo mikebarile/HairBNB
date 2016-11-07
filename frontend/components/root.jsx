@@ -6,6 +6,7 @@ import App from './app.jsx';
 import Home from './home/home';
 import ShowListingContainer from './show_listing/show_listing_container';
 import MyListingsContainer from './my_listings/my_listings_container';
+import AddListingIndex from './add_listing/add_listing_index';
 import AddListingHomeContainer from './add_listing/add_listing_home_container';
 import AddListingFirstContainer from './add_listing/add_listing_first_container';
 import AddListingSecondContainer from './add_listing/add_listing_second_container';
@@ -37,7 +38,8 @@ const Root = ({ store }) => {
         <Route path="/home" component={Home}/>
         <Route path="listings/:listing_id" component={ShowListingContainer} onLeave={purgeListing}/>
         <Route path="my-listings" component={MyListingsContainer} onEnter={redirectHome}/>
-        <Route path="become-a-host" component={AddListingHomeContainer} onEnter={redirectHome}>
+        <Route path="become-a-host" component={AddListingIndex} onEnter={redirectHome}>
+          <IndexRoute component={AddListingHomeContainer}/>
           <Route path="start-with-basics" component={AddListingFirstContainer} onEnter={redirectHome}/>
           <Route path="set-the-scene" component={AddListingSecondContainer} onEnter={redirectHome}/>
           <Route path="ready-for-pups" component={AddListingThirdContainer} onEnter={redirectHome}/>
