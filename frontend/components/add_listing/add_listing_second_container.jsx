@@ -9,7 +9,7 @@ const mapStateToProps = ({ session, listingFormState }) => ({
 
 const mapDispatchToProps = dispatch => ({
   updateListingForm: (formState) => dispatch(updateListingForm(formState)),
-  createListing: (listing) => dispatch(createListing(listing))
+  createListing: (listing) => dispatch(createListing(listing)),
 });
 
 export default connect(
