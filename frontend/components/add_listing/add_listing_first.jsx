@@ -16,10 +16,18 @@ class AddListingFirst extends React.Component {
     this.handleCounter = this.handleCounter.bind(this);
     this.upload = this.upload.bind(this);
     this.handleNext = this.handleNext.bind(this);
+    this.handleNextClick = this.handleNextClick.bind(this);
   }
 
   componentDidMount() {
     this.props.updateListingForm({host_id: this.props.currentUser.id});
+    this.setState({url: this.props.listingFormState.image_url});
+    this.setState({format: this.props.listingFormState.format});
+    this.setState({original_filename: this.props.listingFormState.original_filename});
+    this.refs.titleField.value = this.props.listingFormState.title;
+    this.refs.descriptionField.value = this.props.listingFormState.description;
+    this.setState({title: 50-this.props.listingFormState.title.length});
+    this.setState({description: 500-this.props.listingFormState.description.length});
   }
 
   componentDidUpdate() {
@@ -65,7 +73,10 @@ class AddListingFirst extends React.Component {
             this.setState({format: `.${file.format}`});
             this.setState({original_filename: file.original_filename});
             this.setState({url: file.secure_url});
-            this.props.updateListingForm({image_url: file.secure_url});
+            this.props.updateListingForm({
+              image_url: file.secure_url,
+              original_filename: file.original_filename,
+              format: file.format,});
           }
         }
     });
@@ -82,6 +93,16 @@ class AddListingFirst extends React.Component {
     }
   }
 
+  handleNextClick(e) {
+    e.preventDefault;
+    if (this.state.title < 50 && this.state.title >=0 &&
+      this.state.description < 500 && this.state.description >= 0 &&
+      this.state.url !== null && this.state.image_errors.length === 0) {
+        this.props.updateListingForm({current_form: "set-the-scene"});
+        this.props.router.push('/become-a-host/scene');
+    }
+  }
+
   render() {
     let user = this.props.currentUser;
     return (
@@ -92,6 +113,7 @@ class AddListingFirst extends React.Component {
               <span className="alf-field-title">Name your place</span>
               <div className="alf-input-row">
                 <textarea
+                  ref="titleField"
                   className="alf-text-full"
                   onKeyUp={this.textUpdate("title", 50)}>
                 </textarea>
@@ -101,6 +123,7 @@ class AddListingFirst extends React.Component {
               <span className="alf-field-title">Edit your description</span>
                 <div className="alf-input-row">
                   <textarea
+                    ref="descriptionField"
                     className="alf-text-full"
                     onKeyUp={this.textUpdate("description", 500)}>
                   </textarea>
@@ -120,7 +143,7 @@ class AddListingFirst extends React.Component {
 
             <div className="alf-nav">
               <Link to="/become-a-host" className="alf-back">Back</Link>
-              <button className={this.handleNext()}>Next</button>
+              <button className={this.handleNext()} onClick={this.handleNextClick}>Next</button>
             </div>
 
 
