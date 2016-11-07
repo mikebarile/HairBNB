@@ -74,7 +74,7 @@ class AddListingHome extends React.Component {
               <span className={this.handleButton("start-with-basics", "alh-step-name")}>STEP 1</span>
               <span className={this.handleButton("start-with-basics", "alh-step-title")}>Start with the basics</span>
               <span className={this.handleButton("start-with-basics", "alh-step-description")}>Listing title, description, etc.</span>
-              <Link to="/become-a-host/start-with-basics" className={this.handleButton("start-with-basics", "alh-step-button")}></Link>
+              <Link to="/become-a-host/basics" className={this.handleButton("start-with-basics", "alh-step-button")}></Link>
             </div>
             <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("start-with-basics", "alh-check")}></img>
           </div>
@@ -84,7 +84,7 @@ class AddListingHome extends React.Component {
               <span className={this.handleButton("set-the-scene", "alh-step-name")}>STEP 2</span>
               <span className={this.handleButton("set-the-scene", "alh-step-title")}>Set the scene</span>
               <span className={this.handleButton("set-the-scene", "alh-step-description")}>Amenities and house rules</span>
-              <button className={this.handleButton("set-the-scene", "alh-step-button")}></button>
+              <Link to="/become-a-host/scene" className={this.handleButton("set-the-scene", "alh-step-button")}></Link>
             </div>
             <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("set-the-scene", "alh-check")}></img>
           </div>
@@ -94,7 +94,7 @@ class AddListingHome extends React.Component {
               <span className={this.handleButton("ready-for-pups", "alh-step-name")}>STEP 3</span>
               <span className={this.handleButton("ready-for-pups", "alh-step-title")}>Get ready for pups</span>
               <span className={this.handleButton("ready-for-pups", "alh-step-description")}>Address information and price</span>
-              <button className={this.handleButton("ready-for-pups", "alh-step-button")}></button>
+              <Link to="become-a-host/ready" className={this.handleButton("ready-for-pups", "alh-step-button")}></Link>
             </div>
             <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("ready-for-pups", "alh-check")}></img>
           </div>

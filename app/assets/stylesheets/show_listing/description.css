@@ -8,10 +8,11 @@
 }
 
 .sl-about-row {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-bottom: 10px;
   border-bottom: 1px solid #C4C4C4;
   width: 100%;
 }
@@ -33,7 +34,7 @@
 .sl-section-header {
   font-family: pretty-font;
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 30px;
   width: 170px;
   min-width: 170px;
 }
@@ -48,12 +49,12 @@
 }
 
 .sl-amenities-cols {
-  margin-top: 10px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #C4C4C4;
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .sl-amenities-col {
@@ -93,7 +94,8 @@
 }
 
 .sl-rules-col {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

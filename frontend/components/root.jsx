@@ -40,9 +40,9 @@ const Root = ({ store }) => {
         <Route path="my-listings" component={MyListingsContainer} onEnter={redirectHome}/>
         <Route path="become-a-host" component={AddListingIndex} onEnter={redirectHome}>
           <IndexRoute component={AddListingHomeContainer}/>
-          <Route path="start-with-basics" component={AddListingFirstContainer} onEnter={redirectHome}/>
-          <Route path="set-the-scene" component={AddListingSecondContainer} onEnter={redirectHome}/>
-          <Route path="ready-for-pups" component={AddListingThirdContainer} onEnter={redirectHome}/>
+          <Route path="basics" component={AddListingFirstContainer} onEnter={redirectHome}/>
+          <Route path="scene" component={AddListingSecondContainer} onEnter={redirectHome}/>
+          <Route path="ready" component={AddListingThirdContainer} onEnter={redirectHome}/>
         </Route>
       </Route>
     </Router>
