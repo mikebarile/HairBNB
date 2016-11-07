@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class AddListingFirst extends React.Component {
   constructor(props) {
@@ -27,6 +27,7 @@ class AddListingFirst extends React.Component {
       e.target.style.height = "0px";
       e.target.style.height = (e.target.scrollHeight + 1)+"px";
       this.setState({[field]: max - e.target.value.length});
+      this.props.updateListingForm({[field]: e.target.value});
     };
   }
 
@@ -45,32 +46,42 @@ class AddListingFirst extends React.Component {
       <div className="add-listing-form">
         <div className="alf-first-half">
           <div className="alf-col-first">
-            <span className="alf-field-title">Name your place</span>
-            <div className="alf-input-row">
-              <textarea
-                className="alf-text-full"
-                onKeyUp={this.textUpdate("title", 50)}>
-              </textarea>
-              <span className={this.handleCounter("title", 10)}>{this.state.title}</span>
-            </div>
-
-            <span className="alf-field-title">Edit your description</span>
+            <div className="alf-form">
+              <span className="alf-field-title">Name your place</span>
               <div className="alf-input-row">
                 <textarea
                   className="alf-text-full"
-                  onKeyUp={this.textUpdate("description", 500)}>
+                  onKeyUp={this.textUpdate("title", 50)}>
                 </textarea>
-                <span className={this.handleCounter("description", 50)}>{this.state.description}</span>
+                <span className={this.handleCounter("title", 10)}>{this.state.title}</span>
               </div>
 
-            <span className="alf-field-title">Upload a photo</span>
-            <input type="file" className="alf-file"/>
+              <span className="alf-field-title">Edit your description</span>
+                <div className="alf-input-row">
+                  <textarea
+                    className="alf-text-full"
+                    onKeyUp={this.textUpdate("description", 500)}>
+                  </textarea>
+                  <span className={this.handleCounter("description", 50)}>{this.state.description}</span>
+                </div>
+
+              <span className="alf-field-title">Upload a photo</span>
+              <input type="file" className="alf-file"/>
+            </div>
+            <div className="alf-nav">
+              <Link to="/become-a-host" className="alf-back">Back</Link>
+
+              <button className="alf-next">Next</button>
+            </div>
+
+
           </div>
         </div>
 
         <div className="alf-second-half">
           <div className="alf-col-second">
             <div className="alf-tip-box">
+
             </div>
           </div>
         </div>
@@ -79,4 +90,4 @@ class AddListingFirst extends React.Component {
   }
 }
 
-export default AddListingFirst;
+export default withRouter(AddListingFirst);
