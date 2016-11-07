@@ -17,6 +17,7 @@ class AddListingFirst extends React.Component {
     this.upload = this.upload.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
+    this.handlePeriod = this.handlePeriod.bind(this);
   }
 
   componentDidMount() {
@@ -70,7 +71,7 @@ class AddListingFirst extends React.Component {
           }
           this.setState({image_errors: newErrors});
           if (newErrors.length === 0) {
-            this.setState({format: `.${file.format}`});
+            this.setState({format: file.format});
             this.setState({original_filename: file.original_filename});
             this.setState({url: file.secure_url});
             this.props.updateListingForm({
@@ -100,6 +101,15 @@ class AddListingFirst extends React.Component {
       this.state.url !== null && this.state.image_errors.length === 0) {
         this.props.updateListingForm({current_form: "set-the-scene"});
         this.props.router.push('/become-a-host/scene');
+    }
+  }
+
+  handlePeriod() {
+    if (this.state.url !== null) {
+      return ".";
+    }
+    else {
+      return null;
     }
   }
 
@@ -137,7 +147,7 @@ class AddListingFirst extends React.Component {
                 ))}
               </ul>
               <img className="alf-file-image" src={this.state.url}/>
-              <span className="alf-file-name">{this.state.original_filename}{this.state.format}</span>
+              <span className="alf-file-name">{this.state.original_filename}{this.handlePeriod()}{this.state.format}</span>
               <button onClick={this.upload} className="alf-upload">Upload Image</button>
             </div>
 
