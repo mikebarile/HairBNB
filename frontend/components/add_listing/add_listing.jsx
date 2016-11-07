@@ -5,6 +5,7 @@ import { merge } from 'lodash';
 class AddListingHome extends React.Component {
   constructor(props) {
     super(props);
+    this.handleHeader = this.handleHeader.bind(this);
   }
 
   componentDidMount() {
@@ -50,12 +51,23 @@ class AddListingHome extends React.Component {
     }
   }
 
+  handleHeader() {
+    let user = this.props.currentUser;
+    if (this.props.listingFormState.current_form === "home" ||
+      this.props.listingFormState.current_form === "step-one") {
+        return(<span>Hi, {user.first_name}! Let's get you ready to <br/> become a host.</span>);
+    }
+    else {
+      return (<span>Become a Hairbnb host</span>);
+    }
+  }
+
   render() {
     let user = this.props.currentUser;
     return (
       <div className="add-listing-home">
         <div className="alh-first-col">
-          <span className="alh-header">Hi, {user.first_name}! Let's get you ready to <br/> become a host.</span>
+          <span className="alh-header">{this.handleHeader()}</span>
 
           <div className="alh-step-container">
             <div className="alh-step-container-description">
@@ -64,7 +76,7 @@ class AddListingHome extends React.Component {
               <span className={this.handleButton("step-one", "alh-step-description")}>Listing title, description, etc.</span>
               <button className={this.handleButton("step-one", "alh-step-button")}></button>
             </div>
-            <img className={this.handleButton("step-one", "alh-check")}></img>
+            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("step-one", "alh-check")}></img>
           </div>
 
           <div className="alh-step-container">
@@ -74,7 +86,7 @@ class AddListingHome extends React.Component {
               <span className={this.handleButton("step-two", "alh-step-description")}>Amenities and house rules</span>
               <button className={this.handleButton("step-two", "alh-step-button")}></button>
             </div>
-            <img className={this.handleButton("step-two", "alh-check")}></img>
+            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("step-two", "alh-check")}></img>
           </div>
 
           <div className="alh-step-container">
@@ -84,7 +96,7 @@ class AddListingHome extends React.Component {
               <span className={this.handleButton("step-three", "alh-step-description")}>Address information and price</span>
               <button className={this.handleButton("step-three", "alh-step-button")}></button>
             </div>
-            <img className={this.handleButton("step-three", "alh-check")}></img>
+            <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("step-three", "alh-check")}></img>
           </div>
 
         </div>

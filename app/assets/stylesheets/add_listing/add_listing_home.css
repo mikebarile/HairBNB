@@ -129,5 +129,19 @@
 }
 
 .alh-step-button-dead {
+}
 
+.alh-check-next {
+  display: none;
+}
+
+.alh-check-previous {
+  background-color: #008489;
+  width: 40px;
+  height: 40px;
+  margin-top: 150px;
+}
+
+.alh-check-dead {
+  display: none;
 }
