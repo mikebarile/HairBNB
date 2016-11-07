@@ -51,7 +51,6 @@ class AddListingFirst extends React.Component {
     cloudinary.openUploadWidget(
       window.cloudinary_options,
       (error, images) => {
-        console.log(images[0]);
         if (error === null) {
           let file = images[0];
           let newErrors = [];
@@ -85,7 +84,6 @@ class AddListingFirst extends React.Component {
 
   render() {
     let user = this.props.currentUser;
-    console.log(this.props.listingFormState);
     return (
       <div className="add-listing-form">
         <div className="alf-first-half">
@@ -132,7 +130,10 @@ class AddListingFirst extends React.Component {
         <div className="alf-second-half">
           <div className="alf-col-second">
             <div className="alf-tip-box">
-
+              <img className="alh-tip-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478477881/Icons/Screen_Shot_2016-11-06_at_4.17.32_PM.png"/>
+              <span className="alf-tip-content">
+                This is your summary title and description. You can edit and change them as you see fit. Keeping it brief makes it easier for guests. Then just add a picture to get started!
+              </span>
             </div>
           </div>
         </div>
