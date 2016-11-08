@@ -52,7 +52,7 @@ class AddListingSecond extends React.Component {
         <div className="alf-first-half">
           <div className="alf-col-first">
             <div className="alf-form">
-              <span className="alf-field-title">Add amenities</span>
+              <span className="alf-field-title alf-extra-margin">Add amenities</span>
               <div className="alf-input-buttons">
                 <div className="alf-input-column">
                   <button className={this.handleButton("dog_walks")}
@@ -84,7 +84,7 @@ class AddListingSecond extends React.Component {
                 </div>
               </div>
 
-              <span className="alf-field-title">Add house rules</span>
+              <span className="alf-field-title alf-extra-margin">Add house rules</span>
                 <div className="alf-input-buttons alf-rules-col">
                   <div className="alf-input-column">
                     <button className={this.handleButton("barking")}

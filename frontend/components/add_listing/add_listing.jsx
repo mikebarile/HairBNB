@@ -36,7 +36,7 @@ class AddListingHome extends React.Component {
           return `${element}-next`;
         }
         else {
-          return `${element}-dead`;
+          return `${element}-previous`;
         }
       case "ready-for-pups":
         if (form === "ready-for-pups") {

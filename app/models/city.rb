@@ -1,3 +1,3 @@
 class City < ActiveRecord::Base
-  validates :city_name, :state, :country, presence: true
+  validates :city_name, :country, presence: true
 end

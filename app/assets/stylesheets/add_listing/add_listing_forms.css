@@ -254,6 +254,38 @@
   background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478566087/Icons/1194994263582955302add.svg.hi.png');
 }
 
+.alf-text-full-add {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #DCE0E0;
+  width: 430px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  margin-bottom: 20px;
+  -webkit-transition: border .3s;
+  transition: border .3s;
+  resize: none;
+}
+
+.alf-extra-margin {
+  margin-bottom: 40px;
+}
+
+.alf-text-full-add:focus {
+  border: 1px solid #484848;
+}
+
+.alf-add-title {
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+
 .alf-amenity-false:hover {
   background-color: #DCE0E0
 }
