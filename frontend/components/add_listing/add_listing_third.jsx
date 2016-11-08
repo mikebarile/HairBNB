@@ -52,9 +52,10 @@ class AddListingThird extends React.Component {
       state.zip_code !== "" &&
       state.state !== "" &&
       state.image_url !== null &&
-      state.apt_num !== "" &&
       state.description !== "" &&
-      state.price !== ""){
+      state.price !== "" &&
+      state.zip_code > 0 && state.zip_code < 99999 && state.zip_code.length === 5 &&
+      state.price > 0 && state.price <= 10000){
         this.props.createListing(state);
         this.props.clearListingForm();
         this.props.router.push('/my-listings');
@@ -63,13 +64,17 @@ class AddListingThird extends React.Component {
 
   textUpdate(field) {
     return (e) => {
-      this.props.updateListingForm({[field]: e.target.value});
+      let value = e.target.value;
+      if (e.target.value[0] === "$") {
+        value === e.target.value.slice(1);
+      }
+      this.props.updateListingForm({[field]: value});
     };
   }
 
   handleNext() {
     let state = this.props.listingFormState;
-    if (state.street_address !== "" && state.apt_num !== null &&
+    if (state.street_address !== "" &&
       state.city !== "" && state.state !== null &&
       state.zip_code !== null && state.price !== null)
       {
@@ -92,7 +97,7 @@ class AddListingThird extends React.Component {
     if (state.lat === null || state.lng === null) {
       this.setState({addressError: ["Invalid address, please try again"]});
     }
-    if (state.street_address !== "" && state.apt_num !== null &&
+    if (state.street_address !== "" &&
       state.city !== "" && state.state !== null &&
       state.zip_code !== null && state.price > 0 && state.price < 10000 || state.zip_code.length !== 5) {
         this.props.fetchCoords(state.street_address, state.city, state.state, state.zip_code, state.country);
@@ -305,7 +310,7 @@ class AddListingThird extends React.Component {
               </ul>
               <div className="alf-input-row">
                 <textarea
-                  placeholder="e.g. 100.00"
+                  placeholder="$0.00 - $10,000"
                   ref="priceField"
                   className="alf-text-full-add"
                   onKeyUp={this.textUpdate("price")}>
