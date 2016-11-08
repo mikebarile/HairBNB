@@ -7,8 +7,6 @@ import {fetchListing, fetchListings, createListing, deleteListing,
   editListing, fetchCoords
 } from '../util/listing_api_util';
 
-import Cloudinary from 'cloudinary';
-
 export default ({ getState, dispatch }) => next => action => {
   const receiveListingSuccess = listing => {
     dispatch(receiveListing(listing));
