@@ -69,6 +69,12 @@ class AddListingThird extends React.Component {
   handleNextClick(e) {
     e.preventDefault;
     let state = this.props.listingFormState;
+    if (state.zip_code <= 0 || state.zip_code >99999) {
+      this.setState({zipError: ["Invalid zip code"]});
+    }
+    if (state.price <=0 || state.price > 10000) {
+      this.setState({priceError: ["Price must be greater than $0.00 and less than $10,000"]});
+    }
     if (state.street_address !== "" && state.apt_num !== null &&
       state.city !== "" && state.state !== null &&
       state.zip_code !== null && state.price > 0 && state.price < 10000) {
@@ -261,6 +267,11 @@ class AddListingThird extends React.Component {
               </div>
 
               <span className="alf-add-title">Zip Code</span>
+                <ul className="alf-errors">
+                  {this.state.zipError.map((error, idx) => (
+                    <span key={idx} className="alf-error">{error}</span>
+                  ))}
+                </ul>
               <div className="alf-input-row">
                 <textarea
                   placeholder="e.g. 94102"
@@ -271,6 +282,11 @@ class AddListingThird extends React.Component {
               </div>
 
               <span className="alf-add-title">Price Per Night</span>
+              <ul className="alf-errors">
+                {this.state.priceError.map((error, idx) => (
+                  <span key={idx} className="alf-error">{error}</span>
+                ))}
+              </ul>
               <div className="alf-input-row">
                 <textarea
                   placeholder="e.g. 100.00"

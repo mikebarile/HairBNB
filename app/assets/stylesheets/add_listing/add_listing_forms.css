@@ -117,12 +117,12 @@
 }
 
 .alf-errors {
-  padding-bottom: 10px;
 }
 
 .alf-error {
   color: #B34143;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .alf-back {
