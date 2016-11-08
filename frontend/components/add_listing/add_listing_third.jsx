@@ -29,6 +29,19 @@ class AddListingThird extends React.Component {
     }
 
     let state = this.props.listingFormState;
+    console.log(state);
+    console.log(state.title !== "");
+    console.log(state.host_id !== null);
+    console.log(state.lat !== null);
+    console.log(state.lng !== null);
+    console.log(state.street_address !== "");
+    console.log(state.city !== "");
+    console.log(state.zip_code !== "");
+    console.log(state.state !== "");
+    console.log(state.image_url !== null);
+    console.log(state.apt_num !== "");
+    console.log(state.description !== "");
+    console.log(state.price !== "");
     if(state.title !== "" &&
       state.host_id !== null &&
       state.lat !== null &&
@@ -41,6 +54,7 @@ class AddListingThird extends React.Component {
       state.apt_num !== "" &&
       state.description !== "" &&
       state.price !== ""){
+        console.log('test');
         this.props.createListing(state);
         this.props.updateListingForm({current_form: "home"});
         this.props.router.push('/my-listings');
@@ -83,7 +97,6 @@ class AddListingThird extends React.Component {
   }
 
   render() {
-    console.log(this.props.listingFormState);
     let user = this.props.currentUser;
     return (
       <div className="add-listing-form">
@@ -260,7 +273,7 @@ class AddListingThird extends React.Component {
                       placeholder="e.g. CA"
                       ref="stateField"
                       className="alf-text-half-add"
-                      onKeyUp={this.textUpdate("city")}>
+                      onKeyUp={this.textUpdate("state")}>
                     </textarea>
                   </div>
                 </div>

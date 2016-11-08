@@ -20,7 +20,7 @@ export const fetchListings = (params, success, error) => {
 export const createListing = (listing, success, error) => {
   $.ajax({
     method: 'POST',
-    url: `api/session`,
+    url: `api/listings`,
     data: {"listing": listing},
     success,
     error
