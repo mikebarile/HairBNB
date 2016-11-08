@@ -18,6 +18,12 @@ class SearchBar extends React.Component {
     });
   }
 
+  handleDateType(newType, margin) {
+    return (e) => {
+      e.target.type = newType;
+    };
+  }
+
   handleSubmit() {
 
   }
@@ -26,35 +32,56 @@ class SearchBar extends React.Component {
     return(
       <div className="home-search-bar">
         <div className="home-input-container">
-          <input
-            onChange={this.update("city")}
-            className="home-search-city"
-            type="text"
-            placeholder="Where to?"/>
-          <br/>
 
-          <input
-            onChange={this.update("check_in")}
-            className="home-search-date"
-            type="text"
-            placeholder="Check in"/>
-          <br/>
+          <div className="hsb-where-col">
+            <span className="hsb-sub-title">Where</span>
+            <input
+              onChange={this.update("city")}
+              className="home-search-city"
+              type="text"
+              placeholder="Destination, city, address"/>
+          </div>
 
-          <img className="home-arrow-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478132097/Icons/Arrows-Right-icon_wgfi7w.png"/>
+          <div className="hsb-when-col">
+            <span className="hsb-sub-title">When</span>
+            <div className="hsb-input-row">
+              <input
+                onChange={this.update("check_in")}
+                className="home-search-date"
+                type="text"
+                onFocus={this.handleDateType("date")}
+                onBlur={this.handleDateType("text")}
+                placeholder="Check In"/>
 
-          <input
-            onChange={this.update("check_out")}
-            className="home-search-date"
-            type="text"
-            placeholder="Check out"/>
-          <br/>
+              <img className="home-arrow-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478132097/Icons/Arrows-Right-icon_wgfi7w.png"/>
+
+              <input
+                onChange={this.update("check_out")}
+                className="home-search-date"
+                type="text"
+                onFocus={this.handleDateType("date")}
+                onBlur={this.handleDateType("text")}
+                placeholder="Check Out"/>
+            </div>
+          </div>
         </div>
 
-        <button
-          className="home-search-button"
-          onClick={this.handleSubmit}>Search
-        </button>
+        <div className="hsb-guest-row">
+          <div className="hsb-guest-col">
+            <span className="hsb-sub-title">Dogs</span>
+            <select className="home-search-guest">
+              <option value='1'>1 Dog</option>
+              <option value='2'>2 Dogs</option>
+              <option value='3'>3 Dogs</option>
+              <option value='4'>4 Dogs</option>
+            </select>
+          </div>
 
+          <button
+            className="home-search-button"
+            onClick={this.handleSubmit}>Search
+          </button>
+        </div>
       </div>
     );
   }

@@ -45,11 +45,13 @@ const Root = ({ store }) => {
           <Route path="scene" component={AddListingSecondContainer} onEnter={redirectHome}/>
           <Route path="ready" component={AddListingThirdContainer} onEnter={redirectHome}/>
         </Route>
-        <Route path="search" component={SearchContainer}/>
+
       </Route>
     </Router>
   </Provider>
 );
 };
+
+// <Route path="search" component={SearchContainer}/>
 
 export default Root;
