@@ -29,7 +29,6 @@ export default ({ getState, dispatch }) => next => action => {
   };
 
   const receiveCoordsSuccess = (data) => {
-    console.log(data);
     let lat = data.results[0].geometry.location.lat;
     let lng = data.results[0].geometry.location.lng;
     dispatch(updateListingForm({lat, lng}));

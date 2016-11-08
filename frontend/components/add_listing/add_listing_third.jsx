@@ -19,8 +19,6 @@ class AddListingThird extends React.Component {
       this.props.router.replace('/home');
     }
 
-    console.log(this.props.listingFormState.current_form);
-
     if(this.props.listingFormState.current_form === "home" ||
       this.props.listingFormState.current_form === "start-with-basics" ||
       this.props.listingFormState.current_form === "set-the-scene"){
@@ -41,13 +39,6 @@ class AddListingThird extends React.Component {
     if(this.props.currentUser === null){
       this.props.router.replace('/home');
     }
-
-    console.log(this.state.zipError);
-    console.log(this.state.priceError);
-    console.log(this.state.addressError);
-    console.log(this.state.zipError.length === 0);
-    console.log(this.state.priceError === []);
-    console.log(this.state.addressError === []);
 
     if(state.title !== "" &&
       state.host_id !== null &&
@@ -74,7 +65,7 @@ class AddListingThird extends React.Component {
     return (e) => {
       let value = e.target.value;
       if (e.target.value[0] === "$") {
-        value === e.target.value.slice(1);
+        value = e.target.value.slice(1);
       }
       this.props.updateListingForm({[field]: value});
     };
