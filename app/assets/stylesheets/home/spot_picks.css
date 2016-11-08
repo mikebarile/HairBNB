@@ -8,7 +8,7 @@
   align-items: flex-start;;
   color: #4F4F4F;
   font-family: pretty-font;
-  width: 65%;
+  width: 75%;
 }
 
 .home-main-header {
@@ -32,7 +32,7 @@
 
 .home-pick-img {
   width: 100%;
-  height: 200px;
+  height: 235px;
 }
 
 .home-pick-description {

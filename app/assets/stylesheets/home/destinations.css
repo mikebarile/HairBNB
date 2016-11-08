@@ -7,11 +7,11 @@
   align-items: flex-start;;
   color: #4F4F4F;
   font-family: pretty-font;
-  width: 65%;
+  width: 75%;
 }
 
 .home-destinations-row {
-  height: 280px;
+  height: 355px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -20,7 +20,7 @@
 }
 
 .home-destination-sub-row {
-  height: 280px;
+  height: 355px;
   width: 24%;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
 
 .home-destination-big {
   width: 49%;
-  height: 280px;
+  height: 355px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -48,7 +48,7 @@
 
 .home-destination-small {
   display: flex;
-  height: 135px;
+  height: 172px;
   width: 100%;
   justify-content: flex-start;
   align-items: flex-end;
