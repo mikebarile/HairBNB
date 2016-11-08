@@ -59,13 +59,15 @@
 }
 
 .become-a-host {
+  padding: 0 22px 0 22px;
+  border-left: 1px solid #DCE0E0;
+  height: 60px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
   width: 120px;
   padding-right: 18px;
   border-left: 0;
-}
-
-.become-a-host:hover {
-  cursor: pointer;
 }
 
 .become-a-host-link {
@@ -73,6 +75,11 @@
   padding: 7px;
   border-radius: 5px;
   max-height: 15px;
+}
+
+.become-a-host-link:hover {
+  cursor: pointer;
+  background-color: #F5F5F5;
 }
 
 .user-button-new {
