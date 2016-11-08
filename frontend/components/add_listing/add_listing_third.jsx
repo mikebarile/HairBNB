@@ -197,7 +197,7 @@ class AddListingThird extends React.Component {
                 </textarea>
               </div>
 
-              <span className="alf-add-title">Apartment Number (optional)</span>
+              <span className="alf-add-title">Apt, Suite, Bldg. (optional)</span>
               <div className="alf-input-row">
                 <textarea
                   ref="aptField"
@@ -207,23 +207,39 @@ class AddListingThird extends React.Component {
                 </textarea>
               </div>
 
+              <div className="alf-add-row">
+                <div className="alf-add-col">
+                  <span className="alf-add-title">City</span>
+                  <div className="alf-input-row">
+                    <textarea
+                      placeholder="e.g. San Francisco"
+                      ref="cityField"
+                      className="alf-text-half-add"
+                      onKeyUp={this.textUpdate("city")}>
+                    </textarea>
+                  </div>
+                </div>
+
+                <div className="alf-add-col">
+                  <span className="alf-add-title">State</span>
+                  <div className="alf-input-row">
+                    <textarea
+                      placeholder="e.g. CA"
+                      ref="stateField"
+                      className="alf-text-half-add"
+                      onKeyUp={this.textUpdate("city")}>
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+
               <span className="alf-add-title">Zip Code</span>
               <div className="alf-input-row">
                 <textarea
                   placeholder="e.g. 94102"
                   ref="zipField"
-                  className="alf-text-full-add"
+                  className="alf-text-half-add"
                   onKeyUp={this.textUpdate("zip_code", 50)}>
-                </textarea>
-              </div>
-
-              <span className="alf-add-title">City</span>
-              <div className="alf-input-row">
-                <textarea
-                  placeholder="e.g. San Francisco"
-                  ref="cityField"
-                  className="alf-text-full-add"
-                  onKeyUp={this.textUpdate("city")}>
                 </textarea>
               </div>
 
