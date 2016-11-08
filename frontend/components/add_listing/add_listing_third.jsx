@@ -26,8 +26,6 @@ class AddListingThird extends React.Component {
       this.props.listingFormState.current_form === "set-the-scene"){
         this.props.router.replace('/become-a-host');
       }
-
-
     this.refs.countryField.value = this.props.listingFormState.country;
     this.refs.streetField = this.props.listingFormState.street_address;
     this.refs.aptField = this.props.listingFormState.apt_num;
@@ -38,11 +36,19 @@ class AddListingThird extends React.Component {
   }
 
   componentDidUpdate() {
+    let state = this.props.listingFormState;
+
     if(this.props.currentUser === null){
       this.props.router.replace('/home');
     }
 
-    let state = this.props.listingFormState;
+    console.log(this.state.zipError);
+    console.log(this.state.priceError);
+    console.log(this.state.addressError);
+    console.log(this.state.zipError.length === 0);
+    console.log(this.state.priceError === []);
+    console.log(this.state.addressError === []);
+
     if(state.title !== "" &&
       state.host_id !== null &&
       state.lat !== null &&
@@ -54,8 +60,10 @@ class AddListingThird extends React.Component {
       state.image_url !== null &&
       state.description !== "" &&
       state.price !== "" &&
-      state.zip_code > 0 && state.zip_code < 99999 && state.zip_code.length === 5 &&
-      state.price > 0 && state.price <= 10000){
+      state.zip_code > 0 && state.zip_code <= 99999 && state.zip_code.length === 5 &&
+      state.price > 0 && state.price <= 10000 &&
+      this.state.zipError.length === 0 && this.state.priceError.length === 0 &&
+      this.state.addressError.length === 0){
         this.props.createListing(state);
         this.props.clearListingForm();
         this.props.router.push('/my-listings');
@@ -91,15 +99,25 @@ class AddListingThird extends React.Component {
     if (state.zip_code <= 0 || state.zip_code >99999 || state.zip_code.length !== 5) {
       this.setState({zipError: ["Invalid zip code"]});
     }
+    else {
+      this.setState({zipError: []});
+    }
     if (!(state.price > 0 && state.price <= 10000)) {
       this.setState({priceError: ["Price must be greater than $0.00 and less than $10,000"]});
+    }
+    else {
+      this.setState({priceError: []});
     }
     if (state.lat === null || state.lng === null) {
       this.setState({addressError: ["Invalid address, please try again"]});
     }
+    else {
+      this.setState({addressError: []});
+    }
     if (state.street_address !== "" &&
       state.city !== "" && state.state !== null &&
-      state.zip_code !== null && state.price > 0 && state.price < 10000 || state.zip_code.length !== 5) {
+      state.zip_code > 0 && state.zip_code <= 99999 && state.zip_code.length === 5 &&
+      state.price > 0 && state.price < 10000) {
         this.props.fetchCoords(state.street_address, state.city, state.state, state.zip_code, state.country);
     }
   }
@@ -112,6 +130,12 @@ class AddListingThird extends React.Component {
           <div className="alf-col-first">
             <div className="alf-form">
               <span className="alf-field-title alf-extra-margin">Where's your place located?</span>
+
+              <ul className="alf-errors">
+                {this.state.addressError.map((error, idx) => (
+                  <span key={idx} className="alf-error">{error}</span>
+                ))}
+              </ul>
 
               <span className="alf-add-title">Country</span>
               <div className="alf-input-row">
