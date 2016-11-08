@@ -193,6 +193,7 @@
 .alf-tip-content {
   color: #767676;
   margin-left: 25px;
+  margin-right: 10px;
   margin-top: 5px;
   font-size: 14px;
   line-height: 25px;
@@ -212,11 +213,11 @@
 }
 
 .alf-amenity-true {
-  width: 205px;
+  width: 170px;
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   font-size: 16px;
   height: 45px;
   font-weight: 500;
@@ -224,7 +225,7 @@
   background-repeat: no-repeat;
   background-position: 5% 50%;
   margin-bottom: 20px;
-  padding-right: 15px;
+  padding-left: 50px;
   border-radius: 4px;
   background-color: #4DDFD4;
 }
@@ -255,6 +256,12 @@
 
 .alf-amenity-false:hover {
   background-color: #DCE0E0
+}
+
+.alf-rules-col{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0;
 }
 
 .alf-dog_walks {
@@ -292,4 +299,30 @@
 
 .alf-grooming {
   background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478377953/Icons/amenities/grooming.png');
+}
+
+.alf-barking {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478567999/Icons/80e6b27b.png');
+  background-size: 25px 25px;
+}
+
+.alf-indoor_pee {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478567999/Icons/80e6b27b.png');
+  background-size: 25px 25px;
+}
+.alf-indoor_poop {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478567999/Icons/80e6b27b.png');
+  background-size: 25px 25px;
+}
+.alf-begging {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478567999/Icons/80e6b27b.png');
+  background-size: 25px 25px;
+}
+.alf-whining {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478567999/Icons/80e6b27b.png');
+  background-size: 25px 25px;
+}
+.alf-shedding {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478567999/Icons/80e6b27b.png');
+  background-size: 25px 25px;
 }

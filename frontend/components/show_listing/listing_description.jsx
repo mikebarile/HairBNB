@@ -65,7 +65,7 @@ class Description extends React.Component {
               <div className="sl-amenities-col">
                 <span className={this.handleAmenity(listing.gourmet_food, "sl-dog-food")}>Gourmet dog food</span>
                 <span className={this.handleAmenity(listing.chew_toys, "sl-chew-toys")}>Chew toys</span>
-                <span className={this.handleAmenity(listing.frisbee, "sl-frisbee")}>Daily frisbee sessions</span>
+                <span className={this.handleAmenity(listing.frisbee, "sl-frisbee")}>Frisbee sessions</span>
                 <span className={this.handleAmenity(listing.mailman, "sl-mailman")}>Mailman visits</span>
                 <span className={this.handleAmenity(listing.grooming, "sl-grooming")}>Free grooming</span>
               </div>

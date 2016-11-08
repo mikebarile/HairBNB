@@ -40,9 +40,9 @@ class AddListingSecond extends React.Component {
   handleButtonClick(field) {
     return (e) => {
       e.preventDefault();
-      let truthy = !(this.props.listingFormState[field])
-      this.props.updateListingForm({[field]: truthy})
-    }
+      let truthy = !(this.props.listingFormState[field]);
+      this.props.updateListingForm({[field]: truthy});
+    };
   }
 
   render() {
@@ -75,7 +75,7 @@ class AddListingSecond extends React.Component {
                   <button className={this.handleButton("chew_toys")}
                     onClick={this.handleButtonClick("chew_toys")}>Chew toys</button>
                   <button className={this.handleButton("frisbee")}
-                    onClick={this.handleButtonClick("frisbee")}>Daily frisbee sessions
+                    onClick={this.handleButtonClick("frisbee")}>Frisbee sessions
                   </button>
                   <button className={this.handleButton("mailman")}
                     onClick={this.handleButtonClick("mailman")}>Mailman visits</button>
@@ -85,6 +85,25 @@ class AddListingSecond extends React.Component {
               </div>
 
               <span className="alf-field-title">Add house rules</span>
+                <div className="alf-input-buttons alf-rules-col">
+                  <div className="alf-input-column">
+                    <button className={this.handleButton("barking")}
+                      onClick={this.handleButtonClick("barking")}>No barking
+                    </button>
+                    <button className={this.handleButton("indoor_pee")}
+                      onClick={this.handleButtonClick("indoor_pee")}>No peeing indoors
+                    </button>
+                    <button className={this.handleButton("indoor_poop")}
+                      onClick={this.handleButtonClick("indoor_poop")}>No indoor poop
+                    </button>
+                    <button className={this.handleButton("whining")}
+                      onClick={this.handleButtonClick("whining")}>No whining</button>
+                    <button className={this.handleButton("shedding")}
+                      onClick={this.handleButtonClick("shedding")}>No Shedding</button>
+                    <button className={this.handleButton("begging")}
+                      onClick={this.handleButtonClick("begging")}>No begging for food</button>
+                  </div>
+                </div>
 
             </div>
 
@@ -92,7 +111,6 @@ class AddListingSecond extends React.Component {
               <Link to="/become-a-host/basics" className="alf-back">Back</Link>
               <button className={this.handleNext()} onClick={this.handleNextClick}>Next</button>
             </div>
-
 
           </div>
         </div>
@@ -102,7 +120,7 @@ class AddListingSecond extends React.Component {
             <div className="alf-tip-box">
               <img className="alh-tip-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478477881/Icons/Screen_Shot_2016-11-06_at_4.17.32_PM.png"/>
               <span className="alf-tip-content">
-                This is your summary title and description. You can edit and change them as you see fit. Keeping it brief makes it easier for guests. Then just add a picture to get started!
+                Dogs love amenities! And they don't like rules. I mean, they <u>really</u> don't like rules. The more amenities and fewer rules you add, the more pups you can expect to see in your future!
               </span>
             </div>
           </div>
