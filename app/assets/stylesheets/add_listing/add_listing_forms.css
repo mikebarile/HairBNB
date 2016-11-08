@@ -273,6 +273,32 @@
   resize: none;
 }
 
+.alf-country {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  display: flex;
+  font-family: pretty-font;
+  font-size: 16px;
+  height: 64px;
+  padding-left: 20px;
+  color: #484848;
+  border: 1px solid #AAAAAA;
+  width: 470px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  background-size: 16px 10px;
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478576077/Icons/Screen_Shot_2016-11-07_at_7.32.28_PM.png');
+  margin-bottom: 20px;
+  -webkit-transition: border .3s;
+  transition: border .3s;
+  resize: none;
+}
+
 .alf-extra-margin {
   margin-bottom: 40px;
 }
