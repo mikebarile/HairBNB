@@ -11,7 +11,6 @@ import AddListingHomeContainer from './add_listing/add_listing_home_container';
 import AddListingFirstContainer from './add_listing/add_listing_first_container';
 import AddListingSecondContainer from './add_listing/add_listing_second_container';
 import AddListingThirdContainer from './add_listing/add_listing_third_container';
-import SearchContainer from './search/search_container';
 
 
 const Root = ({ store }) => {
@@ -51,7 +50,5 @@ const Root = ({ store }) => {
   </Provider>
 );
 };
-
-// <Route path="search" component={SearchContainer}/>
 
 export default Root;
