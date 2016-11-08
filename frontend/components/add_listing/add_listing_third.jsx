@@ -15,6 +15,19 @@ class AddListingThird extends React.Component {
   }
 
   componentDidMount() {
+    if(this.props.currentUser === null){
+      this.props.router.replace('/home');
+    }
+
+    console.log(this.props.listingFormState.current_form);
+
+    if(this.props.listingFormState.current_form === "home" ||
+      this.props.listingFormState.current_form === "start-with-basics" ||
+      this.props.listingFormState.current_form === "set-the-scene"){
+        this.props.router.replace('/become-a-host');
+      }
+
+
     this.refs.countryField.value = this.props.listingFormState.country;
     this.refs.streetField = this.props.listingFormState.street_address;
     this.refs.aptField = this.props.listingFormState.apt_num;
@@ -28,12 +41,6 @@ class AddListingThird extends React.Component {
     if(this.props.currentUser === null){
       this.props.router.replace('/home');
     }
-
-    if(this.props.listingFormState.current_form === "home" ||
-      this.props.listingFormState.current_form === "start-with-basics" ||
-      this.props.listingFormState.current_form === "set-the-scene"){
-        this.props.router.replace('/become-a-host');
-      }
 
     let state = this.props.listingFormState;
     if(state.title !== "" &&

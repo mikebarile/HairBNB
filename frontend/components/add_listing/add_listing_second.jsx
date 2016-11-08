@@ -9,17 +9,16 @@ class AddListingSecond extends React.Component {
   }
 
   componentDidMount() {
+    if(this.props.listingFormState.current_form === "home" ||
+      this.props.listingFormState.current_form === "start-with-basics"){
+        this.props.router.replace('/become-a-host');
+      }
   }
 
   componentDidUpdate() {
     if(this.props.currentUser === null){
       this.props.router.replace('/home');
     }
-
-    if(this.props.listingFormState.current_form === "home" ||
-      this.props.listingFormState.current_form === "start-with-basics"){
-        this.props.router.replace('/become-a-host');
-      }
   }
 
   handleNext() {
