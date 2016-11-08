@@ -64,7 +64,7 @@ class AddListingThird extends React.Component {
     let state = this.props.listingFormState;
     if (state.street_address !== "" && state.apt_num !== null &&
       state.city !== "" && state.state !== null &&
-      state.zip_code !== null && state.price > 0 && state.price < 10000)
+      state.zip_code !== null && state.price !== null)
       {
         return "alf-next";
       }
@@ -79,7 +79,7 @@ class AddListingThird extends React.Component {
     if (state.zip_code <= 0 || state.zip_code >99999 || state.zip_code.length !== 5) {
       this.setState({zipError: ["Invalid zip code"]});
     }
-    if (state.price <=0 || state.price > 10000) {
+    if (!(state.price > 0 && state.price <= 10000)) {
       this.setState({priceError: ["Price must be greater than $0.00 and less than $10,000"]});
     }
     if (state.lat === null || state.lng === null) {
