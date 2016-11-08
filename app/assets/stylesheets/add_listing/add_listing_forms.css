@@ -197,3 +197,99 @@
   font-size: 14px;
   line-height: 25px;
 }
+
+.alf-input-buttons {
+  display: flex;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #DCE0E0;
+}
+
+.alf-input-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.alf-amenity-true {
+  width: 205px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 16px;
+  height: 45px;
+  font-weight: 500;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+  margin-bottom: 20px;
+  padding-right: 15px;
+  border-radius: 4px;
+  background-color: #4DDFD4;
+}
+
+.alf-amenity-true:hover {
+  background-color: #00A699;
+}
+
+.alf-amenity-false {
+  width: 205px;
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-radius: 4px;
+  background-color: #C7C9C9;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478566087/Icons/1194994263582955302add.svg.hi.png');
+}
+
+.alf-amenity-false:hover {
+  background-color: #DCE0E0
+}
+
+.alf-dog_walks {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478565304/Icons/20983.png');
+}
+
+.alf-deluxe_bed {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478377852/Icons/amenities/dog-bed.png');
+}
+
+.alf-house_cat {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478565371/Icons/cat.png');
+}
+
+.alf-cuddle_buddy {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478377956/Icons/amenities/cuddle.png');
+}
+
+.alf-gourmet_food {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478377860/Icons/amenities/dog-food.png');
+}
+
+.alf-chew_toys {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478379134/Icons/amenities/nature-dog-bone-icons-4.png');
+  background-size: 25px 25px;
+}
+
+.alf-frisbee {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478377865/Icons/amenities/frisbee.png');
+}
+
+.alf-mailman {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478377952/Icons/amenities/mailman.png');
+}
+
+.alf-grooming {
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478377953/Icons/amenities/grooming.png');
+}
