@@ -44,3 +44,7 @@
     display: none;
     -webkit-appearance: none;
 }
+
+input[type=date] {
+  font-size: 17px;
+}

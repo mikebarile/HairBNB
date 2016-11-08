@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Geosuggest from 'react-geosuggest';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -7,8 +8,9 @@ class SearchBar extends React.Component {
       this.state = {
           city: "",
           check_in: "",
-          check_out: ""
+          check_out: "",
       };
+      this.update = this.update.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -35,11 +37,10 @@ class SearchBar extends React.Component {
 
           <div className="hsb-where-col">
             <span className="hsb-sub-title">Where</span>
-            <input
-              onChange={this.update("city")}
+            <Geosuggest
               className="home-search-city"
-              type="text"
-              placeholder="Destination, city, address"/>
+              placeholder="Destination, city, address"
+            />
           </div>
 
           <div className="hsb-when-col">

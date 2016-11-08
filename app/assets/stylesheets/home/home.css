@@ -88,13 +88,78 @@
 }
 
 .home-search-city {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 5px;
+
   font-size: 18px;
   border-radius: 2px 0px 0px 2px;
   height: 100%;
   width: 100%;
+}
+
+.geosuggest {
+  font-size: 18px;
+  font-size: 1rem;
+  position: relative;
+  width: 329px;
+  margin-left: 5px;
+  text-align: left;
+}
+
+.geosuggest__input {
+  width: 329px;
+  font-size: 18px;
+  font-family: pretty-font;
+  padding: 10px;
+  -webkit-transition: border 0.2s, box-shadow 0.2s;
+          transition: border 0.2s, box-shadow 0.2s;
+}
+.geosuggest__input:focus {
+  outline:none;
+     border:1px solid #4D90FE;
+     -webkit-box-shadow: 0px 0px 5px  #4D90FE;
+     box-shadow: 0px 0px 5px  #4D90FE;
+}
+.geosuggest__suggests {
+  position: absolute;
+  font-size: 12px;
+  top: 100%;
+  left: 0;
+  width: 354px;
+  right: 300px;
+  max-height: 25em;
+  margin-top: 1px;
+  border-radius: 0 0px 3px 3px;
+  background: #fff;
+  border: 1px solid #ABABAB;
+  border-top-width: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  list-style: none;
+  z-index: 5;
+  -webkit-transition: max-height 0.2s, border 0.2s;
+          transition: max-height 0.2s, border 0.2s;
+}
+.geosuggest__suggests--hidden {
+  max-height: 0;
+  overflow: hidden;
+  border-width: 0;
+}
+
+.geosuggest__item {
+  font-size: 14px;
+  padding: .5em .65em;
+  cursor: pointer;
+}
+.geosuggest__item:hover,
+.geosuggest__item:focus {
+  background: #f5f5f5;
+}
+.geosuggest__item--active {
+  background: #267dc0;
+  color: #fff;
+}
+.geosuggest__item--active:hover,
+.geosuggest__item--active:focus {
+  background: #ccc;
 }
 
 .home-search-date {
@@ -107,16 +172,8 @@
   display: flex;
 }
 
-.home-search-date::-webkit-datetime-edit-text {
-  margin: 0px;
-  padding: 0px;
-  align-self: flex-start;
-}
-
-.home-search-date::-webkit-calendar-picker-indicator {
-  margin-right: 5px;
-  padding-left: 0px;
-  margin-left: 0px;
+input[type=date] {
+  font-size: 17px;
 }
 
 .hsb-guest-row {
@@ -135,7 +192,8 @@
 }
 
 .home-search-guest {
-  margin-left: 15px;
+  margin-left: 5px;
+  padding-left: 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
