@@ -6,7 +6,8 @@ class AddListingThird extends React.Component {
     super(props);
     this.state = {
       zipError: [],
-      priceError: []
+      priceError: [],
+      addressError: []
     };
     this.textUpdate = this.textUpdate.bind(this);
     this.handleNext = this.handleNext.bind(this);
@@ -28,20 +29,13 @@ class AddListingThird extends React.Component {
       this.props.router.replace('/home');
     }
 
+    if(this.props.listingFormState.current_form === "home" ||
+      this.props.listingFormState.current_form === "start-with-basics" ||
+      this.props.listingFormState.current_form === "set-the-scene"){
+        this.props.router.replace('/become-a-host');
+      }
+
     let state = this.props.listingFormState;
-    console.log(state);
-    console.log(state.title !== "");
-    console.log(state.host_id !== null);
-    console.log(state.lat !== null);
-    console.log(state.lng !== null);
-    console.log(state.street_address !== "");
-    console.log(state.city !== "");
-    console.log(state.zip_code !== "");
-    console.log(state.state !== "");
-    console.log(state.image_url !== null);
-    console.log(state.apt_num !== "");
-    console.log(state.description !== "");
-    console.log(state.price !== "");
     if(state.title !== "" &&
       state.host_id !== null &&
       state.lat !== null &&
@@ -54,9 +48,8 @@ class AddListingThird extends React.Component {
       state.apt_num !== "" &&
       state.description !== "" &&
       state.price !== ""){
-        console.log('test');
         this.props.createListing(state);
-        this.props.updateListingForm({current_form: "home"});
+        this.props.clearListingForm();
         this.props.router.push('/my-listings');
     }
   }
@@ -83,15 +76,18 @@ class AddListingThird extends React.Component {
   handleNextClick(e) {
     e.preventDefault;
     let state = this.props.listingFormState;
-    if (state.zip_code <= 0 || state.zip_code >99999) {
+    if (state.zip_code <= 0 || state.zip_code >99999 || state.zip_code.length !== 5) {
       this.setState({zipError: ["Invalid zip code"]});
     }
     if (state.price <=0 || state.price > 10000) {
       this.setState({priceError: ["Price must be greater than $0.00 and less than $10,000"]});
     }
+    if (state.lat === null || state.lng === null) {
+      this.setState({addressError: ["Invalid address, please try again"]});
+    }
     if (state.street_address !== "" && state.apt_num !== null &&
       state.city !== "" && state.state !== null &&
-      state.zip_code !== null && state.price > 0 && state.price < 10000) {
+      state.zip_code !== null && state.price > 0 && state.price < 10000 || state.zip_code.length !== 5) {
         this.props.fetchCoords(state.street_address, state.city, state.state, state.zip_code, state.country);
     }
   }

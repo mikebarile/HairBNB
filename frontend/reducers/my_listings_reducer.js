@@ -10,7 +10,7 @@ const MyListingsReducer = (state = defaultState, action) => {
     case RECEIVE_MY_LISTINGS:
       return action.listings;
     case RECEIVE_NEW_LISTING:
-      let newState = merge({}, state);
+      let newState = state.slice(0);
       newState.push(action.listing);
       return newState;
     case CLEAR_STATE:
