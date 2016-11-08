@@ -81,7 +81,6 @@
 
 .alf-text-full:focus {
   border: 1px solid #484848;
-  box-shadow: 0 0 6px #3F7BB8;
 }
 
 .alf-upload {
@@ -276,7 +275,6 @@
 
 .alf-text-full-add:focus {
   border: 1px solid #484848;
-  box-shadow: 0 0 6px #3F7BB8;
 }
 
 .alf-text-half-add {
@@ -300,7 +298,6 @@
 
 .alf-text-half-add:focus {
   border: 1px solid #484848;
-  box-shadow: 0 0 6px #3F7BB8;
 }
 
 .alf-country {

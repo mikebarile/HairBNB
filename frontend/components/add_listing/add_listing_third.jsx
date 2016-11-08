@@ -5,7 +5,8 @@ class AddListingThird extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      zipError: [],
+      priceError: []
     };
     this.textUpdate = this.textUpdate.bind(this);
     this.handleNext = this.handleNext.bind(this);
@@ -13,29 +14,53 @@ class AddListingThird extends React.Component {
   }
 
   componentDidMount() {
+    this.refs.countryField.value = this.props.listingFormState.country;
+    this.refs.streetField = this.props.listingFormState.street_address;
+    this.refs.aptField = this.props.listingFormState.apt_num;
+    this.refs.cityField = this.props.listingFormState.city;
+    this.refs.stateField = this.props.listingFormState.state;
+    this.refs.zipField = this.props.listingFormState.zip_code;
+    this.refs.priceField = this.props.listingFormState.price;
   }
 
   componentDidUpdate() {
     if(this.props.currentUser === null){
       this.props.router.replace('/home');
     }
+
+    let state = this.props.listingFormState;
+    if(state.title !== "" &&
+      state.host_id !== null &&
+      state.lat !== null &&
+      state.lng !== null &&
+      state.street_address !== "" &&
+      state.city !== "" &&
+      state.zip_code !== "" &&
+      state.state !== "" &&
+      state.image_url !== null &&
+      state.apt_num !== "" &&
+      state.description !== "" &&
+      state.price !== ""){
+        this.props.createListing(state);
+        this.props.updateListingForm({current_form: "home"});
+        this.props.router.push('/my-listings');
+    }
   }
 
-  textUpdate(field, max) {
+  textUpdate(field) {
     return (e) => {
-      e.target.style.height = "0px";
-      e.target.style.height = (e.target.scrollHeight + 1)+"px";
-      this.setState({[field]: max - e.target.value.length});
       this.props.updateListingForm({[field]: e.target.value});
     };
   }
 
   handleNext() {
-    if (this.state.title < 50 && this.state.title >=0 &&
-      this.state.description < 500 && this.state.description >= 0 &&
-      this.state.url !== null && this.state.image_errors.length === 0) {
+    let state = this.props.listingFormState;
+    if (state.street_address !== "" && state.apt_num !== null &&
+      state.city !== "" && state.state !== null &&
+      state.zip_code !== null && state.price > 0 && state.price < 10000)
+      {
         return "alf-next";
-    }
+      }
     else {
       return "alf-next-dead";
     }
@@ -43,15 +68,16 @@ class AddListingThird extends React.Component {
 
   handleNextClick(e) {
     e.preventDefault;
-    if (this.state.title < 50 && this.state.title >=0 &&
-      this.state.description < 500 && this.state.description >= 0 &&
-      this.state.url !== null && this.state.image_errors.length === 0) {
-        this.props.updateListingForm({current_form: "set-the-scene"});
-        this.props.router.push('/become-a-host/scene');
+    let state = this.props.listingFormState;
+    if (state.street_address !== "" && state.apt_num !== null &&
+      state.city !== "" && state.state !== null &&
+      state.zip_code !== null && state.price > 0 && state.price < 10000) {
+        this.props.fetchCoords(state.street_address, state.city, state.state, state.zip_code, state.country);
     }
   }
 
   render() {
+    console.log(this.props.listingFormState);
     let user = this.props.currentUser;
     return (
       <div className="add-listing-form">
@@ -64,7 +90,8 @@ class AddListingThird extends React.Component {
               <div className="alf-input-row">
                 <select
                   ref="countryField"
-                  className="alf-country">
+                  className="alf-country"
+                  onChange={this.textUpdate("country")}>
                   <option value='Afghanistan'>Afghanistan</option>
                   <option value='Algeria'>Algeria</option>
                   <option value='Angola'>Angola</option>
@@ -176,7 +203,7 @@ class AddListingThird extends React.Component {
                   <option value='Ukraine'>Ukraine</option>
                   <option value='United Arab Emirates'>United Arab Emirates</option>
                   <option value='United Kingdom'>United Kingdom</option>
-                  <option value='United States' selected>United States</option>
+                  <option value='United States'>United States</option>
                   <option value='Uruguay'>Uruguay</option>
                   <option value='Uzbekistan'>Uzbekistan</option>
                   <option value='Venezuela'>Venezuela</option>
@@ -193,7 +220,7 @@ class AddListingThird extends React.Component {
                   ref="streetField"
                   placeholder="e.g. 123 Main Street"
                   className="alf-text-full-add"
-                  onKeyUp={this.textUpdate("street_address", 50)}>
+                  onKeyUp={this.textUpdate("street_address")}>
                 </textarea>
               </div>
 
@@ -203,7 +230,7 @@ class AddListingThird extends React.Component {
                   ref="aptField"
                   placeholder="e.g. Apt #7"
                   className="alf-text-full-add"
-                  onKeyUp={this.textUpdate("apt_num", 50)}>
+                  onKeyUp={this.textUpdate("apt_num")}>
                 </textarea>
               </div>
 
@@ -239,7 +266,7 @@ class AddListingThird extends React.Component {
                   placeholder="e.g. 94102"
                   ref="zipField"
                   className="alf-text-half-add"
-                  onKeyUp={this.textUpdate("zip_code", 50)}>
+                  onKeyUp={this.textUpdate("zip_code")}>
                 </textarea>
               </div>
 

@@ -45,3 +45,11 @@ export const editListing = (listing, success, error) => {
     error
   });
 };
+
+export const fetchCoords = (street_address, city, state, zip_code, country, success) => {
+  $.ajax({
+    method: 'GET',
+    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${street_address},${city},${state},${zip_code},${country}&key=${window.google_api.key}`,
+    success
+  });
+};

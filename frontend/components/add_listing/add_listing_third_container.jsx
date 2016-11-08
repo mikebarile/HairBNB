@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AddListingThird from './add_listing_third';
-import {createListing, updateListingForm} from '../../actions/listing_actions';
+import {createListing, updateListingForm, fetchCoords} from '../../actions/listing_actions';
 
 const mapStateToProps = ({ session, listingFormState }) => ({
   currentUser: session.currentUser,
@@ -9,7 +9,9 @@ const mapStateToProps = ({ session, listingFormState }) => ({
 
 const mapDispatchToProps = dispatch => ({
   updateListingForm: (formState) => dispatch(updateListingForm(formState)),
-  createListing: (listing) => dispatch(createListing(listing))
+  createListing: (listing) => dispatch(createListing(listing)),
+  fetchCoords: (street_address, city, state, zip_code, country) =>
+    {dispatch(fetchCoords(street_address, city, state, zip_code, country));}
 });
 
 export default connect(

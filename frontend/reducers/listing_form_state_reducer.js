@@ -11,7 +11,7 @@ const defaultState = {
   city: "",
   zip_code: "",
   state: "",
-  country: "",
+  country: "United States",
   image_url: null,
   original_filename: null,
   format: null,

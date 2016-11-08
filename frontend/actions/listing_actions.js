@@ -13,6 +13,7 @@ export const CLEAR_LISTING = "CLEAR_LISTING";
 export const UPDATE_LISTING_FORM = "UPDATE_LISTING_FORM";
 export const CLEAR_STATE = "CLEAR_STATE";
 export const UPDATE_IMAGE = "UPDATE_IMAGE";
+export const FETCH_COORDS = "FETCH_COORDS";
 
 export const fetchListing = (id) => ({
   type: FETCH_LISTING,
@@ -84,4 +85,13 @@ export const clearState = () => ({
 export const updateImage = (file) => ({
   type: UPDATE_IMAGE,
   file
+});
+
+export const fetchCoords = (street_address, city, state, zip_code, country) => ({
+  type: FETCH_COORDS,
+  street_address,
+  city,
+  state,
+  zip_code,
+  country
 });
