@@ -44,3 +44,11 @@
     display: none;
     -webkit-appearance: none;
 }
+
+::-webkit-calendar-picker-indicator { padding: 0px; margin: 0px; }
+::-webkit-datetime-edit { padding: 0px; margin: 0px; }
+::-webkit-datetime-edit-fields-wrapper { padding: 0px; margin: 0px; }
+::-webkit-datetime-edit-text { padding: 0px; margin: 0px; }
+::-webkit-datetime-edit-month-field { padding: 0px; margin: 0px; }
+::-webkit-datetime-edit-day-field { padding: 0px; margin: 0px; }
+::-webkit-datetime-edit-year-field { padding: 0px; margin: 0px; }

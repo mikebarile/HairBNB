@@ -51,7 +51,6 @@ class SearchBar extends React.Component {
                 className="home-search-date"
                 type="text"
                 onFocus={this.handleDateType("date")}
-                onBlur={this.handleDateType("text")}
                 placeholder="Check In"/>
 
               <img className="home-arrow-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478132097/Icons/Arrows-Right-icon_wgfi7w.png"/>
@@ -61,7 +60,6 @@ class SearchBar extends React.Component {
                 className="home-search-date"
                 type="text"
                 onFocus={this.handleDateType("date")}
-                onBlur={this.handleDateType("text")}
                 placeholder="Check Out"/>
             </div>
           </div>
