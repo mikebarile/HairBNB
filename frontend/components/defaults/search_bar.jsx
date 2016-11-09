@@ -5,25 +5,18 @@ import Geosuggest from 'react-geosuggest';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {destination: ""};
     this.handleDestination = this.handleDestination.bind(this);
   }
 
-  handleDestination(suggestion) {
-    return (value) => {
-      if (suggestion === true) {
-        this.setState({destination: value.label});
-
-        this.props.router.push({
-          pathname: "/search",
-          query: {
-            destination: this.state.destination,
-          }});
-      }
-      else {
-        this.setState({destination: value});
-      }
-    };
+  handleDestination(value) {
+    if (value && value.location) {
+      this.props.router.push({
+        pathname: "/search",
+        query: {
+          lat: value.location.lat,
+          lng: value.location.lng
+        }});
+    }
   }
 
   render() {
@@ -55,8 +48,7 @@ class SearchBar extends React.Component {
           placeholder="Where to?"
           id="top-bar"
           style={searchStyle}
-          onChange={this.handleDestination(false)}
-          onSuggestSelect={this.handleDestination(true)}
+          onSuggestSelect={this.handleDestination}
         />
       </div>
     );

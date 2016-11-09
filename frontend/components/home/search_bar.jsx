@@ -6,7 +6,8 @@ class SearchBar extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          destination: "",
+          lat: "",
+          lng: "",
           check_in: "",
           check_out: "",
           guests: "1 Dog"
@@ -30,27 +31,22 @@ class SearchBar extends React.Component {
     };
   }
 
-  handleDestination(suggestion) {
-    return (value) => {
-      if (suggestion === true) {
-        this.setState({
-          destination: value.label
-        });
-      }
-      else {
-        this.setState({
-          destination: value
-        });
-      }
-    };
+  handleDestination(value) {
+    if (value && value.location && value.location.lat) {
+      this.setState({
+        lat: value.location.lat,
+        lng: value.location.lng
+      });
+    }
   }
 
   handleSubmit() {
-    if (this.state.destination !== "") {
+    if (this.state.lat !== "" && this.state.lat !== undefined) {
       this.props.router.push({
         pathname: "/search",
         query: {
-          destination: this.state.destination,
+          lat: this.state.lat,
+          lng: this.state.lng,
           check_in: this.state.check_in,
           check_out: this.state.check_out,
           guests: this.state.guests
@@ -67,8 +63,7 @@ class SearchBar extends React.Component {
           <div className="hsb-where-col">
             <span className="hsb-sub-title">Where</span>
             <Geosuggest
-              onChange={this.handleDestination(false)}
-              onSuggestSelect={this.handleDestination(true)}
+              onSuggestSelect={this.handleDestination}
               className="home-search-city"
               placeholder="Destination, city, address"
             />
