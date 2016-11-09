@@ -128,7 +128,9 @@ class Search extends React.Component {
         </div>
 
         <div className="s-map-col">
-          <Map/>
+          <Map
+            lat={this.props.location.query.lat}
+            lng={this.props.location.query.lng}/>
         </div>
       </div>
     );
