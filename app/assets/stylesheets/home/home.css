@@ -118,9 +118,7 @@
   -webkit-transition: border 0.2s, box-shadow 0.2s;
           transition: border 0.2s, box-shadow 0.2s;
 }
-.geosuggest__input:focus {
 
-}
 .geosuggest__suggests {
   position: absolute;
   font-size: 12px;
@@ -168,16 +166,26 @@
 .home-search-date {
   font-size: 17px;
   height: 100%;
-  margin-left: 15px;
-  margin-top: 10px;
+  margin-left: 5px;
+  padding-left: 10px;
   padding-right: 20px;
   height: 100%;
   width: 100%;
+  margin-right: 10px;
+  height: 40px;
   display: flex;
+}
+
+.home-search-date:focus{
+  outline:none;
+  border:1px solid #4D90FE;
+  -webkit-box-shadow: 0px 0px 5px  #4D90FE;
+  box-shadow: 0px 0px 5px  #4D90FE;
 }
 
 input[type=date] {
   font-size: 16px;
+  width: 99%;
 }
 
 .hsb-guest-row {
@@ -196,6 +204,7 @@ input[type=date] {
 }
 
 .home-search-guest {
+  padding-top: 2px;
   margin-left: 5px;
   padding-left: 10px;
   -webkit-appearance: none;

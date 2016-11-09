@@ -63,12 +63,18 @@ class Search extends React.Component {
                 type="text"
                 onFocus={this.handleDateType("date")}
                 placeholder="Check In"/>
-                <input
-                  onChange={this.update("check_out")}
-                  className="s-date-input"
-                  type="text"
-                  onFocus={this.handleDateType("date")}
-                  placeholder="Check In"/>
+              <input
+                onChange={this.update("check_out")}
+                className="s-date-input"
+                type="text"
+                onFocus={this.handleDateType("date")}
+                placeholder="Check In"/>
+              <select className="s-guest-input">
+                <option value='1'>1 Dog</option>
+                <option value='2'>2 Dogs</option>
+                <option value='3'>3 Dogs</option>
+                <option value='4'>4 Dogs</option>
+              </select>
           </div>
 
           <div className="s-listings">
