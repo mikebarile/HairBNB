@@ -16,7 +16,6 @@ class Search extends React.Component {
 
   componentWillMount() {
   let query = this.props.location.query;
-
   }
 
   componentDidUpdate() {
