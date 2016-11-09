@@ -14,6 +14,7 @@ class MyListings extends React.Component {
     if(this.props.currentUser === null){
       this.props.router.replace('/home');
     }
+    this.props.fetchMyListings({"host_id": this.props.currentUser.id});
   }
 
   handleLocation(listing) {

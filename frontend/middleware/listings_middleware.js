@@ -29,9 +29,19 @@ export default ({ getState, dispatch }) => next => action => {
   };
 
   const receiveCoordsSuccess = (data) => {
-    let lat = data.results[0].geometry.location.lat;
-    let lng = data.results[0].geometry.location.lng;
+    let lat;
+    let lng;
+    if (data === undefined || data.results === undefined || data.results[0] === undefined ||
+      data.results[0].geometry === undefined || data.results[0].geometry.location === undefined){
+      lat = null;
+      lng = null;
+    }
+    else {
+      lat = data.results[0].geometry.location.lat;
+      lng = data.results[0].geometry.location.lng;
+    }
     dispatch(updateListingForm({lat, lng}));
+    dispatch(updateListingForm({clicked: true}));
   };
 
   const errorCallback = xhr => dispatch(receiveListingErrors(xhr.responseJSON));

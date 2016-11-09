@@ -26,9 +26,10 @@ export const fetchMyListings = (params) => ({
   params
 });
 
-export const createListing = (listing) => ({
+export const createListing = (listing, router) => ({
   type: CREATE_LISTING,
-  listing
+  listing,
+  router
 });
 
 export const deleteListing = (id) => ({

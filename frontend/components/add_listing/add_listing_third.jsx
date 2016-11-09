@@ -7,7 +7,8 @@ class AddListingThird extends React.Component {
     this.state = {
       zipError: [],
       priceError: [],
-      addressError: []
+      addressError: [],
+      clicked: false
     };
     this.textUpdate = this.textUpdate.bind(this);
     this.handleNext = this.handleNext.bind(this);
@@ -36,7 +37,17 @@ class AddListingThird extends React.Component {
   componentDidUpdate() {
     let state = this.props.listingFormState;
 
-    if(this.props.currentUser === null){
+    if (state.clicked === true) {
+      if (state.lat === null || state.lng === null) {
+        this.setState({addressError: ["Invalid address, please try again"]});
+        this.props.updateListingForm({clicked: false});
+      }
+      else {
+        this.setState({addressError: []});
+      }
+    }
+
+    if (this.props.currentUser === null){
       this.props.router.replace('/home');
     }
 
@@ -99,17 +110,12 @@ class AddListingThird extends React.Component {
     else {
       this.setState({priceError: []});
     }
-    if (state.lat === null || state.lng === null) {
-      this.setState({addressError: ["Invalid address, please try again"]});
-    }
-    else {
-      this.setState({addressError: []});
-    }
     if (state.street_address !== "" &&
       state.city !== "" && state.state !== null &&
       state.zip_code > 0 && state.zip_code <= 99999 && state.zip_code.length === 5 &&
       state.price > 0 && state.price < 10000) {
         this.props.fetchCoords(state.street_address, state.city, state.state, state.zip_code, state.country);
+        this.setState({clicked: true});
     }
   }
 

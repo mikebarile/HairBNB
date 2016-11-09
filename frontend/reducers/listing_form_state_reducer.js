@@ -3,6 +3,7 @@ import { merge } from 'lodash';
 
 const defaultState = {
   current_form: "home",
+  clicked: false,
   title: "",
   host_id: null,
   lat: null,
