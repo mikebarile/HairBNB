@@ -6,23 +6,43 @@ class SearchBar extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          city: "",
+          destination: "",
           check_in: "",
           check_out: "",
+          guests: ""
       };
       this.update = this.update.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleDestination = this.handleDestination.bind(this);
   }
 
   update(property) {
-    return e => this.setState({
-      [property]: e.target.value
-    });
+    console.log(this.state);
+    return e => {
+        this.setState({
+          [property]: e.target.value
+        });
+    };
   }
 
   handleDateType(newType, margin) {
     return (e) => {
       e.target.type = newType;
+    };
+  }
+
+  handleDestination(suggestion) {
+    return (value) => {
+      if (suggestion === true) {
+        this.setState({
+          destination: value.label
+        });
+      }
+      else {
+        this.setState({
+          destination: value
+        });
+      }
     };
   }
 
@@ -38,6 +58,8 @@ class SearchBar extends React.Component {
           <div className="hsb-where-col">
             <span className="hsb-sub-title">Where</span>
             <Geosuggest
+              onChange={this.handleDestination(false)}
+              onSuggestSelect={this.handleDestination(true)}
               className="home-search-city"
               placeholder="Destination, city, address"
             />
@@ -68,7 +90,7 @@ class SearchBar extends React.Component {
         <div className="hsb-guest-row">
           <div className="hsb-guest-col">
             <span className="hsb-sub-title">Dogs</span>
-            <select className="home-search-guest">
+            <select className="home-search-guest" onChange={this.update("guests")}>
               <option value='1'>1 Dog</option>
               <option value='2'>2 Dogs</option>
               <option value='3'>3 Dogs</option>
