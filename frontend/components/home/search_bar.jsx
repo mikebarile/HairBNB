@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import Geosuggest from 'react-geosuggest';
 
 class SearchBar extends React.Component {
@@ -47,7 +47,9 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit() {
-
+    if (this.state.destination !== "") {
+      this.props.router.push("/search");
+    }
   }
 
   render() {
@@ -108,4 +110,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
