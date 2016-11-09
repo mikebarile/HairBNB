@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
           destination: "",
           check_in: "",
           check_out: "",
-          guests: ""
+          guests: "1 Dog"
       };
       this.update = this.update.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +17,6 @@ class SearchBar extends React.Component {
   }
 
   update(property) {
-    console.log(this.state);
     return e => {
         this.setState({
           [property]: e.target.value
@@ -48,7 +47,15 @@ class SearchBar extends React.Component {
 
   handleSubmit() {
     if (this.state.destination !== "") {
-      this.props.router.push("/search");
+      this.props.router.push({
+        pathname: "/search",
+        query: {
+          destination: this.state.destination,
+          check_in: this.state.check_in,
+          check_out: this.state.check_out,
+          guests: this.state.guests
+        }
+      });
     }
   }
 

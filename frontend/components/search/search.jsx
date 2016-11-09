@@ -51,7 +51,7 @@ class Search extends React.Component {
   }
 
   render() {
-
+    console.log(this.props.location.query);
     return (
       <div className="search">
         <div className="s-form-col">
@@ -70,10 +70,10 @@ class Search extends React.Component {
                 onFocus={this.handleDateType("date")}
                 placeholder="Check In"/>
               <select className="s-guest-input">
-                <option value='1'>1 dog</option>
-                <option value='2'>2 dogs</option>
-                <option value='3'>3 dogs</option>
-                <option value='4'>4 dogs</option>
+                <option value='1'>1 Dog</option>
+                <option value='2'>2 Dogs</option>
+                <option value='3'>3 Dogs</option>
+                <option value='4'>4 Dogs</option>
               </select>
           </div>
 
