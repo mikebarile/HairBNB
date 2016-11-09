@@ -15,10 +15,12 @@ class Search extends React.Component {
   }
 
   componentWillMount() {
+  let query = this.props.location.query;
 
   }
 
   componentDidUpdate() {
+    let query = this.props.location.query;
     if(this.props.currentUser === null){
       this.props.router.replace('/home');
     }
@@ -51,7 +53,7 @@ class Search extends React.Component {
   }
 
   render() {
-    console.log(this.props.location.query);
+
     return (
       <div className="search">
         <div className="s-form-col">
