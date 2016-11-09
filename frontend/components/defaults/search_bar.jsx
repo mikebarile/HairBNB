@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { withRouter } from 'react-router';
+import Geosuggest from 'react-geosuggest';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -15,15 +16,35 @@ class SearchBar extends React.Component {
   }
 
   render() {
+
+    let searchStyle = {
+      'input': {
+        width: '100%',
+        height: '60px',
+        padding: '0px',
+        'paddingLeft': '20px',
+        'paddingTop': '2px',
+        'fontSize': '13px'
+      },
+      'input:focus': {
+        'boxShadow': '0px 0px 0px',
+        '-webkit-box-shadow': '0px 0px 0px',
+        border: '0px'
+      },
+      'suggests': {
+        'marginTop': '1px',
+        'width': 'calc(100% + 1px)'
+      },
+    };
+
     return (
       <div className="search-bar">
-        <img className = "magnifier" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478390875/Icons/magnifying-glass.png"/>
-        <input
+
+        <Geosuggest
           className="search-input"
-          type="text"
-          onChange={this.handleSearch}
-          value={this.state.query}
           placeholder="Where to?"
+          id="top-bar"
+          style={searchStyle}
         />
       </div>
     );
