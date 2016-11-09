@@ -34,12 +34,32 @@ class Search extends React.Component {
 
     return (
       <div className="search">
-        TEST
+        <div className="s-form-col">
+          <div className="s-form-row">
+
+          </div>
+
+          <div className="s-listings">
+            <div className="s-listings-row">
+              <div className="s-listing-item">
+                
+              </div>
+
+              <div className="s-listing-item">
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div className="s-map-col">
+
+        </div>
       </div>
     );
   }
 }
-
-
 
 export default Search;

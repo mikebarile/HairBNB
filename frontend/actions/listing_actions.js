@@ -1,10 +1,12 @@
 export const FETCH_LISTING = "FETCH_LISTING";
 export const FETCH_MY_LISTINGS = "FETCH_MY_LISTINGS";
+export const FETCH_SEARCH_LISTINGS = "FETCH_SEARCH_LISTINGS";
 export const CREATE_LISTING = "CREATE_LISTING";
 export const DELETE_LISTING = "DELETE_LISTING";
 export const EDIT_LISTING = "EDIT_LISTING";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const RECEIVE_MY_LISTINGS = "RECEIVE_MY_LISTINGS";
+export const RECEIVE_SEARCH_LISTINGS = "RECEIVE_SEARCH_LISTINGS";
 export const RECEIVE_NEW_LISTING = "RECEIVE_NEW_LISTING";
 export const REMOVE_LISTING = "REMOVE_LISTING";
 export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
@@ -100,4 +102,14 @@ export const fetchCoords = (street_address, city, state, zip_code, country) => (
 
 export const clearListingForm = () => ({
   type: CLEAR_LISTING_FORM
+});
+
+export const fetchSearchListings = (params) => ({
+  type: FETCH_SEARCH_LISTINGS,
+  params
+});
+
+export const receiveSearchListings = (listings) => ({
+  type: RECEIVE_SEARCH_LISTINGS,
+  listings
 });

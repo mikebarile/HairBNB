@@ -1,6 +1,6 @@
 import { receiveMyListings, receiveListing, receiveNewListing, removeListing,
-  receiveListingErrors, updateListingForm, FETCH_LISTING, FETCH_MY_LISTINGS,
-  CREATE_LISTING, DELETE_LISTING, EDIT_LISTING, UPDATE_IMAGE, FETCH_COORDS
+  receiveListingErrors, receiveSearchListings, updateListingForm, FETCH_LISTING, FETCH_MY_LISTINGS,
+  CREATE_LISTING, DELETE_LISTING, EDIT_LISTING, UPDATE_IMAGE, FETCH_COORDS, FETCH_SEARCH_LISTINGS
 } from '../actions/listing_actions';
 
 import {fetchListing, fetchListings, createListing, deleteListing,
@@ -14,6 +14,10 @@ export default ({ getState, dispatch }) => next => action => {
 
   const receiveMyListingsSuccess = listings => {
     dispatch(receiveMyListings(listings));
+  };
+
+  const receiveSearchListingsSuccess = listings => {
+    dispatch(receiveSearchListings(listings));
   };
 
   const removeListingSuccess = listing => {
@@ -53,6 +57,8 @@ export default ({ getState, dispatch }) => next => action => {
     case FETCH_MY_LISTINGS:
       fetchListings(action.params, receiveMyListingsSuccess);
       break;
+    case FETCH_SEARCH_LISTINGS:
+      fetchListings(action.params, receiveSearchListingsSuccess);
     case CREATE_LISTING:
       createListing(action.listing, receiveNewListingSuccess);
       return next(action);
