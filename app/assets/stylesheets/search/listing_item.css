@@ -10,7 +10,7 @@
   margin-right: 20px;
 }
 
-.home-spot-picks {
+.search-spot-picks {
   margin: 20px 0px 0px 0px;
   padding-bottom: 50px;
   border-bottom: 1px solid #DCE0E0;
@@ -23,31 +23,31 @@
   width: 75%;
 }
 
-.home-main-header {
+.search-main-header {
   font-size: 22px;
   margin-bottom: 20px;
 }
 
-.home-picks-index {
+.search-picks-index {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.home-pick-index-item {
+.search-pick-index-item {
   width: 32%;
 }
 
-.home-pick-index-item:hover {
+.search-pick-index-item:hover {
   cursor: pointer;
 }
 
-.home-pick-img {
+.search-pick-img {
   width: 100%;
   height: 235px;
 }
 
-.home-pick-description {
+.search-pick-description {
   display: flex;
   justify-content: flex-start;
   padding-left: 2px;
@@ -56,17 +56,17 @@
   font-family: sans-serif;
 }
 
-.home-pick-price {
+.search-pick-price {
   font-weight: bolder;
   padding-right: 4px;
 }
 
-.home-pick-title {
+.search-pick-title {
   font-weight: lighter;
   padding-right: 4px;
 }
 
-.home-pick-reviews {
+.search-pick-reviews {
   display: flex;
   justify-content: flex-start;
   padding-left: 2px;
@@ -75,13 +75,13 @@
   font-family: sans-serif;
 }
 
-.home-pick-star {
+.search-pick-star {
   height: 12px;
   width: 12px;
   padding-top: 2px;
   padding-right: 3px;
 }
 
-.home-pick-num-reviews {
+.search-pick-num-reviews {
   padding-right: 4px;
 }

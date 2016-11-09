@@ -14,7 +14,8 @@
   flex-direction: column;
   margin-left: 20px;
   width: 59%;
-  height: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
 }
 
 .s-form-row {
@@ -23,8 +24,10 @@
   justify-content: flex-start;;
   align-items: center;
   height: 80px;
+  padding-bottom: 30px;
   border-bottom: 1px solid #EEF0F0;
   margin-right: 20px;
+  margin-top: 30px;
 }
 
 .s-dates-title {
@@ -80,18 +83,13 @@ input[type=date][class=s-date-input] {
   resize: none;
 }
 
-.s-listings {
-  display: flex;
-  flex-direction: column;
-  margin-top: 24px;
-  margin-right: 0px;
-}
-
 .s-listings-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100%;
   width: 100%;
+  margin-top: 24px;
   margin-bottom: 24px;
 }
 
