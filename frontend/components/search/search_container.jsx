@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Search from './Search';
+import Search from './search';
 import {fetchMyListings} from '../../actions/listing_actions';
 
 const mapStateToProps = ({listingSearch, session}) => ({
