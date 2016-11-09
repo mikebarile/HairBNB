@@ -16,7 +16,7 @@ class SpotPicks extends React.Component {
   render() {
     return(
       <div className="home-spot-picks">
-        <h1 className="home-main-header">Explore Hairbnb picks</h1>
+        <h1 className="home-main-header">Explore Hairbnb Picks</h1>
 
         <div className="home-picks-index">
           <div className="home-pick-index-item" onClick={this.handleClick("/listings/1")}>

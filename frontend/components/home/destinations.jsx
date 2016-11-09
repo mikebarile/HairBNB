@@ -9,7 +9,7 @@ class Destinations extends React.Component {
   render() {
     return(
       <div className="home-destinations">
-        <h1 className="home-main-header">Explore the world</h1>
+        <h1 className="home-main-header">Explore the World</h1>
 
         <div className="home-destinations-row">
           <div className="home-destination-big london">

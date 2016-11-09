@@ -76,6 +76,7 @@
 }
 
 .hsb-sub-title {
+  color: #484848;
   margin-left: 15px;
   margin-top: 15px;
   font-size: 14px;
@@ -88,7 +89,7 @@
 }
 
 .home-search-city {
-  font-size: 18px;
+  font-size: 17px;
   font-size: 1rem;
   right: 1px;
   position: relative;
@@ -111,7 +112,7 @@
 
 .geosuggest__input {
   width: 100%;
-  font-size: 18px;
+  font-size: 17px;
   font-family: pretty-font;
   padding: 10px;
   -webkit-transition: border 0.2s, box-shadow 0.2s;
@@ -165,7 +166,7 @@
 }
 
 .home-search-date {
-  font-size: 18px;
+  font-size: 17px;
   height: 100%;
   margin-left: 15px;
   margin-top: 10px;
@@ -176,7 +177,7 @@
 }
 
 input[type=date] {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .hsb-guest-row {
@@ -203,7 +204,7 @@ input[type=date] {
   background-color: white;
   display: flex;
   font-family: pretty-font;
-  font-size: 18px;
+  font-size: 17px;
   color: #484848;
   width: 120px;
   height: 40px;
