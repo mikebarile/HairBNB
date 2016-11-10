@@ -1,13 +1,23 @@
-import { receiveMyTrips, receiveMyReservations, receiveBooking, removeBooking,
-  receiveBookingErrors, FETCH_MY_TRIPS, FETCH_MY_RESERVATIONS, CREATE_BOOKING,
-  DELETE_BOOKING, EDIT_BOOKING } from '../actions/booking_actions';
+import { receiveMyTrips, receiveMyReservations, receiveNewBooking,
+  removeBooking, receiveBookingErrors, receiveEditedTrip,
+  receiveEditedReservation, FETCH_MY_TRIPS, FETCH_MY_RESERVATIONS,
+  CREATE_BOOKING, DELETE_BOOKING, EDIT_TRIP, EDIT_RESERVATION
+} from '../actions/booking_actions';
 
 import {fetchBookings, createBooking, deleteBooking, editBooking
 } from '../util/booking_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
-  const receiveBookingSuccess = booking => {
-    dispatch(receiveBooking(booking));
+  const receiveNewBookingSuccess = booking => {
+    dispatch(receiveNewBooking(booking));
+  };
+
+  const receiveEditedTripSuccess = booking => {
+    dispatch(receiveEditedTrip(booking));
+  };
+
+  const receiveEditedReservationSuccess = booking => {
+    dispatch(receiveEditedReservation(booking));
   };
 
   const receiveMyTripsSuccess = bookings => {
@@ -32,13 +42,16 @@ export default ({ getState, dispatch }) => next => action => {
       fetchBookings(action.params, receiveMyReservationsSuccess);
       return next(action);
     case CREATE_BOOKING:
-      createBooking(action.booking, receiveBookingSuccess);
+      createBooking(action.booking, receiveNewBookingSuccess);
       return next(action);
     case DELETE_BOOKING:
       deleteBooking(action.id, removeBookingSuccess);
       return next(action);
-    case EDIT_BOOKING:
-      editBooking(action.booking, receiveBookingSuccess);
+    case EDIT_TRIP:
+      editBooking(action.booking, receiveEditedTripSuccess);
+      return next(action);
+    case EDIT_RESERVATION:
+      editBooking(action.booking, receiveEditedReservationSuccess);
       return next(action);
     default:
       return next(action);
