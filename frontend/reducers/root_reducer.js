@@ -5,11 +5,15 @@ import MyListingsReducer from './my_listings_reducer';
 import ListingFormStateReducer from './listing_form_state_reducer';
 import SearchListingsReducer from './listings_search_reducer';
 import FilterReducer from './filter_reducer';
+import MyTripsReducer from './my_trips_reducer';
+import MyReservationsReducer from './my_reservations_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
   listing: ListingReducer,
   myListings: MyListingsReducer,
+  myTrips: MyTripsReducer,
+  myReservations: MyReservationsReducer,
   listingFormState: ListingFormStateReducer,
   searchListings: SearchListingsReducer,
   filter: FilterReducer
