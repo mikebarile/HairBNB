@@ -97,7 +97,9 @@ class ShowListingGuest extends React.Component {
             <BookListing
               currentListing={listing}
               currentUser={this.props.currentUser}
-              errors={this.props.errors}/>
+              errors={this.props.errors}
+              createBooking = {this.props.createBooking}
+              myTrips = {this.props.myTrips}/>
           </div>
         </div>
       </div>

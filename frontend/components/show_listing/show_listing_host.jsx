@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { withRouter } from 'react-router';
-import BookListing from './book_listing';
 import Description from './listing_description';
+import BookListing from './book_listing';
 
 class ShowListingHost extends React.Component {
   constructor(props) {
@@ -97,7 +97,9 @@ class ShowListingHost extends React.Component {
             <BookListing
               currentListing={listing}
               currentUser={this.props.currentUser}
-              errors={this.props.errors}/>
+              errors={this.props.errors}
+              createBooking = {this.props.createBooking}
+              myTrips = {this.props.myTrips}/>
           </div>
         </div>
       </div>

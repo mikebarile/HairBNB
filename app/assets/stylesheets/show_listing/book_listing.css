@@ -69,7 +69,6 @@
 }
 
 .slb-book {
-  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   width: 278px;
@@ -96,4 +95,16 @@
 .slb-book:hover {
   background-color: #FF7E82;
   cursor: pointer;
+}
+
+.slb-errors {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.slb-error {
+  color: #B34143;
+  font-size: 13px;
+  padding-left: 70px;
+  margin-bottom: 20px;
 }

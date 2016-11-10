@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Geosuggest from 'react-geosuggest';
+import Calendar from 'react-input-calendar';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -18,10 +19,8 @@ class SearchBar extends React.Component {
   }
 
   update(property) {
-    return e => {
-        this.setState({
-          [property]: e.target.value
-        });
+    return value => {
+      this[property] = value;
     };
   }
 
@@ -47,8 +46,8 @@ class SearchBar extends React.Component {
         query: {
           lat: this.state.lat,
           lng: this.state.lng,
-          check_in: this.state.check_in,
-          check_out: this.state.check_out,
+          check_in: this.check_in,
+          check_out: this.check_out,
           guests: this.state.guests
         }
       });
@@ -56,6 +55,8 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    let today = new Date();
+
     return(
       <div className="home-search-bar">
         <div className="home-input-container">
@@ -72,21 +73,21 @@ class SearchBar extends React.Component {
           <div className="hsb-when-col">
             <span className="hsb-sub-title">When</span>
             <div className="hsb-input-row">
-              <input
+              <Calendar
+                format='MM/DD/YYYY'
+                minDate={today}
+                placeholder="Check In"
                 onChange={this.update("check_in")}
-                className="home-search-date"
-                type="text"
-                onFocus={this.handleDateType("date")}
-                placeholder="Check In"/>
+              />
 
               <img className="home-arrow-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478132097/Icons/Arrows-Right-icon_wgfi7w.png"/>
 
-              <input
+              <Calendar
+                format='MM/DD/YYYY'
+                minDate={today}
+                placeholder="Check Out"
                 onChange={this.update("check_out")}
-                className="home-search-date"
-                type="text"
-                onFocus={this.handleDateType("date")}
-                placeholder="Check Out"/>
+              />
             </div>
           </div>
         </div>
