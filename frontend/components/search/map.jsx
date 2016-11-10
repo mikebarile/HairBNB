@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router';
 import MarkerManager from '../../util/marker_manager';
 
+const _getCoordsObj = latLng => ({
+  lat: latLng.lat(),
+  lng: latLng.lng()
+});
+
 class Map extends React.Component {
   constructor(props) {
     super(props);
@@ -33,6 +38,21 @@ class Map extends React.Component {
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.listings);
+    this._registerListeners();
+  }
+
+  _registerListeners() {
+    google.maps.event.addListener(this.map, 'idle', () => {
+      const { north, south, east, west } = this.map.getBounds().toJSON();
+      const bounds = {
+        northEast: { lat:north, lng: east },
+        southWest: { lat: south, lng: west } };
+      this.props.updateFilter({bounds});
+    });
+  }
+
+  _handleMarkerClick(bench) {
+    this.props.router.push(`listings/${listing.id}`);
   }
 
   render() {

@@ -3,6 +3,8 @@ class Api::ListingsController < ApplicationController
   def index
     if params.include?("listing")
       @listings = Listing.where(listing_params).limit(18)
+    elsif params.include?("filters")
+      @listings = Listing.in_bounds(params[:filters][:bounds])
     else
       @listings = Listing.all.limit(18)
     end

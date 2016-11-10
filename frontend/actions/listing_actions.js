@@ -17,6 +17,7 @@ export const CLEAR_STATE = "CLEAR_STATE";
 export const UPDATE_IMAGE = "UPDATE_IMAGE";
 export const FETCH_COORDS = "FETCH_COORDS";
 export const CLEAR_LISTING_FORM = "CLEAR_LISTING_FORM";
+export const UPDATE_FILTER = "UPDATE_FILTER";
 
 export const fetchListing = (id) => ({
   type: FETCH_LISTING,
@@ -112,4 +113,9 @@ export const fetchSearchListings = (params) => ({
 export const receiveSearchListings = (listings) => ({
   type: RECEIVE_SEARCH_LISTINGS,
   listings
+});
+
+export const updateFilter = (filter) => ({
+  type: UPDATE_FILTER,
+  filter,
 });

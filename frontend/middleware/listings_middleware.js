@@ -1,10 +1,10 @@
 import { receiveMyListings, receiveListing, receiveNewListing, removeListing,
   receiveListingErrors, receiveSearchListings, updateListingForm, FETCH_LISTING, FETCH_MY_LISTINGS,
-  CREATE_LISTING, DELETE_LISTING, EDIT_LISTING, UPDATE_IMAGE, FETCH_COORDS, FETCH_SEARCH_LISTINGS
-} from '../actions/listing_actions';
+  CREATE_LISTING, DELETE_LISTING, EDIT_LISTING, UPDATE_IMAGE, FETCH_COORDS, FETCH_SEARCH_LISTINGS,
+  UPDATE_FILTER} from '../actions/listing_actions';
 
 import {fetchListing, fetchListings, createListing, deleteListing,
-  editListing, fetchCoords
+  editListing, fetchCoords, fetchSearchListings
 } from '../util/listing_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
@@ -56,9 +56,10 @@ export default ({ getState, dispatch }) => next => action => {
       return next(action);
     case FETCH_MY_LISTINGS:
       fetchListings(action.params, receiveMyListingsSuccess);
-      break;
+      return next(action);
     case FETCH_SEARCH_LISTINGS:
       fetchListings(action.params, receiveSearchListingsSuccess);
+      return next(action);
     case CREATE_LISTING:
       createListing(action.listing, receiveNewListingSuccess);
       return next(action);
@@ -70,6 +71,11 @@ export default ({ getState, dispatch }) => next => action => {
       return next(action);
     case FETCH_COORDS:
       fetchCoords(action.street_address, action.city, action.state, action.zip_code, action.country, receiveCoordsSuccess);
+      return next(action);
+    case UPDATE_FILTER:
+      next(action);
+      fetchSearchListings(action.filter, receiveSearchListingsSuccess);
+      break;
     default:
       return next(action);
   }

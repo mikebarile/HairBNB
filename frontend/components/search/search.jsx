@@ -14,19 +14,6 @@ class Search extends React.Component {
     this.handleDateType = this.handleDateType.bind(this);
   }
 
-  componentWillMount() {
-    let query = this.props.location.query;
-    if (this.props.location.query.lat !== "" && this.props.location.query.lat !== undefined){
-      this.props.fetchSearchListings({
-        lat: query.lat,
-        lng: query.lng
-      });
-    }
-    else {
-      this.props.fetchSearchListings();
-    }
-  }
-
   componentDidUpdate() {
     let query = this.props.location.query;
     if(this.props.currentUser === null){
@@ -142,7 +129,8 @@ class Search extends React.Component {
           <Map
             lat={this.props.location.query.lat}
             lng={this.props.location.query.lng}
-            listings={listings}/>
+            listings={listings}
+            updateFilter={this.props.updateFilter}/>
         </div>
       </div>
     );

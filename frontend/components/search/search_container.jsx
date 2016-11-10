@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 import Search from './search';
-import {fetchSearchListings} from '../../actions/listing_actions';
+import {fetchSearchListings, updateFilter} from '../../actions/listing_actions';
 
-const mapStateToProps = ({searchListings, session}) => ({
+const mapStateToProps = ({searchListings, session, filter}) => ({
   currentUser: session.currentUser,
-  searchListings
+  searchListings,
+  filter
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchSearchListings: (params) => dispatch(fetchSearchListings(params)),
+  updateFilter: (filters) => dispatch(updateFilter(filters))
 });
 
 export default connect(

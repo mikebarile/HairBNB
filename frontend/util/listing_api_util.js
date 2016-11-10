@@ -17,6 +17,16 @@ export const fetchListings = (params, success, error) => {
   });
 };
 
+export const fetchSearchListings = (filters, success, error) => {
+  $.ajax({
+    method: 'GET',
+    url: `api/listings`,
+    data: {"filters": filters},
+    success,
+    error
+  });
+};
+
 export const createListing = (listing, success, error) => {
   $.ajax({
     method: 'POST',

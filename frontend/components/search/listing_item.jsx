@@ -4,6 +4,11 @@ import { Link, withRouter } from 'react-router';
 class ListingItem extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.router.push(`/listings/${this.props.listing.id}`);
   }
 
   render() {
@@ -13,7 +18,7 @@ class ListingItem extends React.Component {
     }
     else {
       return (
-        <div className="search-listing-item">
+        <div className="search-listing-item" onClick={this.handleClick}>
           <img className="search-pick-img" src={listing.image_url}/>
           <div className="search-pick-description">
             <span className="search-pick-price">${listing.price}</span>
