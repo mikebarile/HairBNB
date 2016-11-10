@@ -15,7 +15,16 @@ class Search extends React.Component {
   }
 
   componentWillMount() {
-  let query = this.props.location.query;
+    let query = this.props.location.query;
+    if (this.props.location.query.lat !== "" && this.props.location.query.lat !== undefined){
+      this.props.fetchSearchListings({
+        lat: query.lat,
+        lng: query.lng
+      });
+    }
+    else {
+      this.props.fetchSearchListings();
+    }
   }
 
   componentDidUpdate() {
@@ -52,6 +61,8 @@ class Search extends React.Component {
   }
 
   render() {
+    console.log(this.props);
+    let listings = this.props.searchListings;
 
     return (
       <div className="search">
@@ -80,48 +91,48 @@ class Search extends React.Component {
 
           <div className="s-listings">
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[0]}/>
+              <ListingItem listing={listings[1]}/>
             </div>
 
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[2]}/>
+              <ListingItem listing={listings[3]}/>
             </div>
 
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[4]}/>
+              <ListingItem listing={listings[5]}/>
             </div>
 
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[6]}/>
+              <ListingItem listing={listings[7]}/>
             </div>
 
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[8]}/>
+              <ListingItem listing={listings[9]}/>
             </div>
 
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[10]}/>
+              <ListingItem listing={listings[11]}/>
             </div>
 
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[12]}/>
+              <ListingItem listing={listings[13]}/>
             </div>
 
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[14]}/>
+              <ListingItem listing={listings[15]}/>
             </div>
 
             <div className="s-listings-row">
-              <ListingItem/>
-              <ListingItem/>
+              <ListingItem listing={listings[16]}/>
+              <ListingItem listing={listings[17]}/>
             </div>
 
           </div>
@@ -130,7 +141,8 @@ class Search extends React.Component {
         <div className="s-map-col">
           <Map
             lat={this.props.location.query.lat}
-            lng={this.props.location.query.lng}/>
+            lng={this.props.location.query.lng}
+            listings={listings}/>
         </div>
       </div>
     );

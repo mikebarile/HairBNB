@@ -1,8 +1,11 @@
 class Api::ListingsController < ApplicationController
 
   def index
-    @listings = Listing.where(listing_params)
-    p @listings
+    if params.include?("listing")
+      @listings = Listing.where(listing_params).limit(18)
+    else
+      @listings = Listing.all.limit(18)
+    end
   end
 
   def show

@@ -7,4 +7,7 @@ class Listing < ActiveRecord::Base
   foreign_key: :host_id,
   class_name: :User
 
+  def average_rating
+    reviews.average(:rating)
+  end
 end

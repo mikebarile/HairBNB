@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import MarkerManager from '../../util/marker_manager';
 
 class Map extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Map extends React.Component {
     let mapOptions;
     if(this.props.lat !== "" && this.props.lat !== undefined) {
       mapOptions = {
-        center: {lat: parseInt(this.props.lat), lng: parseInt(this.props.lng)}, // this is SF
+        center: {lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)}, // this is SF
         zoom: 13
       };
     }
@@ -26,6 +27,12 @@ class Map extends React.Component {
     }
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager.updateMarkers(this.props.listings);
+  }
+
+  componentDidUpdate() {
+    this.MarkerManager.updateMarkers(this.props.listings);
   }
 
   render() {
