@@ -1,7 +1,8 @@
 export const FETCH_MY_TRIPS = "FETCH_MY_TRIPS";
 export const FETCH_MY_RESERVATIONS = "FETCH_MY_RESERVATIONS";
 export const CREATE_BOOKING = "CREATE_BOOKING";
-export const DELETE_BOOKING = "DELETE_BOOKING";
+export const DELETE_TRIP = "DELETE_TRIP";
+export const DELETE_RESERVATION = "DELETE_RESERVATION";
 export const EDIT_TRIP = "EDIT_TRIP";
 export const EDIT_RESERVATION = "EDIT_RESERVATION";
 export const RECEIVE_MY_TRIPS = "RECEIVE_MY_TRIPS";
@@ -9,7 +10,8 @@ export const RECEIVE_MY_RESERVATIONS = "RECEIVE_MY_RESERVATIONS";
 export const RECEIVE_NEW_BOOKING = "RECEIVE_NEW_BOOKING";
 export const RECEIVE_EDITED_TRIP = "RECEIVE_EDITED_TRIP";
 export const RECEIVE_EDITED_RESERVATION = "RECEIVE_EDITED_RESERVATION";
-export const REMOVE_BOOKING = "REMOVE_BOOKING";
+export const REMOVE_TRIP = "REMOVE_TRIP";
+export const REMOVE_RESERVATION = "REMOVE_RESERVATION";
 export const RECEIVE_BOOKING_ERRORS = "RECEIVE_BOOKING_ERRORS";
 export const CLEAR_BOOKING_ERRORS = "CLEAR_BOOKING_ERRORS";
 export const CLEAR_STATE = "CLEAR_STATE";
@@ -30,8 +32,13 @@ export const createBooking = (booking, router) => ({
   router
 });
 
-export const deleteBooking = (id) => ({
-  type: CREATE_BOOKING,
+export const deleteTrip = (id) => ({
+  type: DELETE_TRIP,
+  id
+});
+
+export const deleteReservation = (id) => ({
+  type: DELETE_RESERVATION,
   id
 });
 
@@ -70,8 +77,13 @@ export const receiveMyReservations = (bookings) => ({
   bookings
 });
 
-export const removeBooking = (booking) => ({
-  type: REMOVE_BOOKING,
+export const removeTrip = (booking) => ({
+  type: REMOVE_TRIP,
+  booking
+});
+
+export const removeReservation = (booking) => ({
+  type: REMOVE_RESERVATION,
   booking
 });
 
