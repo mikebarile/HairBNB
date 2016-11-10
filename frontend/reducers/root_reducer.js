@@ -7,6 +7,7 @@ import SearchListingsReducer from './listings_search_reducer';
 import FilterReducer from './filter_reducer';
 import MyTripsReducer from './my_trips_reducer';
 import MyReservationsReducer from './my_reservations_reducer';
+import BookingErrorsReducer from './booking_errors_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -16,7 +17,8 @@ const RootReducer = combineReducers({
   myReservations: MyReservationsReducer,
   listingFormState: ListingFormStateReducer,
   searchListings: SearchListingsReducer,
-  filter: FilterReducer
+  filter: FilterReducer,
+  bookingErrors: BookingErrorsReducer
 });
 
 export default RootReducer;

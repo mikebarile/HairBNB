@@ -12,7 +12,9 @@ export const RECEIVE_EDITED_TRIP = "RECEIVE_EDITED_TRIP";
 export const RECEIVE_EDITED_RESERVATION = "RECEIVE_EDITED_RESERVATION";
 export const REMOVE_TRIP = "REMOVE_TRIP";
 export const REMOVE_RESERVATION = "REMOVE_RESERVATION";
-export const RECEIVE_BOOKING_ERRORS = "RECEIVE_BOOKING_ERRORS";
+export const RECEIVE_CREATE_BOOKING_ERRORS = "RECEIVE_BOOKING_ERRORS";
+export const RECEIVE_EDIT_TRIP_ERRORS = "RECEIVE_BOOKING_ERRORS";
+export const RECEIVE_EDIT_RESERVATION_ERRORS = "RECEIVE_BOOKING_ERRORS";
 export const CLEAR_BOOKING_ERRORS = "CLEAR_BOOKING_ERRORS";
 export const CLEAR_STATE = "CLEAR_STATE";
 
@@ -87,8 +89,18 @@ export const removeReservation = (booking) => ({
   booking
 });
 
-export const receiveBookingErrors = (errors) => ({
-  type: RECEIVE_BOOKING_ERRORS,
+export const receiveCreateBookingErrors = (errors) => ({
+  type: RECEIVE_CREATE_BOOKING_ERRORS,
+  errors
+});
+
+export const receiveEditReservationErrors = (errors) => ({
+  type: RECEIVE_EDIT_RESERVATION_ERRORS,
+  errors
+});
+
+export const receiveEditTripErrors = (errors) => ({
+  type: RECEIVE_EDIT_TRIP_ERRORS,
   errors
 });
 

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ShowListing from './show_listing';
 import {fetchListing, deleteListing, editListing, clearListingErrors
 } from '../../actions/listing_actions';
+import { createBooking } from '../../actions/booking_actions';
 
 const mapStateToProps = ({listing, session}) => ({
   currentUser: session.currentUser,
