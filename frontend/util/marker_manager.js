@@ -31,6 +31,7 @@ export default class MarkerManager {
       position: pos,
       map: this.map,
       listingId: listing.id
+      
     });
     marker.addListener('click', () => this.handleClick(listing));
     this.markers.push(marker);

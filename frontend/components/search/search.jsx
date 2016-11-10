@@ -14,10 +14,6 @@ class Search extends React.Component {
     this.handleDateType = this.handleDateType.bind(this);
   }
 
-  componentDidUpdate() {
-    let query = this.props.location.query;
-  }
-
   handleLocation(listing) {
     if (listing.country === "United States") {
       return `${listing.city}, ${listing.state}`;

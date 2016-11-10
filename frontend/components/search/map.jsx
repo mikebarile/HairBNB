@@ -13,24 +13,21 @@ class Map extends React.Component {
   }
 
   componentDidMount () {
-    // find the `<map>` node on the DOM
     const mapDOMNode = this.refs.map;
 
-    // set the map to show SF
     let mapOptions;
     if(this.props.lat !== "" && this.props.lat !== undefined) {
       mapOptions = {
-        center: {lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)}, // this is SF
+        center: {lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)},
         zoom: 13
       };
     }
     else {
       mapOptions = {
-        center: {lat: 0, lng: 0}, // this is SF
+        center: {lat: 0, lng: 0},
         zoom: 2
       };
     }
-    // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.listings);
@@ -39,6 +36,13 @@ class Map extends React.Component {
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.listings);
     this._registerListeners();
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.map.setOptions({
+      center: {lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)},
+      zoom: 13
+    });
   }
 
   _registerListeners() {
