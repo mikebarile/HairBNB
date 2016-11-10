@@ -16,9 +16,6 @@ class Search extends React.Component {
 
   componentDidUpdate() {
     let query = this.props.location.query;
-    if(this.props.currentUser === null){
-      this.props.router.replace('/home');
-    }
   }
 
   handleLocation(listing) {
@@ -48,7 +45,6 @@ class Search extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let listings = this.props.searchListings;
 
     return (

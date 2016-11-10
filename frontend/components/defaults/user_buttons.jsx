@@ -41,7 +41,7 @@ class UserButtons extends React.Component {
   }
 
   callback(e) {
-    console.log(e);
+    
   }
 
   logout() {
