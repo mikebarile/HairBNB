@@ -13,6 +13,16 @@ class User < ActiveRecord::Base
   foreign_key: :host_id,
   class_name: :Listing
 
+  has_many :reservations,
+  primary_key: :id,
+  foreign_key: :host_id,
+  class_name: :Booking
+
+  has_many :trips,
+  primary_key: :id,
+  foreign_key: :guest_id,
+  class_name: :Booking
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)

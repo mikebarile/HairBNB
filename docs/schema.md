@@ -48,8 +48,8 @@ id          | integer   | not null, primary key
 host_id     | integer   | not null, foreign key (references users), indexed
 guest_id    | integer   | not null, foreign key (references users), indexed
 listing_id  | integer   | not null, foreign key (references users), indexed
-start_date  | date      | not null
-end_date    | date      | not null
+check_in    | date      | not null
+check_out   | date      | not null
 message     | text      | not null
 status      | string    | not null, must be "approved", "pending", or "rejected"
 

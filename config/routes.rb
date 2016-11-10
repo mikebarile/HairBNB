@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resource :session
     resources :cities
     resources :listings
+    resources :bookings
   end
 end

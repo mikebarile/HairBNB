@@ -7,6 +7,11 @@ class Listing < ActiveRecord::Base
   foreign_key: :host_id,
   class_name: :User
 
+  has_many :bookings,
+  primary_key: :id,
+  foreign_key: :listing_id,
+  class_name: :Booking
+
   def average_rating
     reviews.average(:rating)
   end
