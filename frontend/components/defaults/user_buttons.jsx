@@ -41,7 +41,7 @@ class UserButtons extends React.Component {
   }
 
   callback(e) {
-    
+
   }
 
   logout() {
@@ -121,7 +121,7 @@ class UserButtons extends React.Component {
           <div className="become-a-host" onClick={this.handleBecomeHost}>
             <span className="become-a-host-link">Become a Host</span>
           </div>
-          <Link className="user-button user-button-trips" to="/">Trips</Link>
+          <Link className="user-button user-button-trips" to="/my-trips">Trips</Link>
           <Dropdown ref="userDropdown">
             <div onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
               <button className="user-button-logout" to="/">
@@ -142,7 +142,7 @@ class UserButtons extends React.Component {
       return (
         <div className="user-buttons">
           <Link className="user-button user-button-host" to="/my-listings">Host</Link>
-          <Link className="user-button user-button-trips" to="/">Trips</Link>
+          <Link className="user-button user-button-trips" to="/my-trips">Trips</Link>
           <Dropdown ref="userDropdown">
             <div onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
               <button className="user-button-logout" to="/">

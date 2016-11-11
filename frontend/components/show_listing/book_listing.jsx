@@ -7,11 +7,6 @@ class BookListing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      guest_id: this.props.currentUser.id,
-      host_id: this.props.currentListing.host_id,
-      listing_id: this.props.currentListing.id,
-      message: "default",
-      status: "pending",
       errors: []
     };
     this.update = this.update.bind(this);
@@ -19,10 +14,10 @@ class BookListing extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps);
     if(newProps.myTrips.length > this.props.myTrips.length) {
       this.props.clearBookingErrors();
       this.setState({});
+      this.props.router.push('/my-trips');
     }
     else if (newProps.errors !== undefined && newProps.errors.length > 0) {
       this.setState({errors: newProps.errors});
@@ -36,7 +31,13 @@ class BookListing extends React.Component {
   }
 
   handleSubmit(e) {
-    if (this.state.guest_id === this.state.host_id) {
+    let guest_id = this.props.currentUser.id;
+    let host_id = this.props.currentListing.host_id;
+
+    if (guest_id === null || guest_id === undefined) {
+      this.setState({errors: ["Please log in before making a booking"]});
+    }
+    if (guest_id === host_id) {
       this.setState({errors: ["You can't book your own listing!"]});
     }
     else if (this.check_in === undefined || this.check_out === undefined ||
@@ -51,11 +52,11 @@ class BookListing extends React.Component {
       this.props.createBooking({
         check_in: this.check_in,
         check_out: this.check_out,
-        guest_id: this.state.guest_id,
-        host_id: this.state.host_id,
-        message: this.state.message,
-        status: this.state.status,
-        listing_id: this.state.listing_id
+        guest_id,
+        host_id,
+        listing_id: this.props.currentListing.id,
+        message: "default",
+        status: "pending",
       });
     }
   }

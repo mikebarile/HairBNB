@@ -12,6 +12,7 @@ import AddListingFirstContainer from './add_listing/add_listing_first_container'
 import AddListingSecondContainer from './add_listing/add_listing_second_container';
 import AddListingThirdContainer from './add_listing/add_listing_third_container';
 import SearchContainer from './search/search_container';
+import MyTripsContainer from './my_trips/my_trips_container';
 
 
 const Root = ({ store }) => {
@@ -46,6 +47,7 @@ const Root = ({ store }) => {
           <Route path="ready" component={AddListingThirdContainer} onEnter={redirectHome}/>
         </Route>
         <Route path="search" component={SearchContainer}/>
+        <Route path="my-trips" component={MyTripsContainer}/>
       </Route>
     </Router>
   </Provider>
