@@ -8,32 +8,15 @@ HairBNB is a full-stack web application inspired by AirBNB.  It utilizes Ruby on
 
 ## Features & Implementation
 
-### Note Rendering and Editing
+### Rending listings
 
-  On the database side, 
+  On the database side, HairBNB is split into several tables: users, listings, bookings, and reviews. Upon entering the site, the app immediately queries the database to pull the "top 3" HairBNB picks and render them to the page. Otherwise, the database renders dynamically depending on which page you're viewing. For example, the database makes a get call to  "api/listings/:id" when you enter a listing show page. Of note, the search bars are backed by Google's geolocation API. When a location is selected, geocoordinates are passed as props to the search page which are then used to fetch relevant listings from the database.
 
-  Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
+  Bookings are stored with basic information on check-in and check-out as well as the guest, host, and listing IDs. It also has a 'status' property that is set to "pending" by default and is currently not in use. Reviews have a similarly simple structure: a listing id, a guest id, a description, and a rating. Listings have methods defined in their class that allows them to carry information on reviews: the average review rating and the number of reviews. When a user enters the show page and the app makes a request to the database, the database returns both the listing and the listing's reviews in one listing object. This enables the app to avoid querying multiple times.
 
-![image of notebook index](wireframes/home-logged-in.png)
+### Adding a listing
+  
 
-Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
-
-### Notebooks
-
-Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
-
-The React component structure for notebooks mirrored that of notes: the `NotebookIndex` component renders a list of `CondensedNotebook`s as subcomponents, along with one `ExpandedNotebook`, kept track of by `NotebookStore.selectedNotebook()`.  
-
-`NotebookIndex` render method:
-
-```javascript
-render: function () {
-  return ({this.state.notebooks.map(function (notebook) {
-    return <CondensedNotebook notebook={notebook} />
-  }
-  <ExpandedNotebook notebook={this.state.selectedNotebook} />)
-}
-```
 
 ### Tags
 
@@ -41,7 +24,6 @@ As with notebooks, tags are stored in the database through a `tag` table and a j
 
 Tags are maintained on the frontend in the `TagStore`.  Because creating, editing, and destroying notes can potentially affect `Tag` objects, the `NoteIndex` and the `NotebookIndex` both listen to the `TagStore`.  It was not necessary to create a `Tag` component, as tags are simply rendered as part of the individual `Note` components.  
 
-![tag screenshot](wireframes/tag-search.png)
 
 ## Future Directions for the Project
 

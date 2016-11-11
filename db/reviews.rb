@@ -32,7 +32,7 @@ module ReviewsFactory
     "100%",
     ": ) ",
     "YEAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH was sick"
-  ],
+  ]
 
   negative_descriptions = [
     "Terrible. Just terrible.",
