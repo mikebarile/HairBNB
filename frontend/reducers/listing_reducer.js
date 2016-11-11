@@ -51,7 +51,6 @@ const ListingReducer = (state = defaultState, action) => {
         return state;
       }
     case RECEIVE_NEW_REVIEW:
-      console.log(state);
       newState = merge({}, state);
       newState.currentListing.reviews.unshift(action.review);
       return newState;
