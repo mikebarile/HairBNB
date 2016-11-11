@@ -50,8 +50,8 @@ module ReviewsFactory
 
   4000.times do
     Review.create({
-      guest_id: 1 + rand(101),
-      listing_id: 1 + rand(203),
+      guest_id: 1 + rand(10),
+      listing_id: 1 + rand(200),
       description: positive_descriptions.shuffle[0],
       rating: rand(2) + 4
       })
@@ -59,7 +59,7 @@ module ReviewsFactory
 
   90.times do
     Review.create({
-      guest_id: 2 + rand(101),
+      guest_id: 2 + rand(100),
       listing_id: 1 + rand(3),
       description: positive_descriptions.shuffle[0],
       rating: 5
@@ -68,8 +68,8 @@ module ReviewsFactory
 
   500.times do
     Review.create({
-      guest_id: 1 + rand(101),
-      listing_id: 4 + rand(200),
+      guest_id: 1 + rand(100),
+      listing_id: 1 + rand(200),
       description: negative_descriptions.shuffle[0],
       rating: rand(2) + 1
       })
