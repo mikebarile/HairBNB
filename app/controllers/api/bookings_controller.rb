@@ -2,9 +2,9 @@ class Api::BookingsController < ApplicationController
 
   def index
     if params.include?("booking")
-      @bookings = Booking.where(booking_params)
+      @bookings = Booking.where(booking_params).order(check_in: :desc)
     else
-      @bookings = Booking.all.limit(18)
+      @bookings = Booking.all.limit(18).order(check_in: :desc)
     end
   end
 

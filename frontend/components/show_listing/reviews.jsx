@@ -7,7 +7,7 @@ class Reviews extends React.Component {
     super(props);
   }
 
-  handleStars(rating, className) {
+   handleStars(rating, className) {
     let stars = [];
 
     if (rating === null || rating === undefined || rating === 0) {
