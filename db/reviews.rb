@@ -59,7 +59,7 @@ module ReviewsFactory
 
   4000.times do
     Review.create!({
-      guest_id: 1 + rand(10),
+      guest_id: 1 + rand(100),
       listing_id: 1 + rand(200),
       description: positive_descriptions.shuffle[0],
       rating: rand(2) + 4
