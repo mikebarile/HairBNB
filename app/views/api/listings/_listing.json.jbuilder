@@ -35,5 +35,5 @@ json.set! :average_rating, listing.average_rating
 json.set! :count_reviews, listing.reviews.length
 
 json.reviews do
-  json.partial! 'api/reviews/review', collection: listing.reviews, as: :review
+  json.partial! 'api/reviews/review', collection: listing.reviews.order(updated_at: :desc), as: :review
 end
