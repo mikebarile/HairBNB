@@ -14,6 +14,8 @@ class Reviews extends React.Component {
     this.handleAddReviewClick = this.handleAddReviewClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.handleCreateReview = this.handleCreateReview.bind(this);
+    this.handleReviews = this.handleReviews.bind(this);
   }
 
    handleStars(rating, className) {
@@ -78,10 +80,10 @@ class Reviews extends React.Component {
   }
 
   handleSubmit(e) {
-    if (this.state.body === "") {
+    if (this.state.reviewBody === "") {
       return(this.setState({errors: ["Review body can't be blank"]}));
     }
-    else if (this.state.rating === null) {
+    else if (this.state.rating === null || this.state.rating === "") {
       return(this.setState({errors: ["Review rating can't be blank"]}));
     }
     else {
@@ -101,8 +103,8 @@ class Reviews extends React.Component {
   }
 
   update(property) {
-    return value => {
-      this[property] = value;
+    return e => {
+      this.setState({[property]: e.target.value});
     };
   }
 
@@ -113,15 +115,28 @@ class Reviews extends React.Component {
     return (
       <div className="slr-create-review">
         <span className="slr-create-review-title">Add a review</span>
-        <select className="slr-create-rating" onChange={this.update("rating")}>
-            <option value='1'>1 star</option>
-            <option value='2'>2 stars</option>
-            <option value='3'>3 stars</option>
-            <option value='4'>4 stars</option>
-            <option value='5'>5 stars</option>
-          </select>
-        <textarea ref="reviewBody" className="slr-review-body" onChange={this.update("reviewBody")}></textarea>
-        <button className="slr-submit-review" onClick={this.handleSubmit}>Submit</button>
+        <div className="slr-create_reivew_container">
+          <ul className="alf-errors">
+            {this.state.errors.map((error, idx) => (
+              <span key={idx} className="alf-error">{error}</span>
+            ))}
+          </ul>
+          <select className="slr-create-rating" onChange={this.update("rating")}>
+              <option defaultValue value="">Please select an option </option>
+              <option value='1'>1 star</option>
+              <option value='2'>2 stars</option>
+              <option value='3'>3 stars</option>
+              <option value='4'>4 stars</option>
+              <option value='5'>5 stars</option>
+            </select>
+          <textarea
+            ref="descriptionField"
+            placeholder="Leave a review to help other dogowners find a great vacation spot for their pooch!"
+            className="slr-review-body"
+            onChange={this.update("reviewBody")}>
+          </textarea>
+          <button onClick={this.handleSubmit} className="slr-submit-review">Submit</button>
+        </div>
       </div>
     );
   }
@@ -159,7 +174,7 @@ class Reviews extends React.Component {
             <div className="slr-header-stars">
               {this.handleStars(listing.average_rating, "slr-header-star")}
             </div>
-            <button className="slr-add-review-button" onClick={this.handleAddReviewClick}>Add review</button>
+            <button className="slr-add-review-button" onClick={this.handleAddReviewClick}>Write a review</button>
           </div>
           {this.handleCreateReview()}
           {this.handleReviews()}

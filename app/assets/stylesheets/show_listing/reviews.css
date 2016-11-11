@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #C4C4C4;
@@ -27,7 +28,6 @@
 .slr-header-stars {
   display: flex;
   flex-direction: row;
-  margin-top: 5px;
   margin-left: 10px;
 }
 
@@ -78,4 +78,102 @@
 
 .slrr-body {
   font-size: 16px;
+}
+
+.slr-add-review-button {
+  display: flex;
+  width: 185px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF5A5F;
+  color: white;
+  border-radius: 4px;
+  margin-left: 40px;
+}
+
+.slr-add-review-button:hover {
+  background-color: #FF7E82
+}
+
+.slr-create-review {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #C4C4C4;
+}
+
+.slr-create-review-container {
+  border 2px solid #DCE0E0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.slr-create-review-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.slr-create-rating {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  display: flex;
+  font-family: pretty-font;
+  font-size: 16px;
+  height: 64px;
+  padding-left: 20px;
+  color: #484848;
+  border: 1px solid #AAAAAA;
+  width: 470px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  background-size: 16px 10px;
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  background-image: url('https://res.cloudinary.com/dsguwnfdw/image/upload/v1478576077/Icons/Screen_Shot_2016-11-07_at_7.32.28_PM.png');
+  margin-bottom: 23px;
+  -webkit-transition: border .3s;
+  transition: border .3s;
+  resize: none;
+}
+
+.slr-review-body {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #DCE0E0;
+  width: 430px;
+  height: 200px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 97% 50%;
+  margin-bottom: 20px;
+  -webkit-transition: border .3s;
+  transition: border .3s;
+  resize: none;
+}
+
+.slr-submit-review {
+  display: flex;
+  width: 185px;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF5A5F;
+  color: white;
+  border-radius: 4px;
+}
+
+.slr-submit-review:hover {
+  background-color: #FF7E82
 }
