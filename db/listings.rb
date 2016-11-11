@@ -276,7 +276,7 @@ module ListingsFactory
       lng = CITY[num][:lng] + rand(50)*0.001
     end
 
-    Listing.create({
+    Listing.create!({
       title: "#{ADJECTIVES.shuffle[0].capitalize} #{APARTMENT.shuffle[0]} ready for a #{DOG.shuffle[0]}",
       price: 50 + rand(500),
       host_id: 1 + rand(100),

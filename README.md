@@ -1,69 +1,56 @@
 # HairBNB
 
-[Heroku link][heroku]
+[HairBNB live][site]
 
-[Trello link][trello]
+[site]: http://www.hairbnb.xyz
 
-[heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/b/FhRgpcIJ/hairbnb
+HairBNB is a full-stack web application inspired by AirBNB.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
-## Minimum Viable Product
+## Features & Implementation
 
-HairBNB is an AirBNB-inspired full stack web application that allows dog owners
-to send their furry friends on vacations to hosts' homes. The application
-was built using Ruby on Rails and React/Redux.  By the end of Week 9, this
-app will, at a minimum, satisfy the following criteria with smooth, bug-free
-navigation, adequate seed data and sufficient CSS styling:
+### Note Rendering and Editing
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Listings
-- [ ] Listing search
-- [ ] Bookings
-- [ ] Listing reviews
-- [ ] Production README
+  On the database side, 
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+  Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+![image of notebook index](wireframes/home-logged-in.png)
 
-## Implementation Timeline
+Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Notebooks
 
-**Objective:** Functioning rails project with front-end Authentication
+Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
 
-### Phase 2: Listings (3 days)
+The React component structure for notebooks mirrored that of notes: the `NotebookIndex` component renders a list of `CondensedNotebook`s as subcomponents, along with one `ExpandedNotebook`, kept track of by `NotebookStore.selectedNotebook()`.  
 
-**Objective:** Listings can be created, read, edited and destroyed through
-the API.
+`NotebookIndex` render method:
 
-### Phase 3: Listing search (1 days)
+```javascript
+render: function () {
+  return ({this.state.notebooks.map(function (notebook) {
+    return <CondensedNotebook notebook={notebook} />
+  }
+  <ExpandedNotebook notebook={this.state.selectedNotebook} />)
+}
+```
 
-**Objective:** Users can search for listings through a UI that incorporates Google Maps' API
+### Tags
 
-### Phase 4: Bookings (2 days)
+As with notebooks, tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `tagged_notes` table is the associated join table, which contains three columns: `id`, `tag_id`, and `note_id`.  
 
-**Objective:** Users can request bookings which hosts can approve or reject
+Tags are maintained on the frontend in the `TagStore`.  Because creating, editing, and destroying notes can potentially affect `Tag` objects, the `NoteIndex` and the `NotebookIndex` both listen to the `TagStore`.  It was not necessary to create a `Tag` component, as tags are simply rendered as part of the individual `Note` components.  
 
-### Phase 5: Reviews (1 day)
+![tag screenshot](wireframes/tag-search.png)
 
-**objective:** Users can add reviews for prior stays
+## Future Directions for the Project
 
-### Bonus Features (TBD)
-- [ ] Listings picture gallery
-- [ ] Messaging
-- [ ] User profiles
-- [ ] Host profiles
-- [ ] Wish lists
-- [ ] Local experiences
-- [ ] Review responses
+In addition to the features already implemented, I plan to continue work on this project.  The next steps for FresherNote are outlined below.
+
+### Search
+
+Searching notes is a standard feature of Evernote.  I plan to utilize the Fuse.js library to create a fuzzy search of notes and notebooks.  This search will look go through tags, note titles, notebook titles, and note content.  
+
+### Direct Messaging
+
+Although this is less essential functionality, I also plan to implement messaging between FresherNote users.  To do this, I will use WebRTC so that notifications of messages happens seamlessly.  

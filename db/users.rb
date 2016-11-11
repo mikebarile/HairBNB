@@ -132,9 +132,10 @@ module UsersFactory
   ]
 
   male_names.each_with_index do |name, idx|
-    User.create({
+    User.create!({
       email: idx,
       password: "password",
+      first_name: male_names.shuffle[0],
       last_name: "default",
       image_url: male_images.shuffle[0],
       is_host: true
@@ -142,9 +143,10 @@ module UsersFactory
   end
 
   female_names.each_with_index do |name, idx|
-    User.create({
+    User.create!({
       email: idx + 100,
       password: "password",
+      first_name: female_names.shuffle[0],
       last_name: "default",
       image_url: female_images.shuffle[0],
       is_host: true
