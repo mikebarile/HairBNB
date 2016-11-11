@@ -121,7 +121,8 @@ class ShowListingGuest extends React.Component {
 
             <Reviews
               currentListing={this.props.currentListing}
-              currentUser={this.props.currentUser}/>
+              currentUser={this.props.currentUser}
+              createReview={this.props.createReview}/>
           </div>
 
           <div className="sl-dummy-col"></div>

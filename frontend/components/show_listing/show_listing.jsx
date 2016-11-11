@@ -29,6 +29,7 @@ class ShowListing extends React.Component {
         createBooking = {this.props.createBooking}
         myTrips = {this.props.myTrips}
         clearBookingErrors={this.props.clearBookingErrors}
+        createReview={this.props.createReview}
       />;
     }
     else {
@@ -39,6 +40,7 @@ class ShowListing extends React.Component {
         createBooking = {this.props.createBooking}
         myTrips = {this.props.myTrips}
         clearBookingErrors={this.props.clearBookingErrors}
+        createReview={this.props.createReview}
       />;
     }
   }

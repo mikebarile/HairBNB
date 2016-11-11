@@ -1,6 +1,7 @@
 import {RECEIVE_LISTING, REMOVE_LISTING, RECEIVE_LISTING_ERRORS,
   CLEAR_LISTING_ERRORS, CLEAR_LISTING, CLEAR_STATE
 } from '../actions/listing_actions';
+import {RECEIVE_NEW_REVIEW} from '../actions/review_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
@@ -35,6 +36,7 @@ const defaultState = {
 
 const ListingReducer = (state = defaultState, action) => {
   Object.freeze(state);
+  let newState;
   switch (action.type) {
     case RECEIVE_LISTING:
       return {
@@ -48,6 +50,10 @@ const ListingReducer = (state = defaultState, action) => {
       else {
         return state;
       }
+    case RECEIVE_NEW_REVIEW:
+      newState = merge({}, state);
+      newState.reviews.push(action.review);
+      return newState;
     case RECEIVE_LISTING_ERRORS:
       return {
         currentListing: defaultState,
@@ -58,7 +64,7 @@ const ListingReducer = (state = defaultState, action) => {
     case CLEAR_STATE:
       return defaultState;
     case CLEAR_LISTING_ERRORS:
-      let newState = merge({}, state);
+      newState = merge({}, state);
       newState.errors = [];
       return newState;
     default:

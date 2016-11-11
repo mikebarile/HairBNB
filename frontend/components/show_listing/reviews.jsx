@@ -5,6 +5,15 @@ import { withRouter } from 'react-router';
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showCreate: false,
+      reviewBody: "",
+      rating: null,
+      errors: []
+    };
+    this.handleAddReviewClick = this.handleAddReviewClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
    handleStars(rating, className) {
@@ -63,6 +72,60 @@ class Reviews extends React.Component {
     }
   }
 
+  handleAddReviewClick(e) {
+    e.preventDefault();
+    this.setState({showCreate: true});
+  }
+
+  handleSubmit(e) {
+    if (this.state.body === "") {
+      return(this.setState({errors: ["Review body can't be blank"]}));
+    }
+    else if (this.state.rating === null) {
+      return(this.setState({errors: ["Review rating can't be blank"]}));
+    }
+    else {
+      this.props.createReview({
+        guest_id: this.props.currentUser.id,
+        description: this.state.reviewBody,
+        listing_id: this.props.currentListing.id,
+        rating: this.state.rating
+      });
+      this.setState({
+        showCreate: false,
+        reviewBody: "",
+        rating: null,
+        errors: []
+      });
+    }
+  }
+
+  update(property) {
+    return value => {
+      this[property] = value;
+    };
+  }
+
+  handleCreateReview() {
+    if (this.state.showCreate === false) {
+      return <div></div>;
+    }
+    return (
+      <div className="slr-create-review">
+        <span className="slr-create-review-title">Add a review</span>
+        <select className="slr-create-rating" onChange={this.update("rating")}>
+            <option value='1'>1 star</option>
+            <option value='2'>2 stars</option>
+            <option value='3'>3 stars</option>
+            <option value='4'>4 stars</option>
+            <option value='5'>5 stars</option>
+          </select>
+        <textarea ref="reviewBody" className="slr-review-body" onChange={this.update("reviewBody")}></textarea>
+        <button className="slr-submit-review" onClick={this.handleSubmit}>Submit</button>
+      </div>
+    );
+  }
+
   handleReviews() {
     let reviews = [];
     if (this.props.currentListing.reviews === undefined) {
@@ -96,7 +159,9 @@ class Reviews extends React.Component {
             <div className="slr-header-stars">
               {this.handleStars(listing.average_rating, "slr-header-star")}
             </div>
+            <button className="slr-add-review-button" onClick={this.handleAddReviewClick}>Add review</button>
           </div>
+          {this.handleCreateReview()}
           {this.handleReviews()}
         </div>
       </div>
