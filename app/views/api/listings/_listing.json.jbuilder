@@ -32,6 +32,7 @@ json.set! :host_image_url, listing.host.image_url
 json.set! :host_first_name, listing.host.first_name
 
 json.set! :average_rating, listing.average_rating
+json.set! :count_reviews, listing.reviews.length
 
 json.reviews do
   json.partial! 'api/reviews/review', collection: listing.reviews, as: :review
