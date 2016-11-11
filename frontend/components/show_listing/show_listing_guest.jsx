@@ -10,6 +10,17 @@ class ShowListingGuest extends React.Component {
     super(props);
   }
 
+  handleStars(rating, className) {
+    let stars = [];
+    for (var i = 1; i <= rating; i++) {
+      stars.push(<img key={i} className={className} src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>);
+    }
+    for (var i = stars.length; i < 5; i++) {
+      stars.push(<img key={i} className={className} src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_68,w_68,x_5,y_2/v1478139574/Icons/Screen_Shot_2016-11-02_at_7.19.10_PM.png"/>);
+    }
+    return stars;
+  }
+
   render() {
     let listing = this.props.currentListing;
     let imgStyle = {
@@ -36,12 +47,8 @@ class ShowListingGuest extends React.Component {
                   <div className="sl-sub-title-row">
                     <span className="sl-sub-title slst-first">{location}</span>
                     <span className="sl-sub-title">·</span>
-                    <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                    <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                    <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                    <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                    <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                    <span className="sl-sub-title">100 reviews</span>
+                      {this.handleStars(listing.average_rating, "sl-star")}
+                      <span className="sl-sub-title">{listing.count_reviews} reviews</span>
                   </div>
                 </div>
 
@@ -72,12 +79,8 @@ class ShowListingGuest extends React.Component {
                 <div className="sl-sub-title-row">
                   <span className="sl-sub-title slst-first">{location}</span>
                   <span className="sl-sub-title">·</span>
-                  <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                  <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                  <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                  <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                  <img className="sl-star" src="https://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>
-                  <span className="sl-sub-title">100 reviews</span>
+                  {this.handleStars(listing.average_rating, "sl-star")}
+                  <span className="sl-sub-title">{listing.count_reviews} reviews</span>
                 </div>
               </div>
 
