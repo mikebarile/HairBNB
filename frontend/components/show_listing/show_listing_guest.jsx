@@ -32,8 +32,13 @@ class ShowListingGuest extends React.Component {
       return stars;
     }
 
+    rating = (Math.round(rating * 2) / 2).toFixed(1);
+
     for (var i = 1; i <= rating; i++) {
       stars.push(<img key={i} className={className} src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_3,y_2/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.12.47_PM.png"/>);
+    }
+    if (rating - Math.floor(rating) === 0.5){
+      stars.push(<img key={i} className={className} src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_70,w_70,x_7/v1478139260/Icons/Screen_Shot_2016-11-02_at_7.13.12_PM.png"/>);
     }
     for (var i = stars.length; i < 5; i++) {
       stars.push(<img key={i} className={className} src="http://res.cloudinary.com/dsguwnfdw/image/upload/c_crop,h_68,w_68,x_5,y_2/v1478139574/Icons/Screen_Shot_2016-11-02_at_7.19.10_PM.png"/>);
