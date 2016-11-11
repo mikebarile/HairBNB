@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { withRouter } from 'react-router';
 import Description from './listing_description';
 import BookListing from './book_listing';
+import Reviews from './reviews';
 
 class ShowListingHost extends React.Component {
   constructor(props) {
@@ -89,6 +90,10 @@ class ShowListingHost extends React.Component {
             <Description
               currentListing={listing}
               errors={this.props.errors}/>
+
+            <Reviews
+              currentListing={this.props.currentListing}
+              currentUser={this.props.currentUser}/>
           </div>
 
           <div className="sl-dummy-col"></div>

@@ -1,4 +1,4 @@
-class Booking < ActiveRecord::Base
+class Review < ActiveRecord::Base
   validates :guest_id, :listing_id, :description, :rating, presence: true
 
   belongs_to :guest,
