@@ -1,9 +1,9 @@
 import { receiveReviews, receiveNewReview, receiveEditedReview,
   removeReview, FETCH_REVIEWS, CREATE_REVIEW, DELETE_REVIEW, EDIT_REVIEW,
-} from '../actions/booking_actions';
+} from '../actions/review_actions';
 
 import {fetchReviews, createReview, deleteReview, editReview
-} from '../util/booking_api_util';
+} from '../util/review_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
   const receiveNewReviewSuccess = booking => {

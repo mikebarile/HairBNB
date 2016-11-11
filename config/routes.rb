@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :cities
     resources :listings
     resources :bookings
+    resources :reviews
   end
 end
