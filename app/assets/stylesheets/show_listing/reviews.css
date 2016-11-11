@@ -106,7 +106,6 @@
 }
 
 .slr-create-review-container {
-  border 2px solid #DCE0E0;
   display: flex;
   flex-direction: column;
   width: 100%;
