@@ -4,7 +4,7 @@ import ListingsMiddleware from './listings_middleware';
 import BookingsMiddleware from './bookings_middleware';
 
 const RootMiddleware = applyMiddleware(
-  SessionMiddleware, ListingsMiddleware
+  SessionMiddleware, ListingsMiddleware, BookingsMiddleware
 );
 
 export default RootMiddleware;

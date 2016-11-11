@@ -26,8 +26,10 @@ class ShowListing extends React.Component {
         currentUser={this.props.currentUser}
         currentListing={this.props.currentListing}
         errors={this.props.errors}
-        deleteListing={this.deleteListing}
-        editListing={this.editListing}/>;
+        createBooking = {this.props.createBooking}
+        myTrips = {this.props.myTrips}
+        clearBookingErrors={this.props.clearBookingErrors}
+      />;
     }
     else {
       return <ShowListingGuest
@@ -35,7 +37,9 @@ class ShowListing extends React.Component {
         currentListing = {this.props.currentListing}
         errors = {this.props.errors}
         createBooking = {this.props.createBooking}
-        myTrips = {this.props.myTrips}/>;
+        myTrips = {this.props.myTrips}
+        clearBookingErrors={this.props.clearBookingErrors}
+      />;
     }
   }
 }

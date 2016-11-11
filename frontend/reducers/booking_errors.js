@@ -1,6 +1,6 @@
 import { RECEIVE_CREATE_BOOKING_ERRORS, RECEIVE_EDIT_TRIP_ERRORS,
   RECEIVE_EDIT_RESERVATION_ERRORS, CLEAR_STATE, CLEAR_BOOKING_ERRORS }
-  from '../actions/listing_actions';
+  from '../actions/booking_actions';
 import { merge } from 'lodash';
 
 const defaultState = {

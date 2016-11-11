@@ -40,7 +40,6 @@ export default ({ getState, dispatch }) => next => action => {
   const createErrorCallback = xhr => dispatch(receiveCreateBookingErrors(xhr.responseJSON));
   const editTripErrorCallback = xhr => dispatch(receiveEditTripErrors(xhr.responseJSON));
   const editReservationErrorCallback = xhr => dispatch(receiveEditReservationErrors(xhr.responseJSON));
-
   switch(action.type) {
     case FETCH_MY_TRIPS:
       fetchBookings(action.params, receiveMyTripsSuccess);

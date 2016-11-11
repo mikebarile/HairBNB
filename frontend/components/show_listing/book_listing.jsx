@@ -7,8 +7,6 @@ class BookListing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      check_in: null,
-      check_out: null,
       guest_id: this.props.currentUser.id,
       host_id: this.props.currentListing.host_id,
       listing_id: this.props.currentListing.id,
@@ -26,7 +24,7 @@ class BookListing extends React.Component {
       this.props.clearBookingErrors();
       this.setState({});
     }
-    else if (newProps.errors.length > 0) {
+    else if (newProps.errors !== undefined && newProps.errors.length > 0) {
       this.setState({errors: newProps.errors});
     }
   }
@@ -38,15 +36,32 @@ class BookListing extends React.Component {
   }
 
   handleSubmit(e) {
-    if (this.check_in !== null && this.check_out !== null) {
-      this.props.createBooking(this.state);
+    if (this.state.guest_id === this.state.host_id) {
+      this.setState({errors: ["You can't book your own listing!"]});
+    }
+    else if (this.check_in === undefined || this.check_out === undefined ||
+      this.check_in === null || this.check_out === null){
+        this.setState({errors: ["Please complete all fields"]});
+      }
+    else if (new Date(this.check_in) < new Date()
+    || new Date(this.check_out) <= new Date(this.check_in)) {
+      this.setState({errors: ["Invalid date range"]});
     }
     else {
-      this.setState({errors: ["Please complete all fields"]});
+      this.props.createBooking({
+        check_in: this.check_in,
+        check_out: this.check_out,
+        guest_id: this.state.guest_id,
+        host_id: this.state.host_id,
+        message: this.state.message,
+        status: this.state.status,
+        listing_id: this.state.listing_id
+      });
     }
   }
 
   render() {
+
     let listing = this.props.currentListing;
     let today = new Date();
 
@@ -58,9 +73,9 @@ class BookListing extends React.Component {
             <span className="slb-col-title">Check In</span>
             <Calendar
               format='MM/DD/YYYY'
-              minDate={today}
               placeholder="mm/dd/yyyy"
               onChange={this.update("check_in")}
+              computableFormat='YYYY/MM/DD'
             />
           </div>
 
@@ -68,9 +83,9 @@ class BookListing extends React.Component {
             <span className="slb-col-title">Check Out</span>
             <Calendar
               format='MM/DD/YYYY'
-              minDate={today}
               placeholder="mm/dd/yyyy"
               onChange={this.update("check_out")}
+              computableFormat='YYYY/MM/DD'
             />
           </div>
 

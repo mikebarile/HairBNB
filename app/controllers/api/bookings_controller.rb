@@ -19,6 +19,7 @@ class Api::BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+
     if @booking.save
       render "api/bookings/show"
     else

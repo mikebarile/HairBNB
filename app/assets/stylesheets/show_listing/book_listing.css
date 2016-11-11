@@ -100,11 +100,12 @@
 .slb-errors {
   margin-top: 10px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .slb-error {
   color: #B34143;
   font-size: 13px;
-  padding-left: 70px;
-  margin-bottom: 20px;
+  padding-left: 15px;
 }

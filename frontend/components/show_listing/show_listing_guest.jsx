@@ -96,10 +96,11 @@ class ShowListingGuest extends React.Component {
           <div className="sl-second-col">
             <BookListing
               currentListing={listing}
+              clearBookingErrors={this.props.clearBookingErrors}
               currentUser={this.props.currentUser}
               errors={this.props.errors}
-              createBooking = {this.props.createBooking}
-              myTrips = {this.props.myTrips}/>
+              createBooking={this.props.createBooking}
+              myTrips={this.props.myTrips}/>
           </div>
         </div>
       </div>

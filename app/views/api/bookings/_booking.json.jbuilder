@@ -2,16 +2,25 @@ json.extract! booking, :id, :host_id, :guest_id, :listing_id, :check_in,
   :check_out, :message, :status
 
 json.host do
-  json.extract! booking.host.id, booking.host.first_name, booking.host.email,
-    booking.host.image_url
+  json.set! :id, booking.host.id
+  json.set! :first_name, booking.host.first_name
+  json.set! :email, booking.host.email
+  json.set! :image_url, booking.host.image_url
 end
 
 json.guest do
-  json.extract! booking.guest.id, booking.guest.first_name, booking.guest.email,
-    booking.guest.image_url
+  json.set! :id, booking.guest.id
+  json.set! :first_name, booking.guest.first_name
+  json.set! :email, booking.guest.email
+  json.set! :image_url, booking.guest.image_url
 end
 
 json.listing do
-  json.extract! booking.listing.id, booking.listing.title, booking.listing.price,
-    booking.listing.state, booking.listing.country, image_url
+  json.set! :id, booking.listing.id
+  json.set! :title, booking.listing.title
+  json.set! :price, booking.listing.price
+  json.set! :city, booking.listing.city
+  json.set! :state, booking.listing.state
+  json.set! :country, booking.listing.country
+  json.set! :image_url, booking.listing.image_url
 end
