@@ -31,12 +31,16 @@ class BookListing extends React.Component {
   }
 
   handleSubmit(e) {
+
+    console.log(this.props.currentUser);
+
+    if (this.props.currentUser === null || this.props.currentUser.id === null) {
+      return(this.setState({errors: ["Please log in before making a booking"]}));
+    }
+
     let guest_id = this.props.currentUser.id;
     let host_id = this.props.currentListing.host_id;
 
-    if (guest_id === null || guest_id === undefined) {
-      this.setState({errors: ["Please log in before making a booking"]});
-    }
     if (guest_id === host_id) {
       this.setState({errors: ["You can't book your own listing!"]});
     }

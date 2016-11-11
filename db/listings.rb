@@ -1,4 +1,4 @@
-def create_listings (
+module ListingsFactory
   Listing.create({
     title: "Charming post-modern kennel",
     price: 294,
@@ -91,4 +91,4 @@ def create_listings (
     country: "United States",
     image_url: "https://res.cloudinary.com/dsguwnfdw/image/upload/v1478136942/Spots/ee58f1d8650eb2c5e208930bb711578e.jpg"
   })
-)
+end

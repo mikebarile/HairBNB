@@ -39,10 +39,11 @@ class Map extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.map.setOptions({
-      center: {lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)},
-      zoom: 13
-    });
+    if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
+      this.map.setOptions({
+        center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)}
+      });
+    }
   }
 
   _registerListeners() {

@@ -1,4 +1,4 @@
-def create_cities (
+module CitiesFactory
   City.create(city_name: 'Tokyo', state: '', country: 'Japan')
   City.create(city_name: 'Jakarta', state: '', country: 'Indonesia')
   City.create(city_name: 'Delhi', state: '', country: 'India')
@@ -501,4 +501,4 @@ def create_cities (
   City.create(city_name: 'Basra', state: '', country: 'Iraq')
   City.create(city_name: 'Sulaymaniyah', state: '', country: 'Iraq')
   City.create(city_name: 'Freetown', state: '', country: 'Sierra Leone')
-)
+end
