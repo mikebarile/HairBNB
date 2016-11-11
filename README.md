@@ -8,7 +8,7 @@ HairBNB is a full-stack web application inspired by AirBNB.  It utilizes Ruby on
 
 ## Features & Implementation
 
-### Rending listings
+### Rendering listings
 
   On the database side, HairBNB is split into several tables: users, listings, bookings, and reviews. Upon entering the site, the app immediately queries the database to pull the "top 3" HairBNB picks and render them to the page. Otherwise, the database renders dynamically depending on which page you're viewing. For example, the database makes a get call to  "api/listings/:id" when you enter a listing show page.
 
