@@ -48,6 +48,15 @@ module ReviewsFactory
     ":( :( :("
   ]
 
+  500.times do
+    Review.create!({
+      guest_id: 1 + rand(100),
+      listing_id: 1 + rand(200),
+      description: negative_descriptions.shuffle[0],
+      rating: rand(2) + 1
+      })
+  end
+
   4000.times do
     Review.create!({
       guest_id: 1 + rand(10),
@@ -66,12 +75,4 @@ module ReviewsFactory
       })
   end
 
-  500.times do
-    Review.create!({
-      guest_id: 1 + rand(100),
-      listing_id: 1 + rand(200),
-      description: negative_descriptions.shuffle[0],
-      rating: rand(2) + 1
-      })
-  end
 end
