@@ -1,5 +1,5 @@
 class Booking < ActiveRecord::Base
-  validates :guest_id, :listing_id, :title, :description, :rating, presence: true
+  validates :guest_id, :listing_id, :description, :rating, presence: true
 
   belongs_to :guest,
   primary_key: :id,
