@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 import { clearListing } from '../actions/listing_actions';
 import App from './app.jsx';
-import Home from './home/home';
+import HomeContainer from './home/home_container';
 import ShowListingContainer from './show_listing/show_listing_container';
 import MyListingsContainer from './my_listings/my_listings_container';
 import AddListingIndex from './add_listing/add_listing_index';
@@ -37,7 +37,7 @@ const Root = ({ store }) => {
     <Router history={hashHistory} onUpdate={() => window.scrollTo(0, 0)}>
       <Route path="/" component={App} >
         <IndexRedirect to="/home" />
-        <Route path="/home" component={Home}/>
+        <Route path="/home" component={HomeContainer}/>
         <Route path="listings/:listing_id" component={ShowListingContainer} onLeave={purgeListing}/>
         <Route path="my-listings" component={MyListingsContainer} onEnter={redirectHome}/>
         <Route path="become-a-host" component={AddListingIndex} onEnter={redirectHome}>

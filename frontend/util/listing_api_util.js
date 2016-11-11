@@ -27,6 +27,16 @@ export const fetchSearchListings = (filters, success, error) => {
   });
 };
 
+export const fetchTopListings = (success, error) => {
+  $.ajax({
+    method: 'GET',
+    url: `api/listings`,
+    data: {"top": ["FUBAR"]},
+    success,
+    error
+  });
+};
+
 export const createListing = (listing, success, error) => {
   $.ajax({
     method: 'POST',

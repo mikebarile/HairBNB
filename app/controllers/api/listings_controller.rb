@@ -2,11 +2,13 @@ class Api::ListingsController < ApplicationController
 
   def index
     if params.include?("listing")
-      @listings = Listing.where(listing_params).order(id: :desc).limit(18)
+      @listings = Listing.where(listing_params).order(id: :asc).limit(18)
     elsif params.include?("filters")
-      @listings = Listing.in_bounds(params[:filters][:bounds]).order(id: :desc)
+      @listings = Listing.in_bounds(params[:filters][:bounds]).order(id: :asc)
+    elsif params.include?("top")
+      @listings = Listing.all.order(id: :asc).limit(3)
     else
-      @listings = Listing.all.order(id: :desc).limit(18)
+      @listings = Listing.all.order(id: :asc).limit(18)
     end
   end
 

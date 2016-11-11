@@ -1,10 +1,11 @@
 import { receiveMyListings, receiveListing, receiveNewListing, removeListing,
-  receiveListingErrors, receiveSearchListings, updateListingForm, FETCH_LISTING, FETCH_MY_LISTINGS,
-  CREATE_LISTING, DELETE_LISTING, EDIT_LISTING, UPDATE_IMAGE, FETCH_COORDS, FETCH_SEARCH_LISTINGS,
-  UPDATE_FILTER} from '../actions/listing_actions';
+  receiveListingErrors, receiveSearchListings, updateListingForm, receiveTopListings,
+  FETCH_LISTING, FETCH_MY_LISTINGS, CREATE_LISTING, DELETE_LISTING, EDIT_LISTING,
+  UPDATE_IMAGE, FETCH_COORDS, FETCH_SEARCH_LISTINGS, UPDATE_FILTER,
+  FETCH_TOP_LISTINGS} from '../actions/listing_actions';
 
 import {fetchListing, fetchListings, createListing, deleteListing,
-  editListing, fetchCoords, fetchSearchListings
+  editListing, fetchCoords, fetchSearchListings, fetchTopListings
 } from '../util/listing_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
@@ -30,6 +31,10 @@ export default ({ getState, dispatch }) => next => action => {
 
   const receiveImageSuccess = object => {
     dispatch(updateListingForm({image_url: object.secure_url}));
+  };
+
+  const receiveTopListingsSuccess = listings => {
+    dispatch(receiveTopListings(listings));
   };
 
   const receiveCoordsSuccess = (data) => {
@@ -76,6 +81,9 @@ export default ({ getState, dispatch }) => next => action => {
       next(action);
       fetchSearchListings(action.filter, receiveSearchListingsSuccess);
       break;
+    case FETCH_TOP_LISTINGS:
+      fetchTopListings(receiveTopListingsSuccess);
+      return next(action);
     default:
       return next(action);
   }

@@ -9,6 +9,10 @@ class Home extends React.Component {
       super(props);
   }
 
+  componentWillMount() {
+    this.props.fetchTopListings();
+  }
+
   update(property) {
     return e => this.setState({
       [property]: e.target.value
@@ -16,6 +20,7 @@ class Home extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return(
       <div className="home">
         <div className="dog-gif">
@@ -23,7 +28,7 @@ class Home extends React.Component {
           <span className="home-subheader">Send your best friend to stay with local hosts in 190 countries</span>
         </div>
         <SearchBar/>
-        <SpotPicks/>
+        <SpotPicks topPicks={this.props.topPicks}/>
         <Destinations/>
       </div>
 

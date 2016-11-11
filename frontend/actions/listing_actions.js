@@ -18,6 +18,8 @@ export const UPDATE_IMAGE = "UPDATE_IMAGE";
 export const FETCH_COORDS = "FETCH_COORDS";
 export const CLEAR_LISTING_FORM = "CLEAR_LISTING_FORM";
 export const UPDATE_FILTER = "UPDATE_FILTER";
+export const FETCH_TOP_LISTINGS = "FETCH_TOP_LISTINGS";
+export const RECEIVE_TOP_LISTINGS = "RECEIVE_TOP_LISTINGS";
 
 export const fetchListing = (id) => ({
   type: FETCH_LISTING,
@@ -118,4 +120,13 @@ export const receiveSearchListings = (listings) => ({
 export const updateFilter = (filter) => ({
   type: UPDATE_FILTER,
   filter,
+});
+
+export const fetchTopListings = () => ({
+  type: FETCH_TOP_LISTINGS
+});
+
+export const receiveTopListings = (listings) => ({
+  type: RECEIVE_TOP_LISTINGS,
+  listings
 });

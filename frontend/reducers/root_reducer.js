@@ -9,6 +9,7 @@ import MyTripsReducer from './my_trips_reducer';
 import MyReservationsReducer from './my_reservations_reducer';
 import BookingErrorsReducer from './booking_errors';
 import ReviewsReducer from './reviews_reducer';
+import TopPicksReducer from './top_picks_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -20,7 +21,8 @@ const RootReducer = combineReducers({
   searchListings: SearchListingsReducer,
   filter: FilterReducer,
   bookingErrors: BookingErrorsReducer,
-  reviews: ReviewsReducer
+  reviews: ReviewsReducer,
+  topPicks: TopPicksReducer
 });
 
 export default RootReducer;
