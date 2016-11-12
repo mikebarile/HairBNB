@@ -80,6 +80,9 @@ class Reviews extends React.Component {
   }
 
   handleSubmit(e) {
+    if (this.props.currentUser === null || this.props.currentUser.id === null) {
+      return(this.setState({errors: ["Please log in before making a booking"]}));
+    }
     if (this.state.reviewBody === "") {
       return(this.setState({errors: ["Review body can't be blank"]}));
     }
