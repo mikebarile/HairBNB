@@ -17,7 +17,7 @@ class AddListingHome extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  componentWillReceiveProps() {
     if (this.props.currentUser) {
       this.setState({errors: null});
     }
@@ -84,7 +84,7 @@ class AddListingHome extends React.Component {
   }
 
   generateError() {
-    if (this.state.errors === null) {
+    if (this.state.errors === null || this.props.currentUser) {
       return (<div></div>);
     }
     else {
