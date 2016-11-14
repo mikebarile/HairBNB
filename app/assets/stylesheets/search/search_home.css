@@ -9,6 +9,11 @@
   margin-bottom: 40px;
 }
 
+.search-no-listings {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
 .s-form-col {
   display: flex;
   flex-direction: column;

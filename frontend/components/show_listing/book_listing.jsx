@@ -97,7 +97,7 @@ class BookListing extends React.Component {
           </div>
 
           <div className="slb-col slb-col-last">
-            <span className="slb-col-title">Guests</span>
+            <span className="slb-col-title">Dogs</span>
             <select className="slb-col-guests">
               <option defaultValue>1</option>
               <option >2</option>

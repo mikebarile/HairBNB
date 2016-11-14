@@ -7,11 +7,22 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      check_in: null,
-      check_out: null
+      check_in: "",
+      check_out: ""
     };
     this.update = this.update.bind(this);
     this.handleDateType = this.handleDateType.bind(this);
+    this.noListings = this.noListings.bind(this);
+  }
+
+  componentDidMount() {
+    if(this.props.location.query && this.props.location.query.check_in &&
+      this.props.location.query.check_out){
+        this.setState({
+          check_in: this.props.location.query.check_in,
+          check_out: this.props.location.query.check_out
+        });
+    }
   }
 
   handleLocation(listing) {
@@ -40,6 +51,14 @@ class Search extends React.Component {
     };
   }
 
+  noListings() {
+    if (this.props.searchListings.length === 0) {
+      return (
+        <span className="search-no-listings">No listings in this area yet!</span>
+      );
+    }
+  }
+
   render() {
     let listings = this.props.searchListings;
 
@@ -50,12 +69,14 @@ class Search extends React.Component {
             <span className="s-dates-title">Dates</span>
               <input
                 onChange={this.update("check_in")}
+                value={this.state.check_in}
                 className="s-date-input"
                 type="text"
                 onFocus={this.handleDateType("date")}
                 placeholder="Check In"/>
               <input
                 onChange={this.update("check_out")}
+                value={this.state.check_out}
                 className="s-date-input"
                 type="text"
                 onFocus={this.handleDateType("date")}
@@ -67,6 +88,8 @@ class Search extends React.Component {
                 <option value='4'>4 Dogs</option>
               </select>
           </div>
+
+          {this.noListings()}
 
           <div className="s-listings">
             <div className="s-listings-row">
