@@ -29,16 +29,17 @@ class Map extends React.Component {
       };
     }
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
+    this._registerListeners();
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.listings);
   }
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.listings);
-    this._registerListeners();
   }
 
   componentWillReceiveProps(newProps) {
+    console.log('test');
     if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
       this.map.setOptions({
         center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)}
@@ -56,7 +57,7 @@ class Map extends React.Component {
     });
   }
 
-  _handleMarkerClick(bench) {
+  _handleMarkerClick(listing) {
     this.props.router.push(`listings/${listing.id}`);
   }
 

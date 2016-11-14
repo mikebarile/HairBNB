@@ -3,7 +3,6 @@ export default class MarkerManager {
     this.map = map;
     this.handleClick = handleClick;
     this.markers = [];
-    //permanently bind instance methods
     this._createMarkerFromlisting = this._createMarkerFromlisting.bind(this);
     this._removeMarker = this._removeMarker.bind(this);
     this._markersToRemove = this._markersToRemove.bind(this);
@@ -31,7 +30,7 @@ export default class MarkerManager {
       position: pos,
       map: this.map,
       listingId: listing.id
-      
+
     });
     marker.addListener('click', () => this.handleClick(listing));
     this.markers.push(marker);
