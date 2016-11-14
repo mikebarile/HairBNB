@@ -75,11 +75,25 @@
   border-left: 0;
 }
 
+.add-a-listing {
+  padding: 0 22px 0 22px;
+  border-left: 1px solid #DCE0E0;
+  height: 60px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 120px;
+  padding-right: 25px;
+  border-left: 0;
+}
+
 .become-a-host-link {
   border: 2px solid #AAAAAA;
   padding: 7px;
   border-radius: 5px;
   max-height: 15px;
+
 }
 
 .become-a-host-link:hover {

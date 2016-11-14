@@ -21,7 +21,6 @@ class UserButtons extends React.Component {
     this.setSwitch = this.setSwitch.bind(this);
     this.openDropdown = this.openDropdown.bind(this);
     this.closeDropdown = this.closeDropdown.bind(this);
-    this.handleBecomeHost = this.handleBecomeHost.bind(this);
   }
 
   showSignupModal() {
@@ -76,22 +75,13 @@ class UserButtons extends React.Component {
     this.refs.userDropdown.hide();
   }
 
-  handleBecomeHost() {
-    if (this.props.currentUser) {
-      this.props.router.push('/become-a-host');
-    }
-    else {
-      this.showSignupModal();
-    }
-  }
-
   render() {
     let currentUser = this.props.currentUser;
     if (currentUser === null) {
       return (
         <div className="user-buttons">
-          <div className="become-a-host" onClick={this.handleBecomeHost}>
-            <span className="become-a-host-link">Become a Host</span>
+          <div className="become-a-host">
+            <Link to="/become-a-host" className="become-a-host-link">Become a Host</Link>
           </div>
 
           <button className="user-button-new" onClick={this.showSignupModal}>Signup</button>
@@ -118,8 +108,8 @@ class UserButtons extends React.Component {
     else if (currentUser && currentUser.is_host === false) {
       return (
         <div className="user-buttons">
-          <div className="become-a-host" onClick={this.handleBecomeHost}>
-            <span className="become-a-host-link">Become a Host</span>
+          <div className="become-a-host">
+            <Link to="/become-a-host" className="become-a-host-link">Become a Host</Link>
           </div>
           <Link className="user-button user-button-trips" to="/my-trips">Trips</Link>
           <Dropdown ref="userDropdown">
@@ -141,6 +131,9 @@ class UserButtons extends React.Component {
     else {
       return (
         <div className="user-buttons">
+          <div className="add-a-listing">
+            <Link to="/become-a-host" className="become-a-host-link">Add a listing</Link>
+          </div>
           <Link className="user-button user-button-host" to="/my-listings">Host</Link>
           <Link className="user-button user-button-trips" to="/my-trips">Trips</Link>
           <Dropdown ref="userDropdown">

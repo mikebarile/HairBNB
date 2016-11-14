@@ -5,16 +5,21 @@ import { merge } from 'lodash';
 class AddListingHome extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {errors: null};
     this.handleHeader = this.handleHeader.bind(this);
+    this.errorHandler = this.errorHandler.bind(this);
+    this.generateError = this.generateError.bind(this);
   }
 
   componentDidMount() {
-    this.props.updateListingForm({host_id: this.props.currentUser.id});
+    if (this.props.currentUser) {
+      this.props.updateListingForm({host_id: this.props.currentUser.id});
+    }
   }
 
   componentDidUpdate() {
-    if(this.props.currentUser === null){
-      this.props.router.replace('/home');
+    if (this.props.currentUser) {
+      this.setState({errors: null});
     }
   }
 
@@ -53,12 +58,42 @@ class AddListingHome extends React.Component {
 
   handleHeader() {
     let user = this.props.currentUser;
-    if (this.props.listingFormState.current_form === "home" ||
-      this.props.listingFormState.current_form === "start-with-basics") {
+    if (user && user.first_name !== undefined) {
         return(<span>Hi, {user.first_name}! Let's get you ready to become a host.</span>);
     }
     else {
-      return (<span>Become a Hairbnb host</span>);
+      return (
+        <div>
+          <span>Become a Hairbnb host</span>
+          <br/>
+          <span className="bh-subtitle">To get started, please signup or login</span>
+        </div>
+      );
+    }
+  }
+
+  errorHandler(e) {
+    e.preventDefault();
+    let user = this.props.currentUser;
+    if (user) {
+      this.props.router.push("/become-a-host/basics");
+    }
+    else {
+      this.setState({errors: "Please log in or sign up to get started"});
+    }
+  }
+
+  generateError() {
+    if (this.state.errors === null) {
+      return (<div></div>);
+    }
+    else {
+      return (
+        <div>
+          <br/>
+          <span className="alh-error-handler">{this.state.errors}</span>
+        </div>
+      );
     }
   }
 
@@ -74,7 +109,8 @@ class AddListingHome extends React.Component {
               <span className={this.handleButton("start-with-basics", "alh-step-name")}>STEP 1</span>
               <span className={this.handleButton("start-with-basics", "alh-step-title")}>Start with the basics</span>
               <span className={this.handleButton("start-with-basics", "alh-step-description")}>Listing title, description, etc.</span>
-              <Link to="/become-a-host/basics" className={this.handleButton("start-with-basics", "alh-step-button")}></Link>
+              {this.generateError()}
+              <button onClick={this.errorHandler} className={this.handleButton("start-with-basics", "alh-step-button")}></button>
             </div>
             <img src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478474954/Icons/check-mark-in-white-md.png" className={this.handleButton("start-with-basics", "alh-check")}></img>
           </div>

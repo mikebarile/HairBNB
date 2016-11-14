@@ -17,7 +17,7 @@ class AddListingSecond extends React.Component {
 
   componentDidUpdate() {
     if(this.props.currentUser === null){
-      this.props.router.replace('/home');
+      this.props.router.replace('/become-a-host');
     }
   }
 

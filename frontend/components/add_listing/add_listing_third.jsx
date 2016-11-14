@@ -17,7 +17,7 @@ class AddListingThird extends React.Component {
 
   componentDidMount() {
     if(this.props.currentUser === null){
-      this.props.router.replace('/home');
+      this.props.router.replace('/become-a-host');
     }
 
     if(this.props.listingFormState.current_form === "home" ||

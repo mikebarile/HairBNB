@@ -13,6 +13,14 @@
   max-width: 480px;
 }
 
+.bh-subtitle {
+  font-size: 18px;
+}
+
+.alh-error-handler {
+  color: #FE0000;
+}
+
 .alh-step-container {
   display: flex;
   justify-content: flex-start;

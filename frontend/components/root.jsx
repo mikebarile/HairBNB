@@ -32,6 +32,12 @@ const Root = ({ store }) => {
     }
   };
 
+  const redirectALHome = (nextState, replaceState) => {
+    if(store.getState().session.currentUser === null){
+      replaceState('/become-a-host');
+    }
+  };
+
   return (
   <Provider store={store}>
     <Router history={hashHistory} onUpdate={() => window.scrollTo(0, 0)}>
@@ -40,11 +46,11 @@ const Root = ({ store }) => {
         <Route path="/home" component={HomeContainer}/>
         <Route path="listings/:listing_id" component={ShowListingContainer} onLeave={purgeListing}/>
         <Route path="my-listings" component={MyListingsContainer} onEnter={redirectHome}/>
-        <Route path="become-a-host" component={AddListingIndex} onEnter={redirectHome}>
+        <Route path="become-a-host" component={AddListingIndex}>
           <IndexRoute component={AddListingHomeContainer}/>
-          <Route path="basics" component={AddListingFirstContainer} onEnter={redirectHome}/>
-          <Route path="scene" component={AddListingSecondContainer} onEnter={redirectHome}/>
-          <Route path="ready" component={AddListingThirdContainer} onEnter={redirectHome}/>
+          <Route path="basics" component={AddListingFirstContainer} onEnter={redirectALHome}/>
+          <Route path="scene" component={AddListingSecondContainer} onEnter={redirectALHome}/>
+          <Route path="ready" component={AddListingThirdContainer} onEnter={redirectALHome}/>
         </Route>
         <Route path="search" component={SearchContainer}/>
         <Route path="my-trips" component={MyTripsContainer}/>
