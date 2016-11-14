@@ -1,5 +1,6 @@
 .dropdown {
   display: inline-block;
+  z-index: 5;
 }
 
 .dropdown__content {

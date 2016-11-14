@@ -61,8 +61,6 @@ const ListingReducer = (state = defaultState, action) => {
       };
     case CLEAR_LISTING:
       return defaultState;
-    case CLEAR_STATE:
-      return defaultState;
     case CLEAR_LISTING_ERRORS:
       newState = merge({}, state);
       newState.errors = [];
