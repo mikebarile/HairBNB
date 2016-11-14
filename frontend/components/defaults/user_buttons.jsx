@@ -120,7 +120,7 @@ class UserButtons extends React.Component {
               </button>
             </div>
             <DropdownContent onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
-              <Link to="/" className="top-bar-dropdown-element tbd-one">Edit profile</Link>
+              <Link to="/" className="top-bar-dropdown-element tbd-one">Edit profile (coming soon)</Link>
               <span className="tbd-border"></span>
               <span className="top-bar-dropdown-element tbd-two" onClick={this.props.logout}>Log out</span>
             </DropdownContent>
@@ -144,7 +144,7 @@ class UserButtons extends React.Component {
               </button>
             </div>
             <DropdownContent onMouseEnter={this.openDropdown} onMouseLeave={this.closeDropdown}>
-              <Link to="/" className="top-bar-dropdown-element tbd-one">Edit profile</Link>
+              <Link to="/" className="top-bar-dropdown-element tbd-one">Edit profile (coming soon)</Link>
               <span className="tbd-border"></span>
               <span className="top-bar-dropdown-element tbd-two" onClick={this.props.logout}>Log out</span>
             </DropdownContent>
