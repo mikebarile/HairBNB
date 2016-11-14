@@ -79,6 +79,8 @@ class BookListing extends React.Component {
               placeholder="mm/dd/yyyy"
               onChange={this.update("check_in")}
               computableFormat='YYYY/MM/DD'
+              closeOnSelect={true}
+              openOnInputFocus={true}
             />
           </div>
 
@@ -89,6 +91,8 @@ class BookListing extends React.Component {
               placeholder="mm/dd/yyyy"
               onChange={this.update("check_out")}
               computableFormat='YYYY/MM/DD'
+              closeOnSelect={true}
+              openOnInputFocus={true}
             />
           </div>
 

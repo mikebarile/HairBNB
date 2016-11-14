@@ -78,6 +78,8 @@ class SearchBar extends React.Component {
                 minDate={today}
                 placeholder="Check In"
                 onChange={this.update("check_in")}
+                closeOnSelect={true}
+                openOnInputFocus={true}
               />
 
               <img className="home-arrow-icon" src="https://res.cloudinary.com/dsguwnfdw/image/upload/v1478132097/Icons/Arrows-Right-icon_wgfi7w.png"/>
@@ -87,6 +89,8 @@ class SearchBar extends React.Component {
                 minDate={today}
                 placeholder="Check Out"
                 onChange={this.update("check_out")}
+                closeOnSelect={true}
+                openOnInputFocus={true}
               />
             </div>
           </div>
