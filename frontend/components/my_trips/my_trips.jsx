@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 class MyListings extends React.Component {
   constructor(props) {
     super(props);
+    this.noListings = this.noListings.bind(this);
   }
 
   componentWillMount() {
@@ -11,7 +12,7 @@ class MyListings extends React.Component {
   }
 
   componentDidUpdate() {
-    if(this.props.currentUser === null){
+    if(this.props.currentUser === null || this.props.currentUser.id === null){
       this.props.router.replace('/home');
     }
     this.props.fetchMyTrips({"guest_id": this.props.currentUser.id});
@@ -40,6 +41,14 @@ class MyListings extends React.Component {
       `url('${imageUrl}') center center / cover no-repeat`});
   }
 
+  noListings() {
+    if (this.props.myTrips.length === 0) {
+      return (
+        <span className="mt-no-listings">No trips booked yet!</span>
+      );
+    }
+  }
+
   render() {
     let numListings = this.props.myTrips.length;
 
@@ -50,6 +59,7 @@ class MyListings extends React.Component {
             <div className="ml-listed-box">
               <span className="ml-listed-span">Your trips</span>
             </div>
+            {this.noListings()}
             {this.props.myTrips.map((booking, idx) => (
               <div className={this.handleLastListing(idx, numListings)} key={booking.id}>
                 <div style={this.imgStyle(booking.listing.image_url)} className="ml-listing-image"></div>

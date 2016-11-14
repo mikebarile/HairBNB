@@ -7,6 +7,11 @@
   color: #4F4F4F;
 }
 
+.mt-no-listings {
+  font-size: 16px;
+  margin: 20px;
+}
+
 .ml-columns-container {
   display: flex;
   width: 1008px;
@@ -110,7 +115,7 @@
 }
 
 .ml-listing-last {
-  
+
   border-bottom: 0;
 }
 
