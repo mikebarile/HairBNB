@@ -58,7 +58,7 @@ class Destinations extends React.Component {
           </div>
 
           <div className="home-destination-sub-row">
-            <div className="home-destination-small cairo" onClick={this.pushDestination('/search?lat=30.0444&lng=13.4050')}>
+            <div className="home-destination-small cairo" onClick={this.pushDestination('/search?lat=30.0444&lng=31.2357')}>
               <span className="home-destination-text">Cairo</span>
             </div>
             <div className="home-destination-small new-york" onClick={this.pushDestination('/search?lat=40.7128&lng=-74.0059')}>
