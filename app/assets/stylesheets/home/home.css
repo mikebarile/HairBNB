@@ -184,7 +184,7 @@
   padding-left: 10px;
   padding-right: 20px;
   height: 100%;
-  width: 120px;
+  width: 70%;
   margin-right: 10px;
   height: 40px;
   display: flex;
@@ -201,7 +201,7 @@
   display: inline-block;
   position: absolute;
   bottom: 7px;
-  right: 30px;
+  right: 25px;
   height: 27px;
   line-height: 27px;
   transform: translateY(4px);

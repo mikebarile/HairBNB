@@ -11,7 +11,8 @@ class SearchBar extends React.Component {
           lng: "",
           check_in: "",
           check_out: "",
-          guests: "1 Dog"
+          guests: "1 Dog",
+          addressError: []
       };
       this.update = this.update.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,7 +41,6 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit() {
-    if (this.state.lat !== "" && this.state.lat !== undefined) {
       this.props.router.push({
         pathname: "/search",
         query: {
@@ -51,7 +51,6 @@ class SearchBar extends React.Component {
           guests: this.state.guests
         }
       });
-    }
   }
 
   render() {
@@ -75,7 +74,6 @@ class SearchBar extends React.Component {
             <div className="hsb-input-row">
               <Calendar
                 format='MM/DD/YYYY'
-                minDate={today}
                 placeholder="Check In"
                 onChange={this.update("check_in")}
                 closeOnSelect={true}
@@ -86,7 +84,6 @@ class SearchBar extends React.Component {
 
               <Calendar
                 format='MM/DD/YYYY'
-                minDate={today}
                 placeholder="Check Out"
                 onChange={this.update("check_out")}
                 closeOnSelect={true}
