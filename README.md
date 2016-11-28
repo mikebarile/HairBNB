@@ -4,7 +4,7 @@
 
 [site]: http://www.hairbnb.xyz
 
-[!Hairbnb Homepage](https://res.cloudinary.com/dsguwnfdw/image/upload/v1480290632/Screen_Shot_2016-11-27_at_3.40.20_PM_qjs3y6.png)
+![Hairbnb Homepage](https://res.cloudinary.com/dsguwnfdw/image/upload/v1480290632/Screen_Shot_2016-11-27_at_3.40.20_PM_qjs3y6.png)
 
 HairBNB is a full-stack web application inspired by AirBNB.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
