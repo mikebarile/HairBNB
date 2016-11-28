@@ -104,7 +104,7 @@ class AddListingThird extends React.Component {
     else {
       this.setState({zipError: []});
     }
-    if (!(state.price > 0 && state.price <= 10000)) {
+    if (!(state.price > 0 && state.price < 10000)) {
       this.setState({priceError: ["Price must be greater than $0.00 and less than $10,000"]});
     }
     else {
