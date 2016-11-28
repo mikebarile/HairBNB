@@ -80,7 +80,7 @@ HairBNB is a full-stack web application inspired by AirBNB.  It utilizes Ruby on
   }
   ```
 
-  The forms themselves were modeled on AirBNB's add a listing forms. Interesting features include a character counter in the first form that turns red when the user is approaching the character limit. This feature is backed up by error handling on the "next button". The second form has dynamic buttons that were hand-designed. The third form pings Google when the user tries to submit a listing to ensure the listing has a valid address. If it doesn't the form throws an error and asks the user to correct their address. The final form submission process is relatively complex in that it relies on both the handleNextClick function and the componentDidUpdate React callback. I've included code snippets below of both to illustrate the form submission logic:
+  The forms themselves were modeled after AirBNB's "add a listing" forms. One notable feature is a character counter in the first form that turns red when the user is approaching the character limit. This feature is backed up by error handling on the "next button". The second form has dynamic buttons that were hand-designed. The third form pings Google when the user tries to submit a listing to ensure the listing has a valid address. If it doesn't the form throws an error and asks the user to correct their address. The final form submission process is relatively complex in that it relies on both the handleNextClick function and the componentDidUpdate React callback. I've included code snippets below of both to illustrate the form submission logic:
   ```
   handleNextClick(e) {
     e.preventDefault;
